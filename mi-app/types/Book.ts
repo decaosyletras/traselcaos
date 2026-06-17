@@ -4,6 +4,8 @@ export interface Book {
   slug: string;
 
   title: string;
+  
+  year: string;
 
   cover: string;
 
