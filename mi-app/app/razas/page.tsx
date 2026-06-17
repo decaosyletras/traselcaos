@@ -25,6 +25,7 @@ export default function RacesPage() {
                 description={race.description}
                 image={race.image}
                 href={`/razas/${race.slug}`}
+                imageRatio="square"
               />
             ))}
 

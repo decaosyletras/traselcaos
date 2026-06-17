@@ -15,6 +15,7 @@ export default function BookCard({
       image={book.cover}
       href={`/libros/${book.slug}`}
       subtitle={book.publishYear.toString()}
+      imageRatio="book"
     />
   );
 }

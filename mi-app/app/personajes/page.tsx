@@ -30,6 +30,7 @@ export default function CharactersPage() {
                 description={character.description}
                 image={character.image}
                 href={`/personajes/${character.slug}`}
+                imageRatio="square"
               />
             ))}
 

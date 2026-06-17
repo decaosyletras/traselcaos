@@ -6,6 +6,8 @@ interface EntityCardProps {
   image?: string;
   href: string;
   subtitle?: string;
+
+  imageRatio?: "square" | "book";
 }
 
 export default function EntityCard({
@@ -14,6 +16,7 @@ export default function EntityCard({
   image,
   href,
   subtitle,
+  imageRatio = "square",
 }: EntityCardProps) {
   return (
     <Link href={href}>
@@ -34,20 +37,22 @@ export default function EntityCard({
 
         {image && (
           <div className="overflow-hidden">
-
             <img
               src={image}
               alt={title}
-              className="
+              className={`
                 w-full
-                aspect-[2/3]
                 object-cover
                 transition
                 duration-700
                 group-hover:scale-110
-              "
+                ${
+                  imageRatio === "book"
+                    ? "aspect-[2/3]"
+                    : "aspect-square"
+                }
+              `}
             />
-
           </div>
         )}
 

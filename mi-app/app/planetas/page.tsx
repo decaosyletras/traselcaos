@@ -30,6 +30,7 @@ export default function PlanetsPage() {
                 description={planet.description}
                 image={planet.image}
                 href={`/planetas/${planet.slug}`}
+                imageRatio="square"
               />
             ))}
 
