@@ -15,7 +15,7 @@ export default function HomePage() {
 
       <TimelinePreview />
 
-      <FeaturedCharacters />
+      {/*<FeaturedCharacters />*/}
     </main>
   );
 }
