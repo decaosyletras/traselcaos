@@ -22,13 +22,14 @@ export default function FeaturedBooks() {
           className="
             mt-16
             grid
-            grid-cols-1
-            md:grid-cols-2
+            grid-cols-2
+            md:grid-cols-3
             lg:grid-cols-4
-            gap-8
+            gap-4
+            md:gap-8
           "
         >
-          {books.slice(0, 4).map((book) => (
+          {books.slice(0, 5).map((book) => (
             <Link
               key={book.id}
               href={`/libros/${book.slug}`}

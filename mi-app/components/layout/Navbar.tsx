@@ -94,13 +94,13 @@ export default function Navbar() {
             "
           >
             <Link href="/">Inicio</Link>
+            
+            <Link href="/libros">
+              Libros
+            </Link>
 
             <Link href="/universo">
               Universo
-            </Link>
-
-            <Link href="/libros">
-              Libros
             </Link>
 
             <Link href="/cronologia">
