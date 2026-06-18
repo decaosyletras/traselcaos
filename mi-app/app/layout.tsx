@@ -2,6 +2,8 @@ import "./globals.css";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import BackButton from "@/components/BackButton";
+
 
 export default function RootLayout({
   children,
@@ -20,6 +22,7 @@ export default function RootLayout({
         <Navbar />
 
         {children}
+        <BackButton />
 
         <Footer />
       </body>
