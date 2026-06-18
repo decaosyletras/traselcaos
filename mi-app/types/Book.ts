@@ -5,8 +5,6 @@ export interface Book {
 
   title: string;
 
-  year: string;
-
   cover: string;
 
   publishYear: number;
