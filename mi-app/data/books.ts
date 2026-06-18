@@ -21,4 +21,14 @@ export const books: Book[] = [
     synopsis:
       "Nuevos conflictos amenazan el equilibrio galáctico.",
   },
+  {
+    id: "book3",
+    slug: "tercer-libro",
+    title: "Tercer Libro",
+    cover: "/images/books/book3.jpg",
+    publishYear: 2026,
+    timelineYear: 150,
+    synopsis:
+      "Nuevos conflictos amenazan el equilibrio galáctico.",
+  },
 ];
