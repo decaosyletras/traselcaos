@@ -2,22 +2,13 @@ import { Book } from "@/types/Book";
 
 export const books: Book[] = [
   {
+    id: "1",
     slug: "libro-1",
     title: "Libro I",
     year: "2023",
     cover: "/images/books/book1.jpg",
-
-    description:
-      "La historia comienza.",
-
+    publishYear: 2023,
     timelineYear: 0,
-
-    races: ["humanos"],
-
-    planets: ["terra"],
-
-    sectors: ["sector-central"],
-
-    characters: ["kael"],
+    synopsis: "La historia comienza.",
   },
 ];
