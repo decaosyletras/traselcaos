@@ -1,14 +1,12 @@
-import EntityCard from "@/components/shared/EntityCard";
+import Link from "next/link";
 
 interface RelatedEntity {
-  id: string;
   title: string;
-  description: string;
-  image?: string;
   href: string;
+  image?: string;
 }
 
-interface Props {
+interface RelatedEntitiesProps {
   title: string;
   entities: RelatedEntity[];
 }
@@ -16,34 +14,39 @@ interface Props {
 export default function RelatedEntities({
   title,
   entities,
-}: Props) {
-  if (!entities.length) return null;
+}: RelatedEntitiesProps) {
+  if (!entities || entities.length === 0) return null;
 
   return (
-    <section className="mt-16">
-      <h2 className="text-3xl font-bold mb-8">
+    <div className="mt-12 rounded-2xl border border-cyan-900/20 bg-zinc-900 p-6">
+      
+      <h3 className="text-lg font-bold mb-4">
         {title}
-      </h2>
+      </h3>
 
-      <div
-        className="
-          grid
-          grid-cols-1
-          sm:grid-cols-2
-          lg:grid-cols-3
-          gap-8
-        "
-      >
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
         {entities.map((entity) => (
-          <EntityCard
-            key={entity.id}
-            title={entity.title}
-            description={entity.description}
-            image={entity.image}
+          <Link
+            key={entity.href}
             href={entity.href}
-          />
+            className="group flex items-center gap-3 p-3 rounded-xl border border-zinc-800 hover:border-cyan-500/40 transition"
+          >
+            {entity.image && (
+              <img
+                src={entity.image}
+                alt={entity.title}
+                className="w-12 h-12 object-cover rounded-lg"
+              />
+            )}
+
+            <span className="text-sm font-medium group-hover:text-cyan-400 transition-colors">
+              {entity.title}
+            </span>
+          </Link>
         ))}
+
       </div>
-    </section>
+    </div>
   );
 }

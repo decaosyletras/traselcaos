@@ -1,19 +1,9 @@
-import { Planet } from "@/types/Planet";
-
-export const planets: Planet[] = [
+export const planets = [
   {
     id: "nerath",
-
     slug: "nerath",
-
-    name: "Nerath",
-
-    description:
-      "Mundo natal de los Seoseres.",
-
-    image:
-      "/images/planets/nerath.jpg",
-
-    sectorId: "outer-rim"
+    name: "Nerathaa",
+    description: "Mundo industrial y militarizado.",
+    sectorId: "sector-norte",
   },
 ];

@@ -6,6 +6,10 @@ export interface Race {
   name: string;
   description: string;
   image?: string;
-  homeworld: string;
+
+  homeworldId: string; // 🔥 antes era string libre
+
   appearances: RaceAppearance[];
+
+  bookIds?: string[]; // 📚 nuevas apariciones en libros
 }

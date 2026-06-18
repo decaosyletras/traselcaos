@@ -9,11 +9,15 @@ const items = [
     title: "Personajes",
     href: "/personajes",
   },
-  {
+  /*{
     title: "Planetas",
     href: "/planetas",
-  },
+  },*/
   {
+    title: "Destellos",
+    href: "/destellos",
+  },
+  /*{
     title: "Sectores",
     href: "/sectores",
   },
@@ -24,7 +28,7 @@ const items = [
   {
     title: "Organizaciones",
     href: "/organizaciones",
-  },
+  },*/
 ];
 
 export default function UniversePreview() {

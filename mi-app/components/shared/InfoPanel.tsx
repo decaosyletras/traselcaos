@@ -1,6 +1,8 @@
+import { ReactNode } from "react";
+
 interface InfoItem {
   label: string;
-  value: string;
+  value: ReactNode; // 🔥 CAMBIO CLAVE: antes string, ahora ReactNode
 }
 
 interface Props {

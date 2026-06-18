@@ -2,6 +2,8 @@
 
 import { useMemo, useState } from "react";
 import { races } from "@/data/races";
+import { planets } from "@/data/planets";
+
 import EntityGrid from "@/components/shared/EntityGrid";
 import EntityCard from "@/components/shared/EntityCard";
 import SectionTitle from "@/components/shared/SectionTitle";
@@ -15,17 +17,22 @@ export default function RacesPage() {
 
     if (!term) return races;
 
-    return races.filter(
-      (race) =>
+    return races.filter((race) => {
+      const planetName =
+        planets.find((p) => p.id === race.homeworldId)?.name ?? "";
+
+      return (
         race.name.toLowerCase().includes(term) ||
-        race.homeworld.toLowerCase().includes(term)
-    );
+        planetName.toLowerCase().includes(term)
+      );
+    });
   }, [search]);
 
   return (
     <main className="min-h-screen">
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
+
           <SectionTitle
             title="Razas"
             subtitle="Civilizaciones conocidas del universo."
@@ -38,16 +45,26 @@ export default function RacesPage() {
           />
 
           <EntityGrid>
-            {filteredRaces.map((race) => (
-              <EntityCard
-                key={race.id}
-                title={race.name}
-                description={race.description}
-                image={race.image}
-                href={`/razas/${race.slug}`}
-                imageRatio="square"
-              />
-            ))}
+            {filteredRaces.map((race) => {
+              const planet = planets.find(
+                (p) => p.id === race.homeworldId
+              );
+
+              return (
+                <EntityCard
+                  key={race.id}
+                  title={race.name}
+                  description={
+                    planet
+                      ? `${race.description} • Planeta: ${planet.name}`
+                      : race.description
+                  }
+                  image={race.image}
+                  href={`/razas/${race.slug}`}
+                  imageRatio="square"
+                />
+              );
+            })}
           </EntityGrid>
 
           {filteredRaces.length === 0 && (
@@ -55,6 +72,7 @@ export default function RacesPage() {
               No se encontraron razas.
             </p>
           )}
+
         </div>
       </section>
     </main>

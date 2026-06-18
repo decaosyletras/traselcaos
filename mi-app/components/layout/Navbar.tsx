@@ -52,12 +52,12 @@ export default function Navbar() {
             Inicio
           </Link>
 
-          <Link href="/universo">
-            Universo
-          </Link>
-
           <Link href="/libros">
             Libros
+          </Link>
+
+          <Link href="/universo">
+            Universo
           </Link>
 
           <Link href="/cronologia">
