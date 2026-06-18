@@ -40,48 +40,60 @@ export default async function BookPage({
   return (
     <main className="min-h-screen bg-zinc-950">
       <section className="max-w-6xl mx-auto px-6 py-24">
-        <div className="grid gap-12 lg:grid-cols-[350px_1fr]">
-          <div>
-            <img
-              src={book.cover}
-              alt={book.title}
-              className="
-                w-full
-                rounded-2xl
-                border
-                border-zinc-800
-              "
-            />
-          </div>
 
-          <div>
-            <p className="text-cyan-400 uppercase tracking-[0.3em] text-sm">
-              Libro de la Saga
-            </p>
+        {/* Portada + información */}
+        <div className="space-y-8">
 
-            <h1 className="mt-4 text-4xl md:text-6xl font-black">
-              {book.title}
-            </h1>
+          <div className="flex gap-4 lg:grid lg:grid-cols-[350px_1fr] lg:gap-12">
 
-            <div className="mt-6 flex gap-6 text-sm text-zinc-400">
-              <span>
-                Publicado: {book.publishYear}
-              </span>
-
-              <span>
-                Cronología: Año {book.timelineYear}
-              </span>
+            <div className="w-32 shrink-0 lg:w-auto">
+              <img
+                src={book.cover}
+                alt={book.title}
+                className="
+                  w-full
+                  rounded-2xl
+                  border
+                  border-zinc-800
+                "
+              />
             </div>
 
-            <p className="mt-8 text-lg text-zinc-300 leading-relaxed">
+            <div>
+              <p className="text-cyan-400 uppercase tracking-[0.3em] text-xs md:text-sm">
+                Libro de la Saga
+              </p>
+
+              <h1 className="mt-3 text-2xl md:text-5xl lg:text-6xl font-black">
+                {book.title}
+              </h1>
+
+              <div className="mt-4 space-y-2 text-sm text-zinc-400">
+                <p>
+                  Publicado: {book.publishYear}
+                </p>
+
+                <p>
+                  Cronología: Año {book.timelineYear}
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Sinopsis */}
+          <div>
+            <p className="text-lg text-zinc-300 leading-relaxed">
               {book.synopsis}
             </p>
           </div>
+
         </div>
 
         {/* Navegación */}
         <div className="mt-20 border-t border-zinc-800 pt-8">
           <div className="flex justify-between items-center">
+
             <div>
               {previousBook && (
                 <Link
@@ -151,8 +163,10 @@ export default async function BookPage({
                 </Link>
               )}
             </div>
+
           </div>
         </div>
+
       </section>
     </main>
   );
