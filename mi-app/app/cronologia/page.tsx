@@ -81,32 +81,52 @@ export default function CronologiaPage() {
               {era.name}
             </h2>
 
-            {/* LÍNEA BASE */}
-            <div className="relative h-16 md:h-20 border-t border-zinc-700">
+            <div className="relative h-24">
 
-              {/* 🔴 HOSTILES (ARRIBA) */}
+              {/* Línea temporal */}
+              <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-cyan-500/60" />
+
+              {/* HOSTILES */}
               {era.hostileEvents.map((event, i) => (
                 <div
                   key={i}
-                  className="absolute top-1/2 -translate-y-full"
-                  style={{ left: `${positionFromTemi(event.temi)}%` }}
+                  className="absolute"
+                  style={{
+                    left: `${positionFromTemi(event.temi)}%`,
+                    top: "50%",
+                  }}
                 >
-                  <p className="text-[9px] md:text-[10px] text-red-400 mb-1 whitespace-nowrap text-center">
+                  {/* línea de conexión */}
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-6 bg-red-500" />
+
+                  {/* punto */}
+                  <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-red-500 shadow shadow-red-500/50" />
+
+                  {/* texto */}
+                  <p className="absolute -top-14 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] text-red-400">
                     {event.title}
                   </p>
-                  <div className="w-2 h-2 md:w-2.5 md:h-2.5 bg-red-500 rounded-full mx-auto" />
                 </div>
               ))}
 
-              {/* 🔵 BENÉVOLOS (ABAJO) */}
+              {/* BENÉVOLOS */}
               {era.benevolentEvents.map((event, i) => (
                 <div
                   key={i}
-                  className="absolute top-1/2 translate-y-0"
-                  style={{ left: `${positionFromTemi(event.temi)}%` }}
+                  className="absolute"
+                  style={{
+                    left: `${positionFromTemi(event.temi)}%`,
+                    top: "50%",
+                  }}
                 >
-                  <div className="w-2 h-2 md:w-2.5 md:h-2.5 bg-cyan-400 rounded-full mx-auto" />
-                  <p className="text-[9px] md:text-[10px] text-cyan-300 mt-1 whitespace-nowrap text-center">
+                  {/* línea de conexión */}
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-6 bg-green-500" />
+
+                  {/* punto */}
+                  <div className="absolute top-6 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-green-500 shadow shadow-green-500/50" />
+
+                  {/* texto */}
+                  <p className="absolute top-11 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] text-green-400">
                     {event.title}
                   </p>
                 </div>
