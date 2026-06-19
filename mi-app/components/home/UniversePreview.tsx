@@ -24,7 +24,7 @@ const items = [
 export default function UniversePreview() {
   return (
     <section className="py-14 md:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
 
         {/* HEADER */}
         <div className="text-center">

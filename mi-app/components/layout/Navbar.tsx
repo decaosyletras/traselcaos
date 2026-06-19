@@ -25,9 +25,9 @@ export default function Navbar() {
         {/* DESKTOP MENU */}
         <nav className="hidden lg:flex items-center gap-8">
           <Link href="/">Inicio</Link>
-          <Link href="/libros">Libros</Link>
+          {/*<Link href="/libros">Libros</Link>
           <Link href="/universo">Universo</Link>
-          <Link href="/cronologia">Cronología</Link>
+          <Link href="/cronologia">Cronología</Link>*/}
           <Link href="/conoceme">Conóceme</Link>
         </nav>
 
@@ -50,7 +50,7 @@ export default function Navbar() {
               Inicio
             </Link>
 
-            <Link href="/libros" onClick={closeMenu}>
+            {/*<Link href="/libros" onClick={closeMenu}>
               Libros
             </Link>
 
@@ -60,7 +60,7 @@ export default function Navbar() {
 
             <Link href="/cronologia" onClick={closeMenu}>
               Cronología
-            </Link>
+            </Link>*/}
 
             <Link href="/conoceme" onClick={closeMenu}>
               Conóceme
