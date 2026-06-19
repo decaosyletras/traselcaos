@@ -1,62 +1,60 @@
+import Link from "next/link";
 import { books } from "@/data/books";
 
-export default function BooksPage() {
+export default function FeaturedBooks() {
   return (
-    <main className="min-h-screen bg-zinc-950 text-white">
+    <section className="py-10 md:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
-      {/* HERO */}
-      <section className="relative py-16 md:py-28 text-center overflow-hidden">
+        {/* HEADER */}
+        <div className="text-center">
+          <p className="text-cyan-400 uppercase tracking-[0.25em] text-[10px] md:text-sm">
+            La Saga
+          </p>
 
-        <div className="absolute inset-0 bg-gradient-to-b from-cyan-950/20 via-zinc-950 to-zinc-950" />
-
-        <div className="relative z-10 px-6">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-black">
+          <h2 className="mt-2 md:mt-4 text-2xl md:text-5xl font-bold">
             Libros
-          </h1>
+          </h2>
 
-          <p className="mt-4 md:mt-6 text-zinc-400 max-w-2xl mx-auto text-sm md:text-base">
-            Explora las novelas de la saga y descubre cómo evoluciona el universo a través del tiempo.
+          <p className="mt-4 md:mt-6 max-w-2xl mx-auto text-zinc-400 text-sm md:text-base leading-relaxed">
+            Descubre las novelas que narran la evolución
+            de imperios galácticos y los secretos del universo.
           </p>
         </div>
 
-      </section>
-
-      {/* GRID / CAROUSEL */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 pb-24">
-
+        {/* GRID */}
         <div
           className="
-            mt-10 md:mt-12
+            mt-10 md:mt-16
 
-            flex gap-4 overflow-x-auto pb-4
-            snap-x snap-mandatory
-
-            sm:grid sm:grid-cols-2
-            md:grid md:grid-cols-3
-            lg:grid lg:grid-cols-5
+            flex gap-4 overflow-x-auto pb-2
+            sm:grid sm:overflow-visible
+            sm:grid-cols-2
+            md:grid-cols-3
+            lg:grid-cols-5
           "
         >
-
           {books.map((book) => (
-            <a
+            <Link
               key={book.id}
               href={`/libros/${book.slug}`}
               className="
+                min-w-[55%] sm:min-w-0
+
                 group
-
-                min-w-[75%] sm:min-w-0
-
-                snap-start
-
                 overflow-hidden
-                rounded-xl sm:rounded-2xl
+                rounded-xl md:rounded-2xl
                 border border-cyan-900/30
-                bg-gradient-to-b from-zinc-900 to-zinc-950
+                bg-gradient-to-b
+                from-zinc-900
+                to-zinc-950
 
-                transition-all duration-300
+                transition-all
+                duration-300
+
                 hover:border-cyan-500/50
                 hover:-translate-y-1
-                hover:shadow-[0_0_25px_rgba(34,211,238,0.12)]
+                hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]
               "
             >
               {/* COVER */}
@@ -66,39 +64,40 @@ export default function BooksPage() {
                   alt={book.title}
                   className="
                     w-full
-                    aspect-[3/4] sm:aspect-[2/3]
+                    aspect-[2/3]
                     object-cover
-                    transition-transform duration-500
+
+                    transition-transform
+                    duration-500
+
                     group-hover:scale-105
                   "
                 />
               </div>
 
               {/* INFO */}
-              <div className="p-3 sm:p-4">
-                <p className="text-cyan-400 text-[10px] sm:text-xs uppercase tracking-widest">
-                  {book.publishYear}
-                </p>
+                <div className="p-4 md:p-5">
+                  <p className="text-cyan-400 text-xs md:text-sm uppercase tracking-widest">
+                    {book.publishYear}
+                  </p>
 
-                <h3 className="mt-1 sm:mt-2 text-sm sm:text-lg font-bold group-hover:text-cyan-300 transition-colors">
-                  {book.title}
-                </h3>
+                  <h3 className="mt-2 text-base md:text-xl font-bold group-hover:text-cyan-300 transition-colors">
+                    {book.title}
+                  </h3>
 
-                <p className="mt-2 text-[11px] sm:text-xs text-zinc-400 line-clamp-2 sm:line-clamp-3">
-                  {book.synopsis}
-                </p>
+                  <p className="mt-2 text-sm md:text-base text-zinc-400 line-clamp-2 md:line-clamp-3">
+                    {book.synopsis}
+                  </p>
 
-                <div className="mt-3 sm:mt-4 text-cyan-400 text-xs sm:text-sm">
-                  Ver detalles →
+                  <div className="mt-4 text-cyan-400 text-sm md:text-base">
+                    Ver detalles →
+                  </div>
                 </div>
-              </div>
-            </a>
+            </Link>
           ))}
-
         </div>
 
-      </section>
-
-    </main>
+      </div>
+    </section>
   );
 }

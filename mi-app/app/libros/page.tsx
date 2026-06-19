@@ -21,20 +21,19 @@ export default function BooksPage() {
 
       </section>
 
-      {/* GRID */}
+      {/* GRID / CAROUSEL */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 pb-24">
 
         <div
           className="
             mt-10 md:mt-12
 
-            grid
-            grid-cols-1
-            sm:grid-cols-2
-            md:grid-cols-3
-            lg:grid-cols-5
+            flex gap-4 overflow-x-auto pb-4
+            snap-x snap-mandatory
 
-            gap-4 sm:gap-6
+            sm:grid sm:grid-cols-2
+            md:grid md:grid-cols-3
+            lg:grid lg:grid-cols-5
           "
         >
 
@@ -44,6 +43,11 @@ export default function BooksPage() {
               href={`/libros/${book.slug}`}
               className="
                 group
+
+                min-w-[75%] sm:min-w-0
+
+                snap-start
+
                 overflow-hidden
                 rounded-xl sm:rounded-2xl
                 border border-cyan-900/30
