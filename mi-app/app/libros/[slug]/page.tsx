@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { books } from "@/data/books";
+import BookNavigation from "@/components/BookNavigation";
 
 interface Props {
   params: Promise<{
@@ -192,78 +193,10 @@ export default async function BookPage({
 
       {/* NAVEGACIÓN */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 pb-24">
-
-        <div className="grid md:grid-cols-2 gap-4">
-
-          {/* ANTERIOR */}
-          <div>
-            {previousBook && (
-              <Link
-                href={`/libros/${previousBook.slug}`}
-                className="
-                  group
-                  block
-                  rounded-2xl
-                  border border-cyan-900/30
-                  bg-zinc-900
-                  p-5
-                  transition-all
-                  hover:border-cyan-500/50
-                  hover:-translate-y-1
-                  hover:shadow-[0_0_30px_rgba(34,211,238,0.12)]
-                "
-              >
-                <p className="text-xs uppercase tracking-widest text-zinc-500">
-                  Libro anterior
-                </p>
-
-                <div className="mt-3 flex items-center gap-3">
-                  <span className="text-2xl text-cyan-400">←</span>
-
-                  <p className="font-semibold group-hover:text-cyan-300 transition-colors">
-                    {previousBook.title}
-                  </p>
-                </div>
-              </Link>
-            )}
-          </div>
-
-          {/* SIGUIENTE */}
-          <div>
-            {nextBook && (
-              <Link
-                href={`/libros/${nextBook.slug}`}
-                className="
-                  group
-                  block
-                  rounded-2xl
-                  border border-cyan-900/30
-                  bg-zinc-900
-                  p-5
-                  text-right
-                  transition-all
-                  hover:border-cyan-500/50
-                  hover:-translate-y-1
-                  hover:shadow-[0_0_30px_rgba(34,211,238,0.12)]
-                "
-              >
-                <p className="text-xs uppercase tracking-widest text-zinc-500">
-                  Siguiente libro
-                </p>
-
-                <div className="mt-3 flex items-center justify-end gap-3">
-                  <p className="font-semibold group-hover:text-cyan-300 transition-colors">
-                    {nextBook.title}
-                  </p>
-
-                  <span className="text-2xl text-cyan-400">→</span>
-                </div>
-              </Link>
-            )}
-          </div>
-
-        </div>
-
+        <BookNavigation
+          previousBook={previousBook}
+          nextBook={nextBook}
+        />
       </section>
 
     </main>
