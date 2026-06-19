@@ -92,7 +92,7 @@ export default async function CharacterPage({
             />
 
             {/* RELACIONES */}
-            {character.relationships &&
+            {/*character.relationships &&
               character.relationships.length > 0 && (
                 <div className="mt-8 rounded-2xl border border-cyan-900/20 bg-zinc-900 p-6">
                   <h3 className="text-lg font-bold mb-4">
@@ -135,7 +135,7 @@ export default async function CharacterPage({
 
                   </div>
                 </div>
-              )}
+              )*/}
 
           </div>
 
