@@ -16,10 +16,10 @@ export default function FeaturedBooks() {
             Libros
           </h3>*/}
 
-          <p className="mt-4 md:mt-6 max-w-2xl mx-auto text-zinc-400 text-sm md:text-base leading-relaxed">
+          {/*<p className="mt-4 md:mt-6 max-w-2xl mx-auto text-zinc-400 text-sm md:text-base leading-relaxed">
             Descubre las novelas que narran la evolución
             de imperios galácticos y los secretos del universo.
-          </p>
+          </p>*/}
         </div>
 
         {/* GRID */}

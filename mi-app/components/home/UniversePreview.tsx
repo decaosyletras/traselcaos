@@ -36,9 +36,9 @@ export default function UniversePreview() {
             Explora el Universo
           </h3>*/}
 
-          <p className="mt-4 md:mt-6 max-w-2xl mx-auto text-zinc-400 text-sm md:text-base">
+          {/*<p className="mt-4 md:mt-6 max-w-2xl mx-auto text-zinc-400 text-sm md:text-base">
             Descubre razas, personajes y fuerzas que moldean la galaxia.
-          </p>
+          </p>*/}
         </div>
 
         {/* GRID */}

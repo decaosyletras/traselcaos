@@ -18,9 +18,9 @@ export default function TimelinePreview() {
             Línea del tiempo
           </h3>*/}
 
-          <p className="mt-4 md:mt-6 text-zinc-400 max-w-2xl mx-auto text-sm md:text-base">
+          {/*<p className="mt-4 md:mt-6 text-zinc-400 max-w-2xl mx-auto text-sm md:text-base">
             Eventos clave que marcaron la historia del universo.
-          </p>
+          </p>*/}
         </div>
 
         {/* ERAS */}
