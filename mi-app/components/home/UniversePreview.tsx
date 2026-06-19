@@ -23,7 +23,7 @@ const items = [
 
 export default function UniversePreview() {
   return (
-    <section className="py-14 md:py-24">
+    <section className="py-14 md:py-10">
       <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
 
         {/* HEADER */}
@@ -42,7 +42,7 @@ export default function UniversePreview() {
         </div>
 
         {/* GRID */}
-        <div className="mt-10 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <div className="mt-2 md:mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
 
           {items.map((item) => (
             <Link

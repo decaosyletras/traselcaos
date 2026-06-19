@@ -5,7 +5,7 @@ export default function TimelinePreview() {
   const previewEras = eras.slice(0, 2);
 
   return (
-    <section className="py-12 md:py-24">
+    <section className="py-12 md:py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* HEADER */}
@@ -24,7 +24,7 @@ export default function TimelinePreview() {
         </div>
 
         {/* ERAS */}
-        <div className="mt-10 md:mt-16 space-y-8">
+        <div className="mt-2 md:mt-4 space-y-8">
 
           {previewEras.map((era) => (
             <div

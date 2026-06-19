@@ -3,7 +3,7 @@ import { books } from "@/data/books";
 
 export default function FeaturedBooks() {
   return (
-    <section className="py-10 md:py-24">
+    <section className="py-10 md:py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* HEADER */}
@@ -25,7 +25,7 @@ export default function FeaturedBooks() {
         {/* GRID */}
         <div
           className="
-            mt-10 md:mt-16
+            mt-2 md:mt-4
 
             flex gap-4 overflow-x-auto pb-2
             sm:grid sm:overflow-visible
