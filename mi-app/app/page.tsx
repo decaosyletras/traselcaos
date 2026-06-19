@@ -6,7 +6,7 @@ import FeaturedCharacters from "@/components/home/FeaturedCharacters";
 
 function Divider({ label }: { label?: string }) {
   return (
-    <div className="relative w-full flex justify-center py-4 md:py-10">
+    <div className="relative w-full flex justify-center pt-8 pb-3 md:pt-18 md:pb-6">
       <div className="w-full max-w-6xl px-6 flex items-center gap-4">
         <div className="h-px flex-1 bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent" />
 
