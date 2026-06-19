@@ -5,12 +5,12 @@ export default function Hero() {
     <section
       className="
         relative
-        min-h-screen md:min-h-[90vh]
+        min-h-[55vh] md:min-h-[90vh]
         flex
         items-start md:items-center
         justify-center
         overflow-hidden
-        pt-16 sm:pt-20 md:pt-0
+        pt-20 sm:pt-24 md:pt-0
       "
     >
       {/* BACKGROUND */}
@@ -24,7 +24,7 @@ export default function Hero() {
         "
       />
 
-      {/* FADE */}
+      {/* FADE HACIA CONTENIDO (clave UX) */}
       <div
         className="
           absolute
@@ -44,6 +44,7 @@ export default function Hero() {
           max-w-5xl mx-auto
           px-5 sm:px-6
           text-center
+          translate-y-0 md:translate-y-0
         "
       >
         {/* SUBTITLE */}
@@ -88,7 +89,7 @@ export default function Hero() {
         {/* BUTTONS */}
         <div
           className="
-            mt-6 sm:mt-10
+            mt-7 sm:mt-10
             flex flex-wrap
             justify-center
             gap-3
