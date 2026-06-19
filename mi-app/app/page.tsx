@@ -6,12 +6,12 @@ import FeaturedCharacters from "@/components/home/FeaturedCharacters";
 
 function Divider({ label }: { label?: string }) {
   return (
-    <div className="relative w-full flex justify-center pt-8 pb-3 md:pt-18 md:pb-6">
+    <div className="relative w-full flex justify-center pt-12 pb-3 md:pt-24 md:pb-6">
       <div className="w-full max-w-6xl px-6 flex items-center gap-4">
         <div className="h-px flex-1 bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent" />
 
         {label && (
-          <span className="text-[14px] md:text-xl tracking-[0.3em] text-cyan-500 uppercase whitespace-nowrap">
+          <span className="text-[16px] md:text-xl tracking-[0.4em] text-cyan-500 uppercase whitespace-nowrap">
             {label}
           </span>
         )}
