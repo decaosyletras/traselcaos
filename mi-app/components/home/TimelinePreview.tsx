@@ -1,40 +1,14 @@
 import Link from "next/link";
-
-const eras = [
-  {
-    id: "era-1",
-    name: "Era del Despertar",
-    benevolentEvents: [
-      { temi: "0000A1FF", title: "Fundación de Nerath" },
-    ],
-    hostileEvents: [
-      { temi: "000012FF", title: "Ascenso del Imperio Solar" },
-    ],
-  },
-  {
-    id: "era-2",
-    name: "Era de la Expansión",
-    benevolentEvents: [
-      { temi: "2000AB10", title: "Colonización de sectores" },
-    ],
-    hostileEvents: [
-      { temi: "2100FF10", title: "Caída de Orion" },
-    ],
-  },
-];
-
-function positionFromTemi(temi: string) {
-  const value = parseInt(temi, 16);
-  const max = 0xffffffff;
-  return (value / max) * 100;
-}
+import { eras, positionFromTemi } from "@/data/eras";
 
 export default function TimelinePreview() {
+  const previewEras = eras.slice(0, 2);
+
   return (
     <section className="py-12 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
-        {/* HEADER MÁS LIGERO (CONSISTENTE CON HOME) */}
+        {/* HEADER */}
         <div className="text-center">
           <p className="text-cyan-400 uppercase tracking-[0.25em] text-[10px] md:text-sm">
             Cronología
@@ -49,10 +23,10 @@ export default function TimelinePreview() {
           </p>
         </div>
 
-        {/* CONTAINER MÁS COMPACTO */}
+        {/* ERAS */}
         <div className="mt-10 md:mt-16 space-y-8">
 
-          {eras.map((era) => (
+          {previewEras.map((era) => (
             <div
               key={era.id}
               className="
@@ -62,7 +36,7 @@ export default function TimelinePreview() {
                 p-4 md:p-6
               "
             >
-              {/* ERA TITLE */}
+              {/* TÍTULO */}
               <h3 className="text-cyan-400 font-semibold text-sm md:text-lg mb-6">
                 {era.name}
               </h3>
@@ -105,13 +79,12 @@ export default function TimelinePreview() {
                 ))}
 
               </div>
-
             </div>
           ))}
 
         </div>
 
-        {/* CTA CONSISTENTE */}
+        {/* CTA */}
         <div className="text-center mt-10 md:mt-14">
           <Link
             href="/cronologia"

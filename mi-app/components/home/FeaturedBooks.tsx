@@ -6,7 +6,7 @@ export default function FeaturedBooks() {
     <section className="py-10 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
-        {/* HEADER MÁS LIGERO EN MÓVIL */}
+        {/* HEADER */}
         <div className="text-center">
           <p className="text-cyan-400 uppercase tracking-[0.25em] text-[10px] md:text-sm">
             La Saga
@@ -22,7 +22,7 @@ export default function FeaturedBooks() {
           </p>
         </div>
 
-        {/* GRID MÁS SUAVE EN MÓVIL */}
+        {/* GRID */}
         <div
           className="
             mt-10 md:mt-16
@@ -45,36 +45,53 @@ export default function FeaturedBooks() {
                 overflow-hidden
                 rounded-xl md:rounded-2xl
                 border border-cyan-900/30
-                bg-gradient-to-b from-zinc-900 to-zinc-950
+                bg-gradient-to-b
+                from-zinc-900
+                to-zinc-950
 
-                transition
+                transition-all
+                duration-300
+
                 hover:border-cyan-500/50
+                hover:-translate-y-1
+                hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]
               "
             >
-              <img
-                src={book.cover}
-                alt={book.title}
-                className="
-                  w-full aspect-[2/3]
-                  object-cover
-                  group-hover:scale-105
-                  transition-transform
-                  duration-500
-                "
-              />
+              {/* COVER */}
+              <div className="overflow-hidden">
+                <img
+                  src={book.cover}
+                  alt={book.title}
+                  className="
+                    w-full
+                    aspect-[2/3]
+                    object-cover
 
+                    transition-transform
+                    duration-500
+
+                    group-hover:scale-105
+                  "
+                />
+              </div>
+
+              {/* INFO */}
               <div className="p-3 md:p-5">
                 <p className="text-cyan-400 text-[10px] md:text-xs uppercase tracking-widest">
                   {book.publishYear}
                 </p>
 
-                <h3 className="mt-1 md:mt-2 text-sm md:text-xl font-bold">
+                <h3 className="mt-1 md:mt-2 text-sm md:text-xl font-bold group-hover:text-cyan-300 transition-colors">
                   {book.title}
                 </h3>
 
                 <p className="mt-2 text-[11px] md:text-sm text-zinc-400 line-clamp-2 md:line-clamp-3">
                   {book.synopsis}
                 </p>
+
+                <div className="mt-3 md:mt-4 text-cyan-400 text-xs md:text-sm">
+                  Ver detalles →
+                </div>
               </div>
             </Link>
           ))}

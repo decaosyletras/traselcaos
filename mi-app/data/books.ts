@@ -3,52 +3,67 @@ import { Book } from "@/types/Book";
 export const books: Book[] = [
   {
     id: "book1",
-    slug: "primer-libro",
-    title: "Primer Libro",
+    slug: "descubrimiento",
+    title: "Descubrimiento",
     cover: "/images/books/book1.jpg",
-    publishYear: 2023,
-    timelineYear: 0,
+    publishYear: 2022,
+    timelineYear: 1,
+    LinkAmazon: 'https://www.amazon.com',
     synopsis:
       "La historia comienza en los límites del espacio conocido.",
+    heroDescription:
+    "La novela que inicia la saga y presenta los primeros descubrimientos que cambiarán para siempre el destino de la galaxia."
   },
   {
     id: "book2",
-    slug: "segundo-libro",
-    title: "Segundo Libro",
+    slug: "divisiones-y-conflictos",
+    title: "Divisiones y Conflictos",
     cover: "/images/books/book2.jpg",
     publishYear: 2024,
-    timelineYear: 150,
+    LinkAmazon: 'https://www.amazon.com',
+    timelineYear: 2,
     synopsis:
       "Nuevos conflictos amenazan el equilibrio galáctico.",
+    heroDescription:
+    "La novela que inicia la saga y presenta los primeros descubrimientos que cambiarán para siempre el destino de la galaxia."
   },
   {
     id: "book3",
-    slug: "tercer-libro",
-    title: "Tercer Libro",
+    slug: "designios-ancestrales",
+    title: "Designios Ancestrales",
     cover: "/images/books/book3.jpg",
     publishYear: 2026,
-    timelineYear: 150,
+    LinkAmazon: 'https://www.amazon.com',
+    timelineYear: 3,
     synopsis:
       "Nuevos conflictos amenazan el equilibrio galáctico.",
+    heroDescription:
+    "La novela que inicia la saga y presenta los primeros descubrimientos que cambiarán para siempre el destino de la galaxia."
   },
   {
     id: "book4",
     slug: "cuarto-libro",
-    title: "Cuarto Libro",
-    cover: "/images/books/book3.jpg",
-    publishYear: 2026,
-    timelineYear: 150,
+    title: "Cargando...",
+    cover: "/images/books/book4.jpg",
+    publishYear: 1111,
+    LinkAmazon: 'https://www.amazon.com',
+    timelineYear: 4,
     synopsis:
       "Nuevos conflictos amenazan el equilibrio galáctico.",
+    heroDescription:
+    "La novela que inicia la saga y presenta los primeros descubrimientos que cambiarán para siempre el destino de la galaxia."
   },
   {
     id: "book5",
     slug: "quinto-libro",
-    title: "Quinto Libro",
-    cover: "/images/books/book3.jpg",
-    publishYear: 2026,
-    timelineYear: 150,
+    title: "Cargando...",
+    cover: "/images/books/book5.jpg",
+    publishYear: 1111,
+    LinkAmazon: 'https://www.amazon.com',
+    timelineYear: 5,
     synopsis:
       "Nuevos conflictos amenazan el equilibrio galáctico.",
+    heroDescription:
+    "La novela que inicia la saga y presenta los primeros descubrimientos que cambiarán para siempre el destino de la galaxia."
   },
 ];
