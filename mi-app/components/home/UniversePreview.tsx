@@ -32,9 +32,9 @@ export default function UniversePreview() {
             Universo
           </p>*/}
 
-          <h3 className="mt-2 md:mt-4 text-lg md:text-5xl font-bold">
+          {/*<h3 className="mt-2 md:mt-4 text-lg md:text-5xl font-bold">
             Explora el Universo
-          </h3>
+          </h3>*/}
 
           <p className="mt-4 md:mt-6 max-w-2xl mx-auto text-zinc-400 text-sm md:text-base">
             Descubre razas, personajes y fuerzas que moldean la galaxia.
