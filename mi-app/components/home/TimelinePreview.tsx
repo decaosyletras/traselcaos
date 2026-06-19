@@ -1,88 +1,106 @@
 import Link from "next/link";
-import { eras, positionFromTemi } from "@/data/eras";
+
+const eras = [
+  {
+    id: "era-1",
+    name: "Era del Despertar",
+    benevolentEvents: [
+      { temi: "0000A1FF", title: "Fundación de Nerath" },
+    ],
+    hostileEvents: [
+      { temi: "000012FF", title: "Ascenso del Imperio Solar" },
+    ],
+  },
+  {
+    id: "era-2",
+    name: "Era de la Expansión",
+    benevolentEvents: [
+      { temi: "2000AB10", title: "Colonización de sectores" },
+    ],
+    hostileEvents: [
+      { temi: "2100FF10", title: "Caída de Orion" },
+    ],
+  },
+];
+
+function positionFromTemi(temi: string) {
+  const value = parseInt(temi, 16);
+  const max = 0xffffffff;
+  return (value / max) * 100;
+}
 
 export default function TimelinePreview() {
   return (
-    <section className="py-24">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-12 md:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
+        {/* HEADER MÁS LIGERO (CONSISTENTE CON HOME) */}
         <div className="text-center">
-          <p className="text-cyan-400 uppercase tracking-[0.3em] text-sm">
-            Historia Galáctica
+          <p className="text-cyan-400 uppercase tracking-[0.25em] text-[10px] md:text-sm">
+            Cronología
           </p>
 
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold">
-            Cronología
+          <h2 className="mt-2 md:mt-4 text-2xl md:text-5xl font-bold">
+            Línea del tiempo
           </h2>
 
-          <p className="mt-6 max-w-3xl mx-auto text-zinc-400">
-            Línea temporal real basada en el espacio hexadecimal completo del universo.
+          <p className="mt-4 md:mt-6 text-zinc-400 max-w-2xl mx-auto text-sm md:text-base">
+            Eventos clave que marcaron la historia del universo.
           </p>
         </div>
 
-        <div className="mt-16 space-y-6">
+        {/* CONTAINER MÁS COMPACTO */}
+        <div className="mt-10 md:mt-16 space-y-8">
 
-          {eras.slice(0, 2).map((era) => (
+          {eras.map((era) => (
             <div
               key={era.id}
               className="
-                rounded-2xl
-                border
-                border-cyan-900/30
-                bg-gradient-to-b
-                from-zinc-900
-                to-zinc-950
-                p-6
+                rounded-xl md:rounded-2xl
+                border border-cyan-900/30
+                bg-gradient-to-b from-zinc-900 to-zinc-950
+                p-4 md:p-6
               "
             >
-              <h3 className="text-xl font-bold text-cyan-400">
+              {/* ERA TITLE */}
+              <h3 className="text-cyan-400 font-semibold text-sm md:text-lg mb-6">
                 {era.name}
               </h3>
 
-              {/* LÍNEA HEX REAL */}
-              <div className="relative h-20 mt-6">
+              {/* TIMELINE */}
+              <div className="relative h-16 md:h-20">
 
-                {/* base: 0 → FFFFFFFF */}
                 <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-cyan-500/40" />
 
-                {/* labels extremos */}
-                <div className="absolute top-0 left-0 text-[10px] text-zinc-500">
-                  0x00000000
-                </div>
-
-                <div className="absolute top-0 right-0 text-[10px] text-zinc-500">
-                  0xFFFFFFFF
-                </div>
-
-                {/* eventos hostiles */}
+                {/* HOSTILES */}
                 {era.hostileEvents.map((event) => (
                   <div
-                    key={event.temi}
+                    key={`h-${event.temi}`}
                     className="absolute"
                     style={{
                       left: `${positionFromTemi(event.temi)}%`,
                       top: "50%",
                     }}
                   >
-                    <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-red-500 flex items-center justify-center text-[10px] font-bold">
-                      {event.id}
-                    </div>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-4 md:h-6 bg-red-500/70" />
+
+                    <div className="absolute top-4 md:top-6 left-1/2 -translate-x-1/2 w-4 h-4 md:w-5 md:h-5 rounded-full bg-red-500 shadow-[0_0_10px_rgba(239,68,68,.5)]" />
                   </div>
                 ))}
 
-                {/* eventos benévolos */}
+                {/* BENÉVOLOS */}
                 {era.benevolentEvents.map((event) => (
                   <div
-                    key={event.temi}
+                    key={`b-${event.temi}`}
                     className="absolute"
                     style={{
                       left: `${positionFromTemi(event.temi)}%`,
                       top: "50%",
                     }}
                   >
-                    <div className="absolute top-2 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-[10px] font-bold text-black">
-                      {event.id}
-                    </div>
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-4 md:h-6 bg-green-500/70" />
+
+                    <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 w-4 h-4 md:w-5 md:h-5 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,.5)]" />
                   </div>
                 ))}
 
@@ -93,10 +111,11 @@ export default function TimelinePreview() {
 
         </div>
 
-        <div className="text-center mt-10">
+        {/* CTA CONSISTENTE */}
+        <div className="text-center mt-10 md:mt-14">
           <Link
             href="/cronologia"
-            className="text-cyan-400 hover:text-cyan-300 transition"
+            className="text-cyan-400 hover:text-cyan-300 text-sm md:text-base font-medium"
           >
             Ver cronología completa →
           </Link>
