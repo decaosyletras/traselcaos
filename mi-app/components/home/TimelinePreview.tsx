@@ -10,13 +10,13 @@ export default function TimelinePreview() {
 
         {/* HEADER */}
         <div className="text-center">
-          <p className="text-cyan-400 uppercase tracking-[0.25em] text-[10px] md:text-sm">
+          {/*<p className="text-cyan-400 uppercase tracking-[0.25em] text-[10px] md:text-sm">
             Cronología
-          </p>
+          </p>*/}
 
-          <h2 className="mt-2 md:mt-4 text-2xl md:text-5xl font-bold">
+          <h3 className="mt-2 md:mt-4 text-lg md:text-5xl font-bold">
             Línea del tiempo
-          </h2>
+          </h3>
 
           <p className="mt-4 md:mt-6 text-zinc-400 max-w-2xl mx-auto text-sm md:text-base">
             Eventos clave que marcaron la historia del universo.

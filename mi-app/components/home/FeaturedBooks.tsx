@@ -8,13 +8,13 @@ export default function FeaturedBooks() {
 
         {/* HEADER */}
         <div className="text-center">
-          <p className="text-cyan-400 uppercase tracking-[0.25em] text-[10px] md:text-sm">
+          {/*<p className="text-cyan-400 uppercase tracking-[0.25em] text-[10px] md:text-sm">
             La Saga
-          </p>
+          </p>*/}
 
-          <h2 className="mt-2 md:mt-4 text-2xl md:text-5xl font-bold">
+          <h3 className="mt-2 md:mt-4 text-lg md:text-5xl font-bold">
             Libros
-          </h2>
+          </h3>
 
           <p className="mt-4 md:mt-6 max-w-2xl mx-auto text-zinc-400 text-sm md:text-base leading-relaxed">
             Descubre las novelas que narran la evolución
