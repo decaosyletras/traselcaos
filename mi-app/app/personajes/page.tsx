@@ -1,13 +1,25 @@
 "use client";
 
 import { useMemo, useState } from "react";
+
 import { characters } from "@/data/characters";
+import { races } from "@/data/races";
+
 import EntityGrid from "@/components/shared/EntityGrid";
 import EntityCard from "@/components/shared/EntityCard";
 import SearchBar from "@/components/shared/SearchBar";
 
 export default function CharactersPage() {
   const [search, setSearch] = useState("");
+
+  // Mapa para resolver raceId -> nombre de raza
+  const racesMap = useMemo(
+    () =>
+      Object.fromEntries(
+        races.map((race) => [race.id, race])
+      ),
+    []
+  );
 
   const filteredCharacters = useMemo(() => {
     const term = search.toLowerCase().trim();
@@ -50,7 +62,10 @@ export default function CharactersPage() {
               <EntityCard
                 key={character.id}
                 title={character.name}
-                description={character.description}
+                description={
+                  racesMap[character.raceId]?.name ??
+                  "Raza desconocida"
+                }
                 image={character.image}
                 href={`/personajes/${character.slug}`}
                 imageRatio="square"

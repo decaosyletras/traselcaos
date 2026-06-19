@@ -4,12 +4,10 @@ import Link from "next/link";
 import { characters } from "@/data/characters";
 import { races } from "@/data/races";
 import { planets } from "@/data/planets";
-import { books } from "@/data/books";
+import { sectors } from "@/data/sectors";
 
 import EntityHeader from "@/components/shared/EntityHeader";
 import InfoPanel from "@/components/shared/InfoPanel";
-import AppearanceTimeline from "@/components/shared/AppearanceTimeline";
-import RelatedEntities from "@/components/shared/RelatedEntities";
 
 export default async function CharacterPage({
   params,
@@ -22,23 +20,28 @@ export default async function CharacterPage({
     (c) => c.slug === slug
   );
 
-  if (!character) return notFound();
+  if (!character) {
+    notFound();
+  }
 
   const race = races.find(
     (r) => r.id === character.raceId
   );
 
-  const planet = race
-    ? planets.find((p) => p.id === race.homeworldId)
+  const homeworld = race
+    ? planets.find(
+        (p) => p.id === race.homeworldId
+      )
     : undefined;
 
-  const appearances = Array.isArray(character.appearances)
-    ? character.appearances
-    : [];
+  const sector = homeworld
+    ? sectors.find(
+        (s) => s.id === homeworld.sectorId
+      )
+    : undefined;
 
   return (
     <main>
-
       <EntityHeader
         title={character.name}
         description={character.description}
@@ -46,28 +49,24 @@ export default async function CharacterPage({
       />
 
       <section className="max-w-7xl mx-auto px-6 py-12">
-
         <div className="grid lg:grid-cols-3 gap-8">
 
+          {/* CONTENIDO */}
           <div className="lg:col-span-2">
 
-            <article className="rounded-2xl bg-zinc-900 p-8">
+            <article className="rounded-2xl border border-cyan-900/20 bg-zinc-900 p-8">
+              <h2 className="text-2xl font-bold mb-4">
+                Historia
+              </h2>
+
               <p className="text-zinc-300 leading-8">
                 {character.description}
               </p>
             </article>
 
-            <AppearanceTimeline
-              items={appearances.map((a) => ({
-                book: a.bookId,
-                era: a.eraId,
-                faction: a.faction,
-                organizations: a.organizations,
-              }))}
-            />
-
           </div>
 
+          {/* SIDEBAR */}
           <div>
 
             <InfoPanel
@@ -75,43 +74,73 @@ export default async function CharacterPage({
               items={[
                 {
                   label: "Raza",
-                  value: race ? (
-                    <Link href={`/razas/${race.slug}`}>
-                      {race.name}
-                    </Link>
-                  ) : (
-                    "Desconocido"
-                  ),
+                  value: race?.name ?? "Desconocida",
                 },
                 {
-                  label: "Planeta",
-                  value: planet ? (
-                    planet.name
-                  ) : (
-                    "Desconocido"
-                  ),
+                  label: "Planeta natal",
+                  value:
+                    homeworld?.name ??
+                    "Desconocido",
+                },
+                {
+                  label: "Sector",
+                  value:
+                    sector?.name ??
+                    "Desconocido",
                 },
               ]}
             />
 
+            {/* RELACIONES */}
+            {character.relationships &&
+              character.relationships.length > 0 && (
+                <div className="mt-8 rounded-2xl border border-cyan-900/20 bg-zinc-900 p-6">
+                  <h3 className="text-lg font-bold mb-4">
+                    Relaciones
+                  </h3>
+
+                  <div className="space-y-3">
+
+                    {character.relationships.map(
+                      (relation, index) => {
+                        const relatedCharacter =
+                          characters.find(
+                            (c) =>
+                              c.id ===
+                              relation.characterId
+                          );
+
+                        if (!relatedCharacter)
+                          return null;
+
+                        return (
+                          <div
+                            key={index}
+                            className="flex items-center justify-between gap-4"
+                          >
+                            <span className="text-zinc-500 text-sm">
+                              {relation.label}
+                            </span>
+
+                            <Link
+                              href={`/personajes/${relatedCharacter.slug}`}
+                              className="text-cyan-400 hover:text-cyan-300 transition-colors text-right"
+                            >
+                              {relatedCharacter.name}
+                            </Link>
+                          </div>
+                        );
+                      }
+                    )}
+
+                  </div>
+                </div>
+              )}
+
           </div>
 
         </div>
-
-        <RelatedEntities
-          title="Personajes Relacionados"
-          entities={characters
-            .filter((c) => c.id !== character.id)
-            .slice(0, 3)
-            .map((c) => ({
-              title: c.name,
-              href: `/personajes/${c.slug}`,
-              image: c.image,
-            }))}
-        />
-
       </section>
-
     </main>
   );
 }

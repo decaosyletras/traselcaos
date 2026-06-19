@@ -4,6 +4,7 @@ import { races } from "@/data/races";
 import { planets } from "@/data/planets";
 import { sectors } from "@/data/sectors";
 import { books } from "@/data/books";
+import { eras } from "@/data/eras";
 
 import Link from "next/link";
 
@@ -38,7 +39,7 @@ export default async function RacePage({
     <main>
       <EntityHeader
         title={race.name}
-        description={race.description}
+        description={race.summary}
         image={race.image}
       />
 
@@ -58,13 +59,23 @@ export default async function RacePage({
             </article>
 
             <AppearanceTimeline
-              items={appearances.map((a) => ({
-                book: a.bookId,
-                era: a.eraId,
-                alignment: a.alignment,
-                faction: a.faction,
-                organizations: a.organizations,
-              }))}
+              items={appearances.map((a) => {
+                const book = books.find(
+                  (b) => b.id === a.bookId
+                );
+
+                const era = eras.find(
+                  (e) => e.id === a.eraId
+                );
+
+                return {
+                  book: book?.title ?? "Desconocido",
+                  era: era?.name ?? "Desconocido",
+                  alignment: a.alignment,
+                  faction: a.faction,
+                  organizations: a.organizations,
+                };
+              })}
             />
 
           </div>
@@ -87,10 +98,10 @@ export default async function RacePage({
                     "Desconocido"
                   ),
                 },
-                {
+                /*{
                   label: "Apariciones",
                   value: appearances.length,
-                },
+                },*/
               ]}
             />
 

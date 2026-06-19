@@ -2,24 +2,42 @@ import { Character } from "@/types/Character";
 
 export const characters: Character[] = [
   {
-    id: "kael",
-    slug: "kael",
-    name: "Kael",
+    id: "arsuen",
+    slug: "arsuen",
+    name: "Arsuen",
     description:
       "Comandante militar que desempeñó un papel clave durante la expansión imperial.",
     image: "/images/characters/kael.jpg",
-    raceId: "seoseres",
-    appearances: [],
+    raceId: "nastajiri",
+    relationships: [
+        {
+        label: "Padre",
+        characterId: "sorie",
+        },
+        {
+        label: "Amigo",
+        characterId: "NombreAmigo",
+        }
+    ],
   },
-
   {
-    id: "lyra",
-    slug: "lyra",
-    name: "Lyra",
+    id: "venet",
+    slug: "venet",
+    name: "Venet",
     description:
       "Exploradora vinculada a los secretos del Anillo.",
     image: "/images/characters/lyra.jpg",
-    raceId: "aelari",
-    appearances: [],
+    raceId: "vel-fatith",
+    relationships: [],
+  },
+  {
+    id: "sorie",
+    slug: "sorie",
+    name: "Sorie",
+    description:
+      "Líder de la Unidad tecnológica",
+    image: "/images/characters/lyra.jpg",
+    raceId: "vel-fatith",
+    relationships: [],
   },
 ];

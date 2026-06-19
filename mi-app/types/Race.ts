@@ -4,12 +4,10 @@ export interface Race {
   id: string;
   slug: string;
   name: string;
+  summary: string;
   description: string;
   image?: string;
-
-  homeworldId: string; // 🔥 antes era string libre
-
+  homeworldId: string;
   appearances: RaceAppearance[];
-
-  bookIds?: string[]; // 📚 nuevas apariciones en libros
+  bookIds?: string[];
 }

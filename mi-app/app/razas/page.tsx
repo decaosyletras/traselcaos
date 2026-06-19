@@ -56,7 +56,7 @@ export default function RacesPage() {
                   title={race.name}
                   description={
                     planet
-                      ? `${race.description} • Planeta: ${planet.name}`
+                      ? `Planeta: ${planet.name}`
                       : race.description
                   }
                   image={race.image}

@@ -1,9 +1,16 @@
 export const planets = [
   {
-    id: "nerath",
-    slug: "nerath",
-    name: "Nerathaa",
+    id: "naidul",
+    slug: "naidul",
+    name: "Naídul",
     description: "Mundo industrial y militarizado.",
-    sectorId: "sector-norte",
+    sectorId: "r-habarth",
+  },
+  {
+    id: "enderith-ka",
+    slug: "enderith-ka",
+    name: "Enderith-ka",
+    description: "Mundo industrial y militarizado.",
+    sectorId: "aphana",
   },
 ];

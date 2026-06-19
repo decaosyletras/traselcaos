@@ -1,8 +1,14 @@
 export const sectors = [
   {
-    id: "sector-norte",
-    slug: "sector-norte",
-    name: "Sector Norte",
+    id: "r-habarth",
+    slug: "r-habarth",
+    name: "R'habarth",
+    description: "Zona militarizada del borde galáctico.",
+  },
+  {
+    id: "aphana",
+    slug: "aphana",
+    name: "Aphana",
     description: "Zona militarizada del borde galáctico.",
   },
 ];
