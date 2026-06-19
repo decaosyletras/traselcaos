@@ -39,7 +39,7 @@ export default function FeaturedBooks() {
               key={book.id}
               href={`/libros/${book.slug}`}
               className="
-                min-w-[70%] sm:min-w-0
+                min-w-[55%] sm:min-w-0
 
                 group
                 overflow-hidden
