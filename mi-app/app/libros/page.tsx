@@ -5,18 +5,25 @@ export default function BooksPage() {
     <main className="min-h-screen bg-zinc-950 text-white">
 
       {/* HERO */}
-      <section className="relative py-16 md:py-28 text-center overflow-hidden">
+      <section className="relative py-20 md:py-28 text-center overflow-hidden">
 
         <div className="absolute inset-0 bg-gradient-to-b from-cyan-950/20 via-zinc-950 to-zinc-950" />
 
         <div className="relative z-10 px-6">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-black">
+
+          {/* SUBTITLE (CONSISTENTE CON UNIVERSO) */}
+          <p className="text-cyan-400 uppercase tracking-[0.3em] text-sm">
+            La Saga
+          </p>
+
+          <h1 className="mt-4 text-4xl md:text-6xl font-black">
             Libros
           </h1>
 
-          <p className="mt-4 md:mt-6 text-zinc-400 max-w-2xl mx-auto text-sm md:text-base">
+          <p className="mt-6 text-zinc-400 max-w-2xl mx-auto text-sm md:text-base">
             Explora las novelas de la saga y descubre cómo evoluciona el universo a través del tiempo.
           </p>
+
         </div>
 
       </section>
@@ -45,7 +52,6 @@ export default function BooksPage() {
                 group
 
                 min-w-[75%] sm:min-w-0
-
                 snap-start
 
                 overflow-hidden
@@ -66,7 +72,7 @@ export default function BooksPage() {
                   alt={book.title}
                   className="
                     w-full
-                    aspect-[3/4] sm:aspect-[2/3]
+                    aspect-[2/3] sm:aspect-[2/3]
                     object-cover
                     transition-transform duration-500
                     group-hover:scale-105
@@ -75,20 +81,20 @@ export default function BooksPage() {
               </div>
 
               {/* INFO */}
-              <div className="p-3 sm:p-4">
-                <p className="text-cyan-400 text-[10px] sm:text-xs uppercase tracking-widest">
+              <div className="p-4 sm:p-5">
+                <p className="text-cyan-400 text-xs uppercase tracking-widest">
                   {book.publishYear}
                 </p>
 
-                <h3 className="mt-1 sm:mt-2 text-sm sm:text-lg font-bold group-hover:text-cyan-300 transition-colors">
+                <h3 className="mt-2 text-base md:text-xl font-bold group-hover:text-cyan-300 transition-colors">
                   {book.title}
                 </h3>
 
-                <p className="mt-2 text-[11px] sm:text-xs text-zinc-400 line-clamp-2 sm:line-clamp-3">
+                <p className="mt-3 text-xs md:text-sm text-zinc-400 line-clamp-2 md:line-clamp-3">
                   {book.synopsis}
                 </p>
 
-                <div className="mt-3 sm:mt-4 text-cyan-400 text-xs sm:text-sm">
+                <div className="mt-4 text-cyan-400 text-sm">
                   Ver detalles →
                 </div>
               </div>
