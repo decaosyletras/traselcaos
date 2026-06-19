@@ -11,7 +11,7 @@ function Divider({ label }: { label?: string }) {
         <div className="h-[2px] flex-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
 
         {label && (
-          <span className="text-[16px] md:text-xl tracking-[0.4em] text-cyan-500 uppercase whitespace-nowrap">
+          <span className="text-[16px] md:text-xl tracking-[0.3em] text-cyan-500 uppercase whitespace-nowrap">
             {label}
           </span>
         )}
