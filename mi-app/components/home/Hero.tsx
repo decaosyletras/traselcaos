@@ -31,6 +31,7 @@ export default function Hero() {
           text-center
         "
       >
+        {/* SUBTITLE */}
         <p
           className="
             text-cyan-400
@@ -42,9 +43,10 @@ export default function Hero() {
           Ópera Espacial
         </p>
 
+        {/* TITLE */}
         <h1
           className="
-            mt-4 sm:mt-6
+            mt-3 sm:mt-6
             text-3xl sm:text-5xl md:text-7xl xl:text-8xl
             font-black
             leading-[1.05]
@@ -53,9 +55,10 @@ export default function Hero() {
           NOMBRE DE TU SAGA
         </h1>
 
+        {/* DESCRIPTION */}
         <p
           className="
-            mt-6 sm:mt-8
+            mt-5 sm:mt-8
             text-sm sm:text-lg md:text-xl
             text-zinc-400
             max-w-2xl md:max-w-3xl
@@ -67,10 +70,10 @@ export default function Hero() {
           misterios ancestrales y personajes que cambiarán el destino de la galaxia.
         </p>
 
-        {/* BOTONES MÁS NATURALES */}
+        {/* BUTTONS */}
         <div
           className="
-            mt-8 sm:mt-10
+            mt-7 sm:mt-10
             flex flex-wrap
             justify-center
             gap-3
@@ -108,24 +111,6 @@ export default function Hero() {
           >
             Explorar Universo
           </Link>
-        </div>
-
-        {/* INDICADOR DE SCROLL */}
-        <div
-          className="
-            absolute
-            bottom-6
-            left-1/2
-            -translate-x-1/2
-            flex
-            flex-col
-            items-center
-            text-cyan-400/70
-            animate-bounce
-          "
-        >
-          <span className="text-xs mb-1">Scroll</span>
-          <div className="w-px h-6 bg-cyan-400/50" />
         </div>
       </div>
     </section>
