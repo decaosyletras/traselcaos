@@ -7,9 +7,10 @@ export default function Hero() {
         relative
         min-h-[85vh] md:min-h-[90vh]
         flex
-        items-center
+        items-start md:items-center
         justify-center
         overflow-hidden
+        pt-24 md:pt-0
       "
     >
       {/* BACKGROUND */}
