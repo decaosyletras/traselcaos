@@ -76,23 +76,23 @@ export default function FeaturedBooks() {
               </div>
 
               {/* INFO */}
-              <div className="p-3 md:p-5">
-                <p className="text-cyan-400 text-[10px] md:text-xs uppercase tracking-widest">
-                  {book.publishYear}
-                </p>
+                <div className="p-4 md:p-5">
+                  <p className="text-cyan-400 text-xs md:text-sm uppercase tracking-widest">
+                    {book.publishYear}
+                  </p>
 
-                <h3 className="mt-1 md:mt-2 text-sm md:text-xl font-bold group-hover:text-cyan-300 transition-colors">
-                  {book.title}
-                </h3>
+                  <h3 className="mt-2 text-base md:text-xl font-bold group-hover:text-cyan-300 transition-colors">
+                    {book.title}
+                  </h3>
 
-                <p className="mt-2 text-[11px] md:text-sm text-zinc-400 line-clamp-2 md:line-clamp-3">
-                  {book.synopsis}
-                </p>
+                  <p className="mt-2 text-sm md:text-base text-zinc-400 line-clamp-2 md:line-clamp-3">
+                    {book.synopsis}
+                  </p>
 
-                <div className="mt-3 md:mt-4 text-cyan-400 text-xs md:text-sm">
-                  Ver detalles →
+                  <div className="mt-4 text-cyan-400 text-sm md:text-base">
+                    Ver detalles →
+                  </div>
                 </div>
-              </div>
             </Link>
           ))}
         </div>
