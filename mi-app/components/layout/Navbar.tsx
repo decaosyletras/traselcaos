@@ -64,8 +64,8 @@ export default function Navbar() {
             Cronología
           </Link>
 
-          <Link href="/extras">
-            Extras
+          <Link href="/conoceme">
+            Conóceme
           </Link>
         </nav>
 
@@ -107,8 +107,8 @@ export default function Navbar() {
               Cronología
             </Link>
 
-            <Link href="/extras">
-              Extras
+            <Link href="/conoceme">
+              Conóceme
             </Link>
           </div>
         </div>

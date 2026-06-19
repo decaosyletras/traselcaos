@@ -1,167 +1,108 @@
 import Link from "next/link";
-
-const eras = [
-  {
-    id: "era-1",
-    name: "Era del Despertar",
-    benevolentEvents: [
-      { temi: "0000A1FF", title: "Fundación de Nerath" },
-    ],
-    hostileEvents: [
-      { temi: "000012FF", title: "Ascenso del Imperio Solar" },
-    ],
-  },
-  {
-    id: "era-2",
-    name: "Era de la Expansión",
-    benevolentEvents: [
-      { temi: "2000AB10", title: "Colonización de sectores" },
-    ],
-    hostileEvents: [
-      { temi: "2100FF10", title: "Caída de Orion" },
-    ],
-  },
-];
-
-function positionFromTemi(temi: string) {
-  const value = parseInt(temi, 16);
-  const max = 0xffffffff;
-  return (value / max) * 100;
-}
+import { eras, positionFromTemi } from "@/data/eras";
 
 export default function TimelinePreview() {
   return (
     <section className="py-24">
+      <div className="max-w-7xl mx-auto px-6">
 
-      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center">
+          <p className="text-cyan-400 uppercase tracking-[0.3em] text-sm">
+            Historia Galáctica
+          </p>
 
-        <h2
-          className="
-            text-4xl
-            md:text-5xl
-            font-bold
-            text-center
-          "
-        >
-          Cronología
-        </h2>
+          <h2 className="mt-4 text-4xl md:text-5xl font-bold">
+            Cronología
+          </h2>
 
-        <p
-          className="
-            mt-6
-            text-zinc-400
-            text-center
-            max-w-2xl
-            mx-auto
-          "
-        >
-          Cinco eras, incontables conflictos
-          y acontecimientos que moldearon la galaxia.
-        </p>
+          <p className="mt-6 max-w-3xl mx-auto text-zinc-400">
+            Línea temporal real basada en el espacio hexadecimal completo del universo.
+          </p>
+        </div>
 
-        <div
-          className="
-            mt-12
-            rounded-2xl
-            border
-            border-cyan-900/20
-            bg-zinc-900
-            p-6
-            md:p-8
-          "
-        >
+        <div className="mt-16 space-y-6">
 
-          <div className="space-y-10">
-
-            {eras.map((era) => (
-              <div key={era.id}>
-
-                <h3 className="text-cyan-400 font-semibold mb-4">
-                  {era.name}
-                </h3>
-
-                <div className="relative h-20">
-
-                  {/* línea */}
-                  <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-cyan-500/60" />
-
-                  {/* hostiles */}
-                  {era.hostileEvents.map((event, i) => (
-                    <div
-                      key={i}
-                      className="absolute"
-                      style={{
-                        left: `${positionFromTemi(event.temi)}%`,
-                        top: "50%",
-                      }}
-                    >
-                      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-4 w-px bg-red-500" />
-
-                      <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-red-500" />
-                    </div>
-                  ))}
-
-                  {/* benevolos */}
-                  {era.benevolentEvents.map((event, i) => (
-                    <div
-                      key={i}
-                      className="absolute"
-                      style={{
-                        left: `${positionFromTemi(event.temi)}%`,
-                        top: "50%",
-                      }}
-                    >
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 h-4 w-px bg-green-500" />
-
-                      <div className="absolute top-4 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-green-500" />
-                    </div>
-                  ))}
-
-                </div>
-
-              </div>
-            ))}
-
-          </div>
-
-          <div className="mt-8 flex justify-center gap-6 text-sm">
-
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-green-500" />
-              <span className="text-zinc-400">
-                Benévolos
-              </span>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-red-500" />
-              <span className="text-zinc-400">
-                Hostiles
-              </span>
-            </div>
-
-          </div>
-
-          <div className="text-center">
-
-            <Link
-              href="/cronologia"
+          {eras.slice(0, 2).map((era) => (
+            <div
+              key={era.id}
               className="
-                inline-block
-                mt-8
-                text-cyan-400
-                hover:text-cyan-300
+                rounded-2xl
+                border
+                border-cyan-900/30
+                bg-gradient-to-b
+                from-zinc-900
+                to-zinc-950
+                p-6
               "
             >
-              Ver cronología completa →
-            </Link>
+              <h3 className="text-xl font-bold text-cyan-400">
+                {era.name}
+              </h3>
 
-          </div>
+              {/* LÍNEA HEX REAL */}
+              <div className="relative h-20 mt-6">
+
+                {/* base: 0 → FFFFFFFF */}
+                <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-cyan-500/40" />
+
+                {/* labels extremos */}
+                <div className="absolute top-0 left-0 text-[10px] text-zinc-500">
+                  0x00000000
+                </div>
+
+                <div className="absolute top-0 right-0 text-[10px] text-zinc-500">
+                  0xFFFFFFFF
+                </div>
+
+                {/* eventos hostiles */}
+                {era.hostileEvents.map((event) => (
+                  <div
+                    key={event.temi}
+                    className="absolute"
+                    style={{
+                      left: `${positionFromTemi(event.temi)}%`,
+                      top: "50%",
+                    }}
+                  >
+                    <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-red-500 flex items-center justify-center text-[10px] font-bold">
+                      {event.id}
+                    </div>
+                  </div>
+                ))}
+
+                {/* eventos benévolos */}
+                {era.benevolentEvents.map((event) => (
+                  <div
+                    key={event.temi}
+                    className="absolute"
+                    style={{
+                      left: `${positionFromTemi(event.temi)}%`,
+                      top: "50%",
+                    }}
+                  >
+                    <div className="absolute top-2 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-[10px] font-bold text-black">
+                      {event.id}
+                    </div>
+                  </div>
+                ))}
+
+              </div>
+
+            </div>
+          ))}
 
         </div>
 
-      </div>
+        <div className="text-center mt-10">
+          <Link
+            href="/cronologia"
+            className="text-cyan-400 hover:text-cyan-300 transition"
+          >
+            Ver cronología completa →
+          </Link>
+        </div>
 
+      </div>
     </section>
   );
 }
