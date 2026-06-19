@@ -5,12 +5,12 @@ export default function Hero() {
     <section
       className="
         relative
-        min-h-[85vh] md:min-h-[90vh]
+        min-h-[75vh] md:min-h-[90vh]
         flex
         items-start md:items-center
         justify-center
         overflow-hidden
-        pt-16 sm:pt-20 md:pt-0
+        pt-20 sm:pt-24 md:pt-0
       "
     >
       {/* BACKGROUND */}
@@ -24,13 +24,27 @@ export default function Hero() {
         "
       />
 
+      {/* FADE HACIA CONTENIDO (clave UX) */}
+      <div
+        className="
+          absolute
+          bottom-0
+          left-0
+          right-0
+          h-24
+          bg-gradient-to-t
+          from-zinc-950
+          to-transparent
+        "
+      />
+
       <div
         className="
           relative z-10
           max-w-5xl mx-auto
           px-5 sm:px-6
           text-center
-          -translate-y-4 md:translate-y-0
+          translate-y-0 md:translate-y-0
         "
       >
         {/* SUBTITLE */}
