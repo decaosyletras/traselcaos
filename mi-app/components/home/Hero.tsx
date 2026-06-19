@@ -10,7 +10,7 @@ export default function Hero() {
         items-start md:items-center
         justify-center
         overflow-hidden
-        pt-24 md:pt-0
+        pt-16 sm:pt-20 md:pt-0
       "
     >
       {/* BACKGROUND */}
@@ -30,6 +30,7 @@ export default function Hero() {
           max-w-5xl mx-auto
           px-5 sm:px-6
           text-center
+          -translate-y-4 md:translate-y-0
         "
       >
         {/* SUBTITLE */}
