@@ -24,7 +24,7 @@ export default function Hero() {
         "
       />
 
-      {/* FADE HACIA CONTENIDO (clave UX) */}
+      {/* FADE HACIA CONTENIDO */}
       <div
         className="
           absolute
@@ -44,7 +44,6 @@ export default function Hero() {
           max-w-5xl mx-auto
           px-5 sm:px-6
           text-center
-          translate-y-0 md:translate-y-0
         "
       >
         {/* SUBTITLE */}
@@ -83,7 +82,8 @@ export default function Hero() {
           "
         >
           Una historia de civilizaciones, guerras interestelares,
-          misterios ancestrales y personajes que cambiarán el destino de la galaxia.
+          misterios ancestrales y personajes que cambiarán el destino
+          de la galaxia.
         </p>
 
         {/* BUTTONS */}
@@ -96,7 +96,7 @@ export default function Hero() {
           "
         >
           <Link
-            href="/libros"
+            href="#saga"
             className="
               px-5 py-2.5
               rounded-full
@@ -113,7 +113,7 @@ export default function Hero() {
           </Link>
 
           <Link
-            href="/universo"
+            href="#universo"
             className="
               px-5 py-2.5
               rounded-full

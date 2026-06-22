@@ -26,12 +26,17 @@ export default function HomePage() {
   return (
     <main>
       <Hero />
-      <Divider label="LA SAGA" />
-      <FeaturedBooks />
-      <Divider label="UNIVERSO" />
-      <UniversePreview />
-      <Divider label="CRONOLOGÍA" />
-      <TimelinePreview />
+
+      <section id="saga">
+        <Divider label="LA SAGA" />
+        <FeaturedBooks />
+      </section>
+
+      <section id="universo">
+        <Divider label="UNIVERSO" />
+        <UniversePreview />
+      </section>
+      
     </main>
   );
 }
