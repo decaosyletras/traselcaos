@@ -9,5 +9,5 @@ export interface Race {
   image?: string;
   homeworldId: string;
   appearances: RaceAppearance[];
-  bookIds?: string[];
+  FirstBook: string[];
 }

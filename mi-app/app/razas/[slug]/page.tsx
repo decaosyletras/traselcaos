@@ -23,9 +23,7 @@ export default async function RacePage({
 
   if (!race) return notFound();
 
-  const homeworld = planets.find(
-    (p) => p.id === race.homeworldId
-  );
+  const homeworld = planets.find((p) => p.id === race.homeworldId);
 
   const sector = homeworld
     ? sectors.find((s) => s.id === homeworld.sectorId)
@@ -46,6 +44,7 @@ export default async function RacePage({
       <section className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid lg:grid-cols-3 gap-8">
 
+          {/* HISTORIA PRINCIPAL */}
           <div className="lg:col-span-2">
 
             <article className="rounded-2xl border border-cyan-900/20 bg-zinc-900 p-8">
@@ -58,19 +57,16 @@ export default async function RacePage({
               </p>
             </article>
 
+            {/* CRONOLOGÍA / APARICIONES */}
             <AppearanceTimeline
               items={appearances.map((a) => {
-                const book = books.find(
-                  (b) => b.id === a.bookId
-                );
-
-                const era = eras.find(
-                  (e) => e.id === a.eraId
-                );
+                const book = books.find((b) => b.id === a.bookId);
+                const era = eras.find((e) => e.id === a.eraId);
 
                 return {
                   book: book?.title ?? "Desconocido",
                   era: era?.name ?? "Desconocido",
+                  text: a.text, // 👈 NUEVO CAMPO
                   alignment: a.alignment,
                   faction: a.faction,
                   organizations: a.organizations,
@@ -80,32 +76,23 @@ export default async function RacePage({
 
           </div>
 
+          {/* SIDEBAR */}
           <div>
             <InfoPanel
               title="Datos"
               items={[
                 {
                   label: "Planeta natal",
-                  value: homeworld ? (homeworld.name
-                  ) : (
-                    "Desconocido"
-                  ),
+                  value: homeworld ? homeworld.name : "Desconocido",
                 },
                 {
                   label: "Sector",
-                  value: sector ? (sector.name
-                  ) : (
-                    "Desconocido"
-                  ),
+                  value: sector ? sector.name : "Desconocido",
                 },
-                /*{
-                  label: "Apariciones",
-                  value: appearances.length,
-                },*/
               ]}
             />
 
-            {/* 📚 LIBROS */}
+            {/* LIBROS */}
             {appearances.length > 0 && (
               <div className="mt-8 rounded-2xl border border-cyan-900/20 bg-zinc-900 p-6">
                 <h3 className="text-lg font-bold mb-4">
@@ -114,9 +101,7 @@ export default async function RacePage({
 
                 <div className="space-y-2">
                   {appearances.map((a, index) => {
-                    const book = books.find(
-                      (b) => b.id === a.bookId
-                    );
+                    const book = books.find((b) => b.id === a.bookId);
 
                     if (!book) return null;
 

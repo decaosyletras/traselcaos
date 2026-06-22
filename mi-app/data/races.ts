@@ -5,24 +5,26 @@ export const races: Race[] = [
     id: "nastajiri",
     slug: "nastajiri",
     name: "Nastajiri",
-    summary: "Resumen",
-    description: "Mercenarios nómadas presentes en distintos conflictos galácticos.",
+    summary: "",
+    description: "Especie conocida por ser la primera (de tiempos avanzados) en poseer un Destello entre sus habitantes.",
     image: "/images/races/nastajiri.jpg",
     homeworldId: "naidul",
-    bookIds: ["book1","book3"],
+    FirstBook: ["book1"],
     appearances: [
       {
         bookId: "book1",
         eraId: "era-1",
+        text: "Tras recibir la misteriosa visita de una especie proveniente de otro planeta, los Nastajiri descubren lo que hace falta para ser considerada una especie avanzada.",
         alignment: "Benévolos",
-        faction: "Imperio Solar",
+        faction: "",
         organizations: [""],
       },
       {
         bookId: "book3",
-        eraId: "era-2",
+        eraId: "era-3",
+        text: "Ya consolidados dentro de la Asociación Cealtar Universal, los Nastajiri se ven envueltos en un evento que les traerá un reencuentro con la memoria de Arsuen.",
         alignment: "Benévolos",
-        faction: "Imperio Solar 2",
+        faction: "",
         organizations: ["Orden Cealtar"],
       }
     ]
@@ -31,17 +33,46 @@ export const races: Race[] = [
     id: "vel-fatith",
     slug: "vel-fatith",
     name: "Vel-Fatith",
-    summary: "Resumen2",
-    description: "Hostiles experimentadores.",
+    summary: "",
+    description: "Una especie que, en su desesperación por mantener viva su genética, han experimentado con gran cantidad de especies cercanas a su planeta.",
     image: "/images/races/fatith.jpg",
     homeworldId: "enderith-ka",
-    bookIds: ["book1"],
+    FirstBook: ["book1"],
     appearances: [
       {
         bookId: "book1",
         eraId: "era-1",
+        text: "La desesperación por mantener viva su genética, y el desconocimiento de sus orígenes y su pasado han creado un ambiente lleno de traiciones entre los Fatith, quienes, sin saberlo, han creado a un ser poderoso, cuya única finalidad es la venganza.",
         alignment: "Hostiles",
         faction: "Imperio Solar",
+        organizations: ["Orden Cealtar"],
+      }
+    ]
+  },
+  {
+    id: "tailyas",
+    slug: "tailyas",
+    name: "Taílyas",
+    summary: "Resumen",
+    description: "Mercenarios nómadas presentes en distintos conflictos galácticos.",
+    image: "/images/races/nastajiri.jpg",
+    homeworldId: "naidul",
+    FirstBook: ["book2"],
+    appearances: [
+      {
+        bookId: "book2",
+        eraId: "era-1",
+        text: "Historia 1",
+        alignment: "Benévolos",
+        faction: "Imperio Solar",
+        organizations: [""],
+      },
+      {
+        bookId: "book3",
+        eraId: "era-2",
+        text: "Historia 1",
+        alignment: "Benévolos",
+        faction: "Imperio Solar 2",
         organizations: ["Orden Cealtar"],
       }
     ]

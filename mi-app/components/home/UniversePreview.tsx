@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const items = [
   {
-    title: "Razas",
+    title: "Especies",
     href: "/razas",
     description:
       "Especies, culturas y civilizaciones de la galaxia.",
