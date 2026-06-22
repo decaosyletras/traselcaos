@@ -6,9 +6,14 @@ export default function Hero() {
     const el = document.getElementById(id);
     if (!el) return;
 
-    const yOffset = -90; // ajusta si tu navbar es más alto
+    // 🔧 AJUSTE FINO DEL NAVBAR
+    // Cambia este valor si tu navbar es más alto o más bajo
+    const NAVBAR_HEIGHT = 30;
+
     const y =
-      el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      el.getBoundingClientRect().top +
+      window.pageYOffset -
+      NAVBAR_HEIGHT;
 
     window.scrollTo({
       top: y,
@@ -29,55 +34,26 @@ export default function Hero() {
       "
     >
       {/* BACKGROUND */}
-      <div
-        className="
-          absolute inset-0
-          bg-gradient-to-b
-          from-cyan-950/20
-          via-zinc-950
-          to-zinc-950
-        "
-      />
+      <div className="absolute inset-0 bg-gradient-to-b from-cyan-950/20 via-zinc-950 to-zinc-950" />
 
       {/* FADE */}
-      <div
-        className="
-          absolute
-          bottom-0
-          left-0
-          right-0
-          h-24
-          bg-gradient-to-t
-          from-zinc-950
-          to-transparent
-        "
-      />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-zinc-950 to-transparent" />
 
-      <div
-        className="
-          relative z-10
-          max-w-5xl mx-auto
-          px-5 sm:px-6
-          text-center
-        "
-      >
-        {/* SUBTITLE */}
+      <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-6 text-center">
+
         <p className="text-cyan-400 uppercase tracking-[0.3em] text-[10px] sm:text-sm">
           Ópera Espacial
         </p>
 
-        {/* TITLE */}
         <h1 className="mt-3 sm:mt-6 text-3xl sm:text-5xl md:text-7xl xl:text-8xl font-black leading-[1.05]">
           NOMBRE DE TU SAGA
         </h1>
 
-        {/* DESCRIPTION */}
         <p className="mt-5 sm:mt-8 text-sm sm:text-lg md:text-xl text-zinc-400 max-w-2xl md:max-w-3xl mx-auto leading-relaxed">
           Una historia de civilizaciones, guerras interestelares,
           misterios ancestrales y personajes que cambiarán el destino de la galaxia.
         </p>
 
-        {/* BUTTONS */}
         <div className="mt-7 sm:mt-10 flex flex-wrap justify-center gap-3">
 
           <button
