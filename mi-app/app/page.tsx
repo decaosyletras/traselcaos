@@ -27,16 +27,15 @@ export default function HomePage() {
     <main>
       <Hero />
 
-      <section id="saga">
+      <section id="saga" className="scroll-mt-20 md:scroll-mt-24">
         <Divider label="LA SAGA" />
         <FeaturedBooks />
       </section>
 
-      <section id="universo">
+      <section id="universo" className="scroll-mt-20 md:scroll-mt-24">
         <Divider label="UNIVERSO" />
         <UniversePreview />
       </section>
-      
     </main>
   );
 }

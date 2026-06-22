@@ -1,6 +1,21 @@
-import Link from "next/link";
+"use client";
 
 export default function Hero() {
+
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    const yOffset = -90; // ajusta si tu navbar es más alto
+    const y =
+      el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({
+      top: y,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section
       className="
@@ -24,7 +39,7 @@ export default function Hero() {
         "
       />
 
-      {/* FADE HACIA CONTENIDO */}
+      {/* FADE */}
       <div
         className="
           absolute
@@ -47,56 +62,26 @@ export default function Hero() {
         "
       >
         {/* SUBTITLE */}
-        <p
-          className="
-            text-cyan-400
-            uppercase
-            tracking-[0.3em]
-            text-[10px] sm:text-sm
-          "
-        >
+        <p className="text-cyan-400 uppercase tracking-[0.3em] text-[10px] sm:text-sm">
           Ópera Espacial
         </p>
 
         {/* TITLE */}
-        <h1
-          className="
-            mt-3 sm:mt-6
-            text-3xl sm:text-5xl md:text-7xl xl:text-8xl
-            font-black
-            leading-[1.05]
-          "
-        >
+        <h1 className="mt-3 sm:mt-6 text-3xl sm:text-5xl md:text-7xl xl:text-8xl font-black leading-[1.05]">
           NOMBRE DE TU SAGA
         </h1>
 
         {/* DESCRIPTION */}
-        <p
-          className="
-            mt-5 sm:mt-8
-            text-sm sm:text-lg md:text-xl
-            text-zinc-400
-            max-w-2xl md:max-w-3xl
-            mx-auto
-            leading-relaxed
-          "
-        >
+        <p className="mt-5 sm:mt-8 text-sm sm:text-lg md:text-xl text-zinc-400 max-w-2xl md:max-w-3xl mx-auto leading-relaxed">
           Una historia de civilizaciones, guerras interestelares,
-          misterios ancestrales y personajes que cambiarán el destino
-          de la galaxia.
+          misterios ancestrales y personajes que cambiarán el destino de la galaxia.
         </p>
 
         {/* BUTTONS */}
-        <div
-          className="
-            mt-7 sm:mt-10
-            flex flex-wrap
-            justify-center
-            gap-3
-          "
-        >
-          <Link
-            href="#saga"
+        <div className="mt-7 sm:mt-10 flex flex-wrap justify-center gap-3">
+
+          <button
+            onClick={() => scrollToSection("saga")}
             className="
               px-5 py-2.5
               rounded-full
@@ -110,10 +95,10 @@ export default function Hero() {
             "
           >
             Leer la Saga
-          </Link>
+          </button>
 
-          <Link
-            href="#universo"
+          <button
+            onClick={() => scrollToSection("universo")}
             className="
               px-5 py-2.5
               rounded-full
@@ -126,7 +111,8 @@ export default function Hero() {
             "
           >
             Explorar Universo
-          </Link>
+          </button>
+
         </div>
       </div>
     </section>
