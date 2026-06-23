@@ -30,14 +30,6 @@ export default function SmartSearch({
       return [];
     }
 
-    const exactMatch = items.some(
-      (item) => item.title.toLowerCase() === term
-    );
-
-    if (exactMatch) {
-      return [];
-    }
-
     return items
       .filter((item) =>
         item.title.toLowerCase().startsWith(term)
@@ -87,31 +79,38 @@ export default function SmartSearch({
             shadow-xl
           "
         >
-          {suggestions.map((item) => (
-            <button
-              key={item.id}
-              type="button"
-              onClick={() => onChange(item.title)}
-              className="
-                w-full
-                text-left
-                px-4
-                py-3
-                hover:bg-zinc-800
-                transition
-              "
-            >
-              <div className="font-medium">
-                {item.title}
-              </div>
+          {suggestions.map((item) => {
+            const isExact =
+              item.title.toLowerCase() ===
+              value.toLowerCase().trim();
 
-              {item.description && (
-                <div className="text-xs text-zinc-500 mt-1">
-                  {item.description}
+            return (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => onChange(item.title)}
+                className={`
+                  w-full
+                  text-left
+                  px-4
+                  py-3
+                  transition
+                  hover:bg-zinc-800
+                  ${isExact ? "bg-zinc-800" : ""}
+                `}
+              >
+                <div className="font-medium">
+                  {item.title}
                 </div>
-              )}
-            </button>
-          ))}
+
+                {item.description && (
+                  <div className="text-xs text-zinc-500 mt-1">
+                    {item.description}
+                  </div>
+                )}
+              </button>
+            );
+          })}
         </div>
       )}
     </div>
