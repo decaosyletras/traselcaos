@@ -34,7 +34,7 @@ export const races: Race[] = [
     slug: "vel-fatith",
     name: "Vel-Fatith",
     summary: "",
-    description: "Una especie que, en su desesperación por mantener viva su genética, han experimentado con gran cantidad de especies cercanas a su planeta.",
+    description: "Especie que, impulsada por la desesperación de preservar su linaje genético, ha llevado a cabo experimentos con numerosas especies de los sistemas cercanos a su planeta.",
     image: "/images/races/fatith.jpg",
     homeworldId: "enderith-ka",
     FirstBook: ["book1"],
