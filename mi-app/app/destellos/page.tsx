@@ -37,9 +37,9 @@ export default function FlashesPage() {
       <section className="py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-6">
 
-          <h1 className="text-3xl md:text-5xl font-bold text-center mb-8 md:mb-12">
+          <p className="text-cyan-400 uppercase tracking-[0.3em] text-xl">
             Destellos
-          </h1>
+          </p>
 
           {/*<SearchBar
             value={search}

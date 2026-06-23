@@ -58,10 +58,9 @@ export default function RacesPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
 
-          <SectionTitle
-            title="Especies"
-            subtitle="Civilizaciones conocidas del universo."
-          />
+          <p className="text-cyan-400 uppercase tracking-[0.3em] text-xl">
+            Especies
+          </p>
 
           {/* SEARCH PRO */}
           <SmartSearch

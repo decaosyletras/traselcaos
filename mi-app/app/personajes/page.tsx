@@ -87,9 +87,9 @@ export default function CharactersPage() {
       <section className="py-16 md:py-20">
         <div className="max-w-5xl mx-auto px-6">
 
-          <h1 className="text-3xl md:text-5xl font-bold text-center mb-10">
+          <p className="text-cyan-400 uppercase tracking-[0.3em] text-xl">
             Personajes
-          </h1>
+          </p>
 
           <SmartSearch
             value={search}
