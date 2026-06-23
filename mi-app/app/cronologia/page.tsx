@@ -6,17 +6,10 @@ export default function CronologiaPage() {
 
       {/* HERO */}
       <section className="py-20 md:py-28 text-center">
-        <p className="text-cyan-400 uppercase tracking-[0.3em] text-sm">
-          Historia Galáctica
+        <p className="text-cyan-400 uppercase tracking-[0.3em] text-xl">
+          Cronología
         </p>
-
-        <h1 className="mt-4 text-4xl md:text-6xl font-black">
-          Cronología del Universo
-        </h1>
-
-        <p className="mt-6 max-w-3xl mx-auto text-zinc-400">
-          Línea temporal real basada en el espacio hexadecimal completo del universo (0x00000000 → 0xFFFFFFFF).
-        </p>
+        
       </section>
 
       {/* ERAS */}

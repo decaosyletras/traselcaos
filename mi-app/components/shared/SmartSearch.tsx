@@ -15,6 +15,16 @@ interface SmartSearchProps {
   items: SearchItem[];
 }
 
+/**
+ * Quita acentos para búsquedas "humanas"
+ */
+function normalize(text: string) {
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
 export default function SmartSearch({
   value,
   onChange,
@@ -24,13 +34,13 @@ export default function SmartSearch({
   const [focused, setFocused] = useState(false);
 
   const suggestions = useMemo(() => {
-    const term = value.toLowerCase().trim();
+    const term = normalize(value.trim());
 
     if (!term) return [];
 
     return items
       .filter((item) =>
-        item.title.toLowerCase().includes(term)
+        normalize(item.title).includes(term)
       )
       .slice(0, 6);
   }, [value, items]);
