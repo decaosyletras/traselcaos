@@ -51,7 +51,6 @@ export default async function RacePage({
           {/* MAIN */}
           <div className="lg:col-span-2 space-y-8">
 
-            {/* HISTORIA */}
             <article className="rounded-2xl border border-cyan-900/20 bg-zinc-900 p-6 md:p-8">
               <h2 className="text-xl md:text-2xl font-bold mb-4">
                 Historia
@@ -62,7 +61,6 @@ export default async function RacePage({
               </p>
             </article>
 
-            {/* TIMELINE */}
             <AppearanceTimeline
               items={appearances.map((a) => {
                 const book = books.find((b) => b.id === a.bookId);
@@ -130,9 +128,10 @@ export default async function RacePage({
 
         </div>
 
-        {/* MOBILE INFO PANEL (ESTO ES LO QUE TE FALTABA) */}
+        {/* MOBILE ORDER FIX (ESTO ES CLAVE) */}
         <div className="lg:hidden mt-8 space-y-6">
 
+          {/* DATOS PRIMERO */}
           <InfoPanel
             title="Datos"
             items={[
@@ -147,6 +146,7 @@ export default async function RacePage({
             ]}
           />
 
+          {/* APARICIONES PRIMERO QUE LIBROS */}
           {appearances.length > 0 && (
             <div className="rounded-2xl border border-cyan-900/20 bg-zinc-900 p-6">
               <h3 className="text-lg font-bold mb-4">
