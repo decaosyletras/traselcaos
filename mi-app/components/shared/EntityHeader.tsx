@@ -10,61 +10,31 @@ export default function EntityHeader({
   image,
 }: Props) {
   return (
-    <section className="relative bg-zinc-950 overflow-hidden">
+    <section className="bg-zinc-950 border-b border-cyan-900/20">
 
-      <div className="max-w-6xl mx-auto px-6 py-6 md:py-14">
+      <div className="max-w-6xl mx-auto px-6 py-6 md:py-12">
 
-        {/* ================= MOBILE ================= */}
-        <div className="md:hidden space-y-4">
-
-          {/* TOP ROW: image + title */}
-          <div className="flex items-center gap-4">
-
-            {image && (
-              <img
-                src={image}
-                alt={title}
-                className="w-14 h-14 rounded-lg object-cover"
-              />
-            )}
-
-            <h1 className="text-xl font-bold leading-tight">
-              {title}
-            </h1>
-
-          </div>
-
-          {/* DESCRIPTION */}
-          <p className="text-sm text-zinc-300 leading-6">
-            {description}
-          </p>
-
-        </div>
-
-        {/* ================= DESKTOP ================= */}
-        <div className="hidden md:flex gap-10 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-6 md:gap-10 items-start">
 
           {/* IMAGE */}
           {image && (
-            <div className="w-64 h-64 flex-shrink-0">
+            <div className="w-full">
               <img
                 src={image}
                 alt={title}
-                className="w-full h-full object-cover rounded-2xl"
+                className="w-full aspect-square object-cover rounded-2xl"
               />
             </div>
           )}
 
-          {/* TEXT SIDE */}
-          <div className="flex-1">
+          {/* TEXT */}
+          <div>
 
-            {/* TITLE */}
-            <h1 className="text-5xl font-bold">
+            <h1 className="text-2xl md:text-5xl font-bold">
               {title}
             </h1>
 
-            {/* DESCRIPTION (A LA DERECHA DE LA IMAGEN, ABAJO DEL TÍTULO) */}
-            <p className="mt-6 text-zinc-300 leading-8 max-w-2xl">
+            <p className="mt-4 md:mt-6 text-zinc-300 leading-7 md:leading-8 max-w-2xl">
               {description}
             </p>
 

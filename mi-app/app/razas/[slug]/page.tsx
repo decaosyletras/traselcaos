@@ -37,19 +37,21 @@ export default async function RacePage({
 
   return (
     <main>
-      {/* HEADER (desktop sigue igual) */}
+
       <EntityHeader
         title={race.name}
         description={race.summary}
         image={race.image}
       />
 
-      <section className="max-w-7xl mx-auto px-6 py-12">
+      <section className="max-w-7xl mx-auto px-6 py-10">
+
         <div className="grid lg:grid-cols-3 gap-8">
 
-          {/* MAIN CONTENT */}
-          <div className="lg:col-span-2">
+          {/* MAIN */}
+          <div className="lg:col-span-2 space-y-8">
 
+            {/* HISTORIA */}
             <article className="rounded-2xl border border-cyan-900/20 bg-zinc-900 p-6 md:p-8">
               <h2 className="text-xl md:text-2xl font-bold mb-4">
                 Historia
@@ -60,15 +62,11 @@ export default async function RacePage({
               </p>
             </article>
 
+            {/* TIMELINE */}
             <AppearanceTimeline
               items={appearances.map((a) => {
-                const book = books.find(
-                  (b) => b.id === a.bookId
-                );
-
-                const era = eras.find(
-                  (e) => e.id === a.eraId
-                );
+                const book = books.find((b) => b.id === a.bookId);
+                const era = eras.find((e) => e.id === a.eraId);
 
                 return {
                   book: book?.title ?? "Desconocido",
@@ -83,28 +81,25 @@ export default async function RacePage({
 
           </div>
 
-          {/* SIDEBAR DESKTOP (igual) */}
-          <div className="hidden lg:block">
+          {/* DESKTOP SIDEBAR */}
+          <aside className="hidden lg:block space-y-6">
+
             <InfoPanel
               title="Datos"
               items={[
                 {
                   label: "Planeta natal",
-                  value: homeworld
-                    ? homeworld.name
-                    : "Desconocido",
+                  value: homeworld?.name ?? "Desconocido",
                 },
                 {
                   label: "Sector",
-                  value: sector
-                    ? sector.name
-                    : "Desconocido",
+                  value: sector?.name ?? "Desconocido",
                 },
               ]}
             />
 
             {appearances.length > 0 && (
-              <div className="mt-8 rounded-2xl border border-cyan-900/20 bg-zinc-900 p-6">
+              <div className="rounded-2xl border border-cyan-900/20 bg-zinc-900 p-6">
                 <h3 className="text-lg font-bold mb-4">
                   Apariciones en libros
                 </h3>
@@ -130,49 +125,58 @@ export default async function RacePage({
                 </div>
               </div>
             )}
-          </div>
 
-          {/* MOBILE INFO BLOCK (NUEVO) */}
-          <div className="lg:hidden">
-            <div className="flex gap-4 items-start rounded-2xl border border-cyan-900/20 bg-zinc-900 p-4">
-
-              {/* imagen pequeña */}
-              <img
-                src={race.image}
-                alt={race.name}
-                className="w-16 h-16 rounded-lg object-cover"
-              />
-
-              <div className="flex-1">
-
-                <h2 className="text-lg font-bold leading-tight">
-                  {race.name}
-                </h2>
-
-                <div className="mt-2 text-sm text-zinc-400 space-y-1">
-
-                  <p>
-                    <span className="text-zinc-500">
-                      Planeta:
-                    </span>{" "}
-                    {homeworld?.name ??
-                      "Desconocido"}
-                  </p>
-
-                  <p>
-                    <span className="text-zinc-500">
-                      Sector:
-                    </span>{" "}
-                    {sector?.name ?? "Desconocido"}
-                  </p>
-
-                </div>
-
-              </div>
-            </div>
-          </div>
+          </aside>
 
         </div>
+
+        {/* MOBILE INFO PANEL (ESTO ES LO QUE TE FALTABA) */}
+        <div className="lg:hidden mt-8 space-y-6">
+
+          <InfoPanel
+            title="Datos"
+            items={[
+              {
+                label: "Planeta natal",
+                value: homeworld?.name ?? "Desconocido",
+              },
+              {
+                label: "Sector",
+                value: sector?.name ?? "Desconocido",
+              },
+            ]}
+          />
+
+          {appearances.length > 0 && (
+            <div className="rounded-2xl border border-cyan-900/20 bg-zinc-900 p-6">
+              <h3 className="text-lg font-bold mb-4">
+                Apariciones en libros
+              </h3>
+
+              <div className="space-y-2">
+                {appearances.map((a, index) => {
+                  const book = books.find(
+                    (b) => b.id === a.bookId
+                  );
+
+                  if (!book) return null;
+
+                  return (
+                    <Link
+                      key={index}
+                      href={`/libros/${book.slug}`}
+                      className="block text-cyan-400 hover:text-cyan-300"
+                    >
+                      {book.title}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+        </div>
+
       </section>
     </main>
   );
