@@ -5,7 +5,7 @@ export default function CronologiaPage() {
     <main className="min-h-screen bg-zinc-950 text-white">
 
       {/* HERO */}
-      <section className="py-20 md:py-28 text-center">
+      <section className="py-20 md:py-10 text-center">
         <p className="text-cyan-400 uppercase tracking-[0.3em] text-xl">
           Cronología
         </p>
