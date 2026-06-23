@@ -7,7 +7,7 @@ export default function CronologiaPage() {
 
       {/* HERO */}
       <SectionTitle
-          title="Destellos"
+          title="Cronología"
       />
 
       {/* ERAS */}

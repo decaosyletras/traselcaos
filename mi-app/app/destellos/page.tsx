@@ -35,7 +35,7 @@ export default function FlashesPage() {
 
   return (
     <main className="min-h-screen">
-      <section className="py-16 md:py-20">
+      <section className="py-2 md:py-2">
         <div className="max-w-7xl mx-auto px-6">
 
           <SectionTitle

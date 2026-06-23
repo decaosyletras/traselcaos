@@ -37,7 +37,7 @@ export default async function RacePage({
       {/* HEADER */}
       <section className="bg-zinc-950 border-b border-cyan-900/20">
         <div className="max-w-6xl mx-auto px-6 py-8 md:py-12">
-          <div className="flex flex-row md:flex-row gap-4 md:gap-10 items-center md:items-start">
+          <div className="flex flex-row md:flex-row gap-4 md:gap-10 items-start">
             
             {/* LEFT */}
             <div className="w-[90px] md:w-[220px] flex-shrink-0">
@@ -93,7 +93,7 @@ export default async function RacePage({
             />
           </div>
 
-          {/* SIDEBAR DESKTOP */}
+          {/* SIDEBAR DESKTOP (NO TOCAR) */}
           <aside className="hidden lg:block space-y-6">
             <InfoPanel
               title="Datos"
@@ -136,7 +136,7 @@ export default async function RacePage({
             )}
           </aside>
 
-          {/* MOBILE */}
+          {/* MOBILE: INFO + TIMELINE ABAJO */}
           <div className="lg:hidden space-y-6">
             <InfoPanel
               title="Datos"
@@ -177,6 +177,22 @@ export default async function RacePage({
                 </div>
               </div>
             )}
+
+            <AppearanceTimeline
+              items={appearances.map((a) => {
+                const book = books.find((b) => b.id === a.bookId);
+                const era = eras.find((e) => e.id === a.eraId);
+
+                return {
+                  book: book?.title ?? "Desconocido",
+                  era: era?.name ?? "Desconocido",
+                  text: a.text,
+                  alignment: a.alignment,
+                  faction: a.faction,
+                  organizations: a.organizations,
+                };
+              })}
+            />
           </div>
 
         </div>

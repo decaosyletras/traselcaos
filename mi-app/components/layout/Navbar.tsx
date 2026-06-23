@@ -9,11 +9,10 @@ export default function Navbar() {
   const closeMenu = () => setOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-cyan-900/20 bg-zinc-950/90 backdrop-blur">
+    <header className="fixed top-0 left-0 right-0 h-16 z-50 border-b border-cyan-900/20 bg-zinc-950/90 backdrop-blur">
 
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
-        {/* LOGO */}
         <Link
           href="/"
           className="text-xl font-bold tracking-wider"
@@ -22,16 +21,11 @@ export default function Navbar() {
           TU SAGA
         </Link>
 
-        {/* DESKTOP MENU */}
         <nav className="hidden lg:flex items-center gap-8">
           <Link href="/">Inicio</Link>
-          {/*<Link href="/libros">Libros</Link>
-          <Link href="/universo">Universo</Link>
-          <Link href="/cronologia">Cronología</Link>*/}
           <Link href="/conoceme">Conóceme</Link>
         </nav>
 
-        {/* MOBILE BUTTON */}
         <button
           className="lg:hidden text-2xl"
           onClick={() => setOpen((v) => !v)}
@@ -41,31 +35,11 @@ export default function Navbar() {
 
       </div>
 
-      {/* MOBILE MENU */}
       {open && (
         <div className="lg:hidden border-t border-cyan-900/20">
           <div className="flex flex-col gap-4 p-6">
-
-            <Link href="/" onClick={closeMenu}>
-              Inicio
-            </Link>
-
-            {/*<Link href="/libros" onClick={closeMenu}>
-              Libros
-            </Link>
-
-            <Link href="/universo" onClick={closeMenu}>
-              Universo
-            </Link>
-
-            <Link href="/cronologia" onClick={closeMenu}>
-              Cronología
-            </Link>*/}
-
-            <Link href="/conoceme" onClick={closeMenu}>
-              Conóceme
-            </Link>
-
+            <Link href="/" onClick={closeMenu}>Inicio</Link>
+            <Link href="/conoceme" onClick={closeMenu}>Conóceme</Link>
           </div>
         </div>
       )}
