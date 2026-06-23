@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 interface SearchItem {
   id: string;
@@ -21,6 +21,8 @@ export default function SmartSearch({
   placeholder,
   items,
 }: SmartSearchProps) {
+  const [focused, setFocused] = useState(false);
+
   const suggestions = useMemo(() => {
     const term = value.toLowerCase().trim();
 
@@ -28,23 +30,32 @@ export default function SmartSearch({
       return [];
     }
 
+    const exactMatch = items.some(
+      (item) => item.title.toLowerCase() === term
+    );
+
+    if (exactMatch) {
+      return [];
+    }
+
     return items
       .filter((item) =>
-        item.title.toLowerCase().includes(term)
+        item.title.toLowerCase().startsWith(term)
       )
       .slice(0, 5);
   }, [value, items]);
 
   return (
     <div className="relative">
-
       <input
         type="text"
         value={value}
-        onChange={(e) =>
-          onChange(e.target.value)
-        }
+        onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
+        onFocus={() => setFocused(true)}
+        onBlur={() =>
+          setTimeout(() => setFocused(false), 150)
+        }
         className="
           w-full
           rounded-xl
@@ -59,7 +70,7 @@ export default function SmartSearch({
         "
       />
 
-      {suggestions.length > 0 && (
+      {focused && suggestions.length > 0 && (
         <div
           className="
             absolute
@@ -80,9 +91,7 @@ export default function SmartSearch({
             <button
               key={item.id}
               type="button"
-              onClick={() =>
-                onChange(item.title)
-              }
+              onClick={() => onChange(item.title)}
               className="
                 w-full
                 text-left
@@ -105,7 +114,6 @@ export default function SmartSearch({
           ))}
         </div>
       )}
-
     </div>
   );
 }

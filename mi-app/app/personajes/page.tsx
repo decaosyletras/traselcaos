@@ -38,34 +38,25 @@ export default function CharactersPage() {
       const race = racesMap[character.raceId];
 
       const planet = race
-        ? planets.find(
-            (p) => p.id === race.homeworldId
-          )
+        ? planets.find((p) => p.id === race.homeworldId)
         : undefined;
 
       const sector = planet
-        ? sectors.find(
-            (s) => s.id === planet.sectorId
-          )
+        ? sectors.find((s) => s.id === planet.sectorId)
         : undefined;
 
       const matchesSearch =
         !term ||
-        character.name
-          .toLowerCase()
-          .includes(term);
+        character.name.toLowerCase().includes(term);
 
       const matchesRace =
-        !raceFilter ||
-        race?.id === raceFilter;
+        !raceFilter || race?.id === raceFilter;
 
       const matchesPlanet =
-        !planetFilter ||
-        planet?.id === planetFilter;
+        !planetFilter || planet?.id === planetFilter;
 
       const matchesSector =
-        !sectorFilter ||
-        sector?.id === sectorFilter;
+        !sectorFilter || sector?.id === sectorFilter;
 
       return (
         matchesSearch &&
@@ -112,9 +103,7 @@ export default function CharactersPage() {
             <select
               value={raceFilter}
               onChange={(e) =>
-                setRaceFilter(
-                  e.target.value
-                )
+                setRaceFilter(e.target.value)
               }
               className="
                 rounded-xl
@@ -130,10 +119,7 @@ export default function CharactersPage() {
               </option>
 
               {races.map((race) => (
-                <option
-                  key={race.id}
-                  value={race.id}
-                >
+                <option key={race.id} value={race.id}>
                   {race.name}
                 </option>
               ))}
@@ -142,9 +128,7 @@ export default function CharactersPage() {
             <select
               value={planetFilter}
               onChange={(e) =>
-                setPlanetFilter(
-                  e.target.value
-                )
+                setPlanetFilter(e.target.value)
               }
               className="
                 rounded-xl
@@ -160,10 +144,7 @@ export default function CharactersPage() {
               </option>
 
               {planets.map((planet) => (
-                <option
-                  key={planet.id}
-                  value={planet.id}
-                >
+                <option key={planet.id} value={planet.id}>
                   {planet.name}
                 </option>
               ))}
@@ -172,9 +153,7 @@ export default function CharactersPage() {
             <select
               value={sectorFilter}
               onChange={(e) =>
-                setSectorFilter(
-                  e.target.value
-                )
+                setSectorFilter(e.target.value)
               }
               className="
                 rounded-xl
@@ -190,10 +169,7 @@ export default function CharactersPage() {
               </option>
 
               {sectors.map((sector) => (
-                <option
-                  key={sector.id}
-                  value={sector.id}
-                >
+                <option key={sector.id} value={sector.id}>
                   {sector.name}
                 </option>
               ))}
@@ -202,83 +178,68 @@ export default function CharactersPage() {
           </div>
 
           <div className="mt-8 space-y-4">
+            {filteredCharacters.map((character) => {
+              const race =
+                racesMap[character.raceId];
 
-            {filteredCharacters.map(
-              (character) => {
-                const race =
-                  racesMap[
-                    character.raceId
-                  ];
+              const planet = race
+                ? planetsMap[race.homeworldId]
+                : undefined;
 
-                const planet = race
-                  ? planetsMap[
-                      race.homeworldId
-                    ]
-                  : undefined;
+              const sector = planet
+                ? sectorsMap[planet.sectorId]
+                : undefined;
 
-                const sector = planet
-                  ? sectorsMap[
-                      planet.sectorId
-                    ]
-                  : undefined;
+              return (
+                <article
+                  key={character.id}
+                  className="
+                    rounded-xl
+                    border
+                    border-cyan-900/20
+                    bg-zinc-900/50
+                    p-5
+                    md:p-6
+                  "
+                >
+                  <h2 className="text-xl md:text-2xl font-bold">
+                    {character.name}
+                  </h2>
 
-                return (
-                  <article
-                    key={character.id}
-                    className="
-                      rounded-xl
-                      border
-                      border-cyan-900/20
-                      bg-zinc-900/50
-                      p-5
-                      md:p-6
-                    "
-                  >
-                    <h2 className="text-xl md:text-2xl font-bold">
-                      {character.name}
-                    </h2>
+                  <div className="flex flex-wrap gap-2 text-sm mt-2">
+                    <span className="text-cyan-400">
+                      {race?.name}
+                    </span>
 
-                    <div className="flex flex-wrap gap-2 text-sm mt-2">
+                    {planet && (
+                      <>
+                        <span className="text-zinc-600">
+                          •
+                        </span>
+                        <span className="text-zinc-400">
+                          {planet.name}
+                        </span>
+                      </>
+                    )}
 
-                      <span className="text-cyan-400">
-                        {race?.name}
-                      </span>
+                    {sector && (
+                      <>
+                        <span className="text-zinc-600">
+                          •
+                        </span>
+                        <span className="text-zinc-400">
+                          {sector.name}
+                        </span>
+                      </>
+                    )}
+                  </div>
 
-                      {planet && (
-                        <>
-                          <span className="text-zinc-600">
-                            •
-                          </span>
-
-                          <span className="text-zinc-400">
-                            {planet.name}
-                          </span>
-                        </>
-                      )}
-
-                      {sector && (
-                        <>
-                          <span className="text-zinc-600">
-                            •
-                          </span>
-
-                          <span className="text-zinc-400">
-                            {sector.name}
-                          </span>
-                        </>
-                      )}
-
-                    </div>
-
-                    <p className="mt-3 text-zinc-400 leading-7">
-                      {character.description}
-                    </p>
-
-                  </article>
-                );
-              }
-            )}
-
+                  <p className="mt-3 text-zinc-400 leading-7">
+                    {character.description}
+                  </p>
+                </article>
+              );
+            })}
           </div>
 
           {filteredCharacters.length === 0 && (
