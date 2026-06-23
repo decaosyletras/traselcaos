@@ -37,21 +37,21 @@ export default async function RacePage({
   return (
     <main>
 
-      {/* HEADER PRO */}
+      {/* HEADER (RESPONSIVE FIX REAL) */}
       <section className="bg-zinc-950 border-b border-cyan-900/20">
         <div className="max-w-6xl mx-auto px-6 py-8 md:py-12">
 
-          <div className="flex flex-row gap-10 items-start">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-10 items-start">
 
-            {/* LEFT SIDE */}
-            <div className="w-[220px] flex-shrink-0">
+            {/* LEFT */}
+            <div className="w-full md:w-[220px] flex-shrink-0">
 
               {race.image && (
-                <div className="rounded-2xl overflow-hidden border border-cyan-900/30 shadow-lg">
+                <div className="rounded-2xl overflow-hidden border border-cyan-900/30 shadow-lg w-full md:w-[220px]">
                   <img
                     src={race.image}
                     alt={race.name}
-                    className="w-[220px] h-[220px] object-cover transition-transform duration-300 hover:scale-105"
+                    className="w-full md:w-[220px] h-[220px] object-cover"
                   />
                 </div>
               )}
@@ -63,12 +63,12 @@ export default async function RacePage({
               <div className="mt-2 h-[2px] w-12 bg-cyan-500/60 rounded-full" />
             </div>
 
-            {/* RIGHT SIDE */}
+            {/* RIGHT */}
             <div className="flex-1 self-start">
 
-              <div className="rounded-2xl border border-cyan-900/20 bg-zinc-900/60 backdrop-blur-sm p-6 md:p-8">
+              <div className="rounded-2xl border border-cyan-900/20 bg-zinc-900/60 backdrop-blur-sm p-5 md:p-8">
 
-                <p className="text-zinc-300 leading-7 md:leading-8 text-[15px] md:text-base">
+                <p className="text-zinc-300 leading-7 md:leading-8 text-sm md:text-base">
                   {race.description}
                 </p>
 
@@ -154,9 +154,10 @@ export default async function RacePage({
 
           </aside>
 
-          {/* SIDEBAR MOBILE */}
+          {/* MOBILE ORDER FIX (IMPORTANTE) */}
           <div className="lg:hidden space-y-6">
 
+            {/* 1. DATOS PRIMERO */}
             <InfoPanel
               title="Datos"
               items={[
@@ -171,6 +172,7 @@ export default async function RacePage({
               ]}
             />
 
+            {/* 2. APARICIONES DESPUÉS */}
             {appearances.length > 0 && (
               <div className="rounded-2xl border border-cyan-900/20 bg-zinc-900 p-6">
                 <h3 className="text-lg font-bold mb-4">
