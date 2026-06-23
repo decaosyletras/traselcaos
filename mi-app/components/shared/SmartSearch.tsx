@@ -26,15 +26,13 @@ export default function SmartSearch({
   const suggestions = useMemo(() => {
     const term = value.toLowerCase().trim();
 
-    if (!term || term.length < 2) {
-      return [];
-    }
+    if (!term) return [];
 
     return items
       .filter((item) =>
-        item.title.toLowerCase().startsWith(term)
+        item.title.toLowerCase().includes(term)
       )
-      .slice(0, 5);
+      .slice(0, 6);
   }, [value, items]);
 
   return (
@@ -79,38 +77,31 @@ export default function SmartSearch({
             shadow-xl
           "
         >
-          {suggestions.map((item) => {
-            const isExact =
-              item.title.toLowerCase() ===
-              value.toLowerCase().trim();
+          {suggestions.map((item) => (
+            <button
+              key={item.id}
+              type="button"
+              onClick={() => onChange(item.title)}
+              className="
+                w-full
+                text-left
+                px-4
+                py-3
+                hover:bg-zinc-800
+                transition
+              "
+            >
+              <div className="font-medium">
+                {item.title}
+              </div>
 
-            return (
-              <button
-                key={item.id}
-                type="button"
-                onClick={() => onChange(item.title)}
-                className={`
-                  w-full
-                  text-left
-                  px-4
-                  py-3
-                  transition
-                  hover:bg-zinc-800
-                  ${isExact ? "bg-zinc-800" : ""}
-                `}
-              >
-                <div className="font-medium">
-                  {item.title}
+              {item.description && (
+                <div className="text-xs text-zinc-500 mt-1">
+                  {item.description}
                 </div>
-
-                {item.description && (
-                  <div className="text-xs text-zinc-500 mt-1">
-                    {item.description}
-                  </div>
-                )}
-              </button>
-            );
-          })}
+              )}
+            </button>
+          ))}
         </div>
       )}
     </div>
