@@ -22,7 +22,7 @@ export default function AppearanceTimeline({ items }: Props) {
   return (
     <section className="mt-16">
 
-      {/* HEADER TOGGLE */}
+      {/* TOGGLE HEADER */}
       <button
         onClick={() => setOpen((v) => !v)}
         className="
@@ -32,26 +32,39 @@ export default function AppearanceTimeline({ items }: Props) {
           border border-cyan-900/30
           bg-zinc-900/60
           px-5 py-4
-          hover:border-cyan-500/40
-          transition
+
+          cursor-pointer
+
+          hover:border-cyan-400/60
+          hover:bg-zinc-900
+          hover:shadow-[0_0_20px_rgba(34,211,238,0.08)]
+
+          transition-all
+          duration-300
         "
       >
         <div className="text-left">
-          <h2 className="text-lg md:text-xl font-bold text-cyan-300">
-            Ver apariciones
+          <h2 className="text-lg md:text-xl font-bold text-cyan-300 flex items-center gap-2">
+            ⚠ Ver apariciones
           </h2>
 
           <p className="text-sm text-zinc-400 mt-1">
-            Puede contener spoilers de la historia
+            Puede contener leves spoilers de la historia
           </p>
         </div>
 
-        <span className="text-cyan-400 text-xl">
-          {open ? "−" : "+"}
-        </span>
+        {/* ICONO MÁS CLARO */}
+        <div className="flex items-center gap-3 text-cyan-400">
+          <span className="text-sm hidden sm:inline">
+            {open ? "Ocultar" : "Ver"}
+          </span>
+          <span className="text-cyan-400 text-xl">
+            {open ? "−" : "+"}
+          </span>
+        </div>
       </button>
 
-      {/* CONTENT (COLLAPSIBLE) */}
+      {/* CONTENT */}
       <div
         className={`
           relative overflow-hidden transition-all duration-500 ease-in-out
@@ -70,7 +83,6 @@ export default function AppearanceTimeline({ items }: Props) {
 
               <div className="rounded-xl border border-cyan-900/20 bg-zinc-900 p-5 hover:border-cyan-500/30 transition">
 
-                {/* header */}
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 text-sm">
                     {item.book}
@@ -81,21 +93,18 @@ export default function AppearanceTimeline({ items }: Props) {
                   </span>
                 </div>
 
-                {/* texto narrativo */}
                 {item.text && (
                   <p className="mt-4 text-zinc-300 leading-7">
                     {item.text}
                   </p>
                 )}
 
-                {/* role */}
                 {item.role && (
                   <p className="mt-4 font-semibold text-zinc-200">
                     {item.role}
                   </p>
                 )}
 
-                {/* alineación */}
                 {item.alignment && (
                   <p className="mt-2 text-zinc-400">
                     Alineación:{" "}
@@ -105,7 +114,6 @@ export default function AppearanceTimeline({ items }: Props) {
                   </p>
                 )}
 
-                {/* facción */}
                 {item.faction && (
                   <p className="mt-2 text-zinc-400">
                     Facción:{" "}
@@ -115,7 +123,6 @@ export default function AppearanceTimeline({ items }: Props) {
                   </p>
                 )}
 
-                {/* organizaciones */}
                 {item.organizations?.length ? (
                   <div className="mt-4 flex flex-wrap gap-2">
                     {item.organizations.map((org) => (
