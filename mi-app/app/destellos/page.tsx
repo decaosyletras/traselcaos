@@ -41,11 +41,11 @@ export default function FlashesPage() {
             Destellos
           </h1>
 
-          <SearchBar
+          {/*<SearchBar
             value={search}
             onChange={setSearch}
             placeholder="Buscar destello..."
-          />
+          />*/}
 
           <div
             className="

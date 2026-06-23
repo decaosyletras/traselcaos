@@ -6,10 +6,10 @@ import { races } from "@/data/races";
 import { planets } from "@/data/planets";
 import { books } from "@/data/books";
 
+import SmartSearch from "@/components/shared/SmartSearch";
 import EntityGrid from "@/components/shared/EntityGrid";
 import EntityCard from "@/components/shared/EntityCard";
 import SectionTitle from "@/components/shared/SectionTitle";
-import SearchBar from "@/components/shared/SearchBar";
 
 export default function RacesPage() {
   const [search, setSearch] = useState("");
@@ -29,6 +29,18 @@ export default function RacesPage() {
       );
     });
   }, [search]);
+
+  const searchItems = useMemo(
+    () =>
+      races.map((race) => ({
+        id: race.id,
+        title: race.name,
+        description:
+          planets.find((p) => p.id === race.homeworldId)
+            ?.name ?? "",
+      })),
+    []
+  );
 
   const racesByBook = books.map((book) => ({
     book,
@@ -51,10 +63,12 @@ export default function RacesPage() {
             subtitle="Civilizaciones conocidas del universo."
           />
 
-          <SearchBar
+          {/* SEARCH PRO */}
+          <SmartSearch
             value={search}
             onChange={setSearch}
-            placeholder="Buscar por especie o planeta..."
+            placeholder="Buscar especie o planeta..."
+            items={searchItems}
           />
 
           {racesByBook.map(({ book, races }) => {
@@ -62,6 +76,7 @@ export default function RacesPage() {
 
             return (
               <div key={book.id} className="mt-14">
+
                 <h2 className="mb-6 text-2xl md:text-3xl font-bold text-cyan-400">
                   {book.title}
                 </h2>
@@ -88,6 +103,7 @@ export default function RacesPage() {
                     );
                   })}
                 </EntityGrid>
+
               </div>
             );
           })}
