@@ -1,8 +1,6 @@
 interface Props {
   title: string;
-
   description: string;
-
   image?: string;
 }
 
@@ -12,72 +10,63 @@ export default function EntityHeader({
   image,
 }: Props) {
   return (
-    <section
-      className="
-        relative
-        overflow-hidden
-      "
-    >
-      {image && (
-        <div className="h-[300px] md:h-[450px]">
+    <section className="relative overflow-hidden bg-zinc-950">
 
-          <img
-            src={image}
-            alt={title}
-            className="
-              w-full
-              h-full
-              object-cover
-              opacity-40
-            "
-          />
+      <div className="max-w-6xl mx-auto px-6 py-6 md:py-14">
+
+        {/* MOBILE */}
+        <div className="flex items-center gap-4 md:hidden">
+
+          {image && (
+            <img
+              src={image}
+              alt={title}
+              className="w-14 h-14 rounded-lg object-cover"
+            />
+          )}
+
+          <div className="flex-1">
+            <h1 className="text-xl font-bold leading-tight">
+              {title}
+            </h1>
+
+            <p className="text-sm text-zinc-300 mt-1 line-clamp-2">
+              {description}
+            </p>
+          </div>
+        </div>
+
+        {/* DESKTOP */}
+        <div className="hidden md:flex gap-10 items-center">
+
+          {/* IMAGE SIDE */}
+          {image && (
+            <div className="w-64 h-64 flex-shrink-0">
+              <img
+                src={image}
+                alt={title}
+                className="w-full h-full object-cover rounded-2xl"
+              />
+            </div>
+          )}
+
+          {/* TEXT SIDE */}
+          <div className="flex-1">
+
+            <h1 className="text-5xl font-bold">
+              {title}
+            </h1>
+
+            <p className="mt-6 text-zinc-300 leading-8 max-w-2xl">
+              {description}
+            </p>
+
+          </div>
 
         </div>
-      )}
 
-      <div
-        className="
-          absolute
-          inset-0
-          bg-gradient-to-b
-          from-black/30
-          via-black/60
-          to-zinc-950
-        "
-      />
-
-      <div
-        className="
-          absolute
-          bottom-0
-          left-0
-          right-0
-          max-w-6xl
-          mx-auto
-          px-6
-          pb-12
-        "
-      >
-        <h1
-          className="
-            text-4xl
-            md:text-6xl
-            font-bold
-          "
-        >
-          {title}
-        </h1>
-
-        <p
-          className="
-            mt-4
-            text-zinc-300
-            max-w-2xl
-          "
-        >
-          {description}
-        </p>
       </div>
+
     </section>
   );
 }
