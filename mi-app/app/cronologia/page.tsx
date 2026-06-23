@@ -1,16 +1,14 @@
 import { eras, positionFromTemi } from "@/data/eras";
+import SectionTitle from "@/components/shared/SectionTitle";
 
 export default function CronologiaPage() {
   return (
     <main className="min-h-screen bg-zinc-950 text-white">
 
       {/* HERO */}
-      <section className="py-20 md:py-10 text-center">
-        <p className="text-cyan-400 uppercase tracking-[0.3em] text-xl">
-          Cronología
-        </p>
-        
-      </section>
+      <SectionTitle
+          title="Destellos"
+      />
 
       {/* ERAS */}
       <section className="max-w-7xl mx-auto px-6 pb-24 space-y-10">

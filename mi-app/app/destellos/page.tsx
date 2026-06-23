@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 
 import { flashes } from "@/data/flashes";
 import { characters } from "@/data/characters";
+import SectionTitle from "@/components/shared/SectionTitle";
 
 import SearchBar from "@/components/shared/SearchBar";
 
@@ -37,12 +38,9 @@ export default function FlashesPage() {
       <section className="py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-6">
 
-          <section className="py-20 md:py-10 text-center">
-            <p className="text-cyan-400 uppercase tracking-[0.3em] text-xl">
-              Destellos
-            </p>
-            
-          </section>
+          <SectionTitle
+            title="Destellos"
+          />
 
           {/*<SearchBar
             value={search}

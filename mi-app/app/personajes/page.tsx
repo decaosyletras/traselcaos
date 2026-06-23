@@ -6,6 +6,7 @@ import { characters } from "@/data/characters";
 import { races } from "@/data/races";
 import { planets } from "@/data/planets";
 import { sectors } from "@/data/sectors";
+import SectionTitle from "@/components/shared/SectionTitle";
 
 import SmartSearch from "@/components/shared/SmartSearch";
 
@@ -87,13 +88,9 @@ export default function CharactersPage() {
       <section className="py-16 md:py-20">
         <div className="max-w-5xl mx-auto px-6">
 
-          {/* HERO */}
-            <section className="py-20 md:py-10 text-center">
-              <p className="text-cyan-400 uppercase tracking-[0.3em] text-xl">
-                Personajes
-              </p>
-              
-            </section>
+          <SectionTitle
+            title="personajes"
+          />
 
           <SmartSearch
             value={search}
