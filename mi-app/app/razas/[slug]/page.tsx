@@ -8,7 +8,6 @@ import { eras } from "@/data/eras";
 
 import Link from "next/link";
 
-import EntityHeader from "@/components/shared/EntityHeader";
 import InfoPanel from "@/components/shared/InfoPanel";
 import AppearanceTimeline from "@/components/shared/AppearanceTimeline";
 
@@ -38,12 +37,51 @@ export default async function RacePage({
   return (
     <main>
 
-      <EntityHeader
-        title={race.name}
-        description={race.summary}
-        image={race.image}
-      />
+      {/* HEADER PRO */}
+      <section className="bg-zinc-950 border-b border-cyan-900/20">
+        <div className="max-w-6xl mx-auto px-6 py-8 md:py-12">
 
+          <div className="flex flex-row gap-10 items-start">
+
+            {/* LEFT SIDE */}
+            <div className="w-[220px] flex-shrink-0">
+
+              {race.image && (
+                <div className="rounded-2xl overflow-hidden border border-cyan-900/30 shadow-lg">
+                  <img
+                    src={race.image}
+                    alt={race.name}
+                    className="w-[220px] h-[220px] object-cover transition-transform duration-300 hover:scale-105"
+                  />
+                </div>
+              )}
+
+              <h1 className="mt-4 text-2xl font-bold tracking-wide text-white">
+                {race.name}
+              </h1>
+
+              <div className="mt-2 h-[2px] w-12 bg-cyan-500/60 rounded-full" />
+            </div>
+
+            {/* RIGHT SIDE */}
+            <div className="flex-1 self-start">
+
+              <div className="rounded-2xl border border-cyan-900/20 bg-zinc-900/60 backdrop-blur-sm p-6 md:p-8">
+
+                <p className="text-zinc-300 leading-7 md:leading-8 text-[15px] md:text-base">
+                  {race.description}
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* CONTENT */}
       <section className="max-w-7xl mx-auto px-6 py-10">
 
         <div className="grid lg:grid-cols-3 gap-8">
@@ -51,18 +89,6 @@ export default async function RacePage({
           {/* MAIN */}
           <div className="lg:col-span-2 space-y-8">
 
-            {/* HISTORIA */}
-            <article className="rounded-2xl border border-cyan-900/20 bg-zinc-900 p-6 md:p-8">
-              <h2 className="text-xl md:text-2xl font-bold mb-4">
-                Historia
-              </h2>
-
-              <p className="text-zinc-300 leading-7 md:leading-8">
-                {race.description}
-              </p>
-            </article>
-
-            {/* TIMELINE */}
             <AppearanceTimeline
               items={appearances.map((a) => {
                 const book = books.find((b) => b.id === a.bookId);
@@ -81,7 +107,7 @@ export default async function RacePage({
 
           </div>
 
-          {/* DESKTOP SIDEBAR */}
+          {/* SIDEBAR DESKTOP */}
           <aside className="hidden lg:block space-y-6">
 
             <InfoPanel
@@ -128,56 +154,57 @@ export default async function RacePage({
 
           </aside>
 
-        </div>
+          {/* SIDEBAR MOBILE */}
+          <div className="lg:hidden space-y-6">
 
-        {/* MOBILE INFO PANEL (ESTO ES LO QUE TE FALTABA) */}
-        <div className="lg:hidden mt-8 space-y-6">
+            <InfoPanel
+              title="Datos"
+              items={[
+                {
+                  label: "Planeta natal",
+                  value: homeworld?.name ?? "Desconocido",
+                },
+                {
+                  label: "Sector",
+                  value: sector?.name ?? "Desconocido",
+                },
+              ]}
+            />
 
-          <InfoPanel
-            title="Datos"
-            items={[
-              {
-                label: "Planeta natal",
-                value: homeworld?.name ?? "Desconocido",
-              },
-              {
-                label: "Sector",
-                value: sector?.name ?? "Desconocido",
-              },
-            ]}
-          />
+            {appearances.length > 0 && (
+              <div className="rounded-2xl border border-cyan-900/20 bg-zinc-900 p-6">
+                <h3 className="text-lg font-bold mb-4">
+                  Apariciones en libros
+                </h3>
 
-          {appearances.length > 0 && (
-            <div className="rounded-2xl border border-cyan-900/20 bg-zinc-900 p-6">
-              <h3 className="text-lg font-bold mb-4">
-                Apariciones en libros
-              </h3>
+                <div className="space-y-2">
+                  {appearances.map((a, index) => {
+                    const book = books.find(
+                      (b) => b.id === a.bookId
+                    );
 
-              <div className="space-y-2">
-                {appearances.map((a, index) => {
-                  const book = books.find(
-                    (b) => b.id === a.bookId
-                  );
+                    if (!book) return null;
 
-                  if (!book) return null;
-
-                  return (
-                    <Link
-                      key={index}
-                      href={`/libros/${book.slug}`}
-                      className="block text-cyan-400 hover:text-cyan-300"
-                    >
-                      {book.title}
-                    </Link>
-                  );
-                })}
+                    return (
+                      <Link
+                        key={index}
+                        href={`/libros/${book.slug}`}
+                        className="block text-cyan-400 hover:text-cyan-300"
+                      >
+                        {book.title}
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          )}
+            )}
+
+          </div>
 
         </div>
 
       </section>
+
     </main>
   );
 }
