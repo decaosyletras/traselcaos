@@ -1,10 +1,19 @@
 "use client";
 
 import { useMemo, useState } from "react";
+
 import { flashes } from "@/data/flashes";
 import { characters } from "@/data/characters";
+
 import SearchBar from "@/components/shared/SearchBar";
-import Link from "next/link";
+
+const colorMap: Record<string, string> = {
+  Azul: "bg-blue-500",
+  Rojo: "bg-red-500",
+  Verde: "bg-green-500",
+  Morado: "bg-purple-500",
+  Amarillo: "bg-yellow-500",
+};
 
 export default function FlashesPage() {
   const [search, setSearch] = useState("");
@@ -14,11 +23,12 @@ export default function FlashesPage() {
 
     if (!term) return flashes;
 
-    return flashes.filter((flash) =>
-      flash.name.toLowerCase().includes(term) ||
-      flash.color.toLowerCase().includes(term) ||
-      flash.ability.toLowerCase().includes(term) ||
-      flash.era.toLowerCase().includes(term)
+    return flashes.filter(
+      (flash) =>
+        flash.name.toLowerCase().includes(term) ||
+        flash.color.toLowerCase().includes(term) ||
+        flash.ability.toLowerCase().includes(term) ||
+        flash.era.toLowerCase().includes(term)
     );
   }, [search]);
 
@@ -34,61 +44,107 @@ export default function FlashesPage() {
           <SearchBar
             value={search}
             onChange={setSearch}
-            placeholder="Buscar destello, color, habilidad o era..."
+            placeholder="Buscar destello..."
           />
 
-          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-6">
-
+          <div
+            className="
+              mt-8
+              grid
+              grid-cols-1
+              sm:grid-cols-2
+              lg:grid-cols-3
+              gap-6
+            "
+          >
             {filteredFlashes.map((flash) => {
               const bearer = characters.find(
                 (c) => c.id === flash.bearerId
               );
 
               return (
-                <div
+                <article
                   key={flash.id}
                   className="
-                    rounded-xl
+                    overflow-hidden
+                    rounded-2xl
                     border
                     border-cyan-900/20
                     bg-zinc-900
-                    p-3 md:p-5
+                    hover:border-cyan-500/30
                     transition
-                    hover:border-cyan-500/50
                   "
                 >
-                  {/* Link al detalle */}
-                  <Link href={`/destellos/${flash.slug}`}>
-                    <h2 className="text-sm md:text-lg font-bold">
+                  {/* Imagen */}
+
+                  <div className="aspect-[16/9] overflow-hidden">
+                    <img
+                      src={flash.image}
+                      alt={flash.name}
+                      className="
+                        w-full
+                        h-full
+                        object-cover
+                      "
+                    />
+                  </div>
+
+                  {/* Contenido */}
+
+                  <div className="p-5">
+
+                    <div className="flex items-center gap-3 mb-3">
+
+                      <div
+                        className={`
+                          w-3
+                          h-3
+                          rounded-full
+                          ${colorMap[flash.color] ?? "bg-cyan-500"}
+                        `}
+                      />
+
+                      <span className="text-sm text-zinc-400">
+                        {flash.color}
+                      </span>
+
+                    </div>
+
+                    <h2 className="text-xl font-bold">
                       {flash.name}
                     </h2>
 
-                    <p className="text-xs text-zinc-400 mt-1">
-                      {flash.color}
-                    </p>
-
-                    <p className="text-xs text-zinc-400">
+                    <p className="mt-4 text-zinc-400 leading-7">
                       {flash.ability}
                     </p>
 
-                    <p className="text-xs text-zinc-400">
-                      {flash.era}
-                    </p>
-                  </Link>
+                    <div className="mt-6 space-y-2 text-sm">
 
-                  {/* Link al personaje (SEPARADO, sin anidar links) */}
-                  {bearer && (
-                    <Link
-                      href={`/personajes/${bearer.slug}`}
-                      className="mt-3 inline-block text-xs text-cyan-400 hover:text-cyan-300"
-                    >
-                      Portador: {bearer.name}
-                    </Link>
-                  )}
-                </div>
+                      <div>
+                        <span className="text-zinc-500">
+                          Era:
+                        </span>{" "}
+                        <span className="text-zinc-300">
+                          {flash.era}
+                        </span>
+                      </div>
+
+                      <div>
+                        <span className="text-zinc-500">
+                          Portador:
+                        </span>{" "}
+                        <span className="text-zinc-300">
+                          {bearer?.name ??
+                            "Desconocido"}
+                        </span>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </article>
               );
             })}
-
           </div>
 
           {filteredFlashes.length === 0 && (
