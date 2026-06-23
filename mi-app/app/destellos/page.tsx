@@ -51,10 +51,10 @@ export default function FlashesPage() {
             className="
               mt-8
               grid
-              grid-cols-1
-              sm:grid-cols-2
-              lg:grid-cols-3
-              gap-6
+              grid-cols-2
+              lg:grid-cols-5
+              gap-4
+              md:gap-6
             "
           >
             {filteredFlashes.map((flash) => {
@@ -72,12 +72,13 @@ export default function FlashesPage() {
                     border-cyan-900/20
                     bg-zinc-900
                     hover:border-cyan-500/30
-                    transition
+                    transition-all
+                    duration-300
                   "
                 >
                   {/* Imagen */}
 
-                  <div className="aspect-[16/9] overflow-hidden">
+                  <div className="aspect-square overflow-hidden">
                     <img
                       src={flash.image}
                       alt={flash.name}
@@ -85,15 +86,18 @@ export default function FlashesPage() {
                         w-full
                         h-full
                         object-cover
+                        transition-transform
+                        duration-500
+                        hover:scale-105
                       "
                     />
                   </div>
 
                   {/* Contenido */}
 
-                  <div className="p-5">
+                  <div className="p-3 md:p-4">
 
-                    <div className="flex items-center gap-3 mb-3">
+                    <div className="flex items-center gap-2 mb-2">
 
                       <div
                         className={`
@@ -104,40 +108,25 @@ export default function FlashesPage() {
                         `}
                       />
 
-                      <span className="text-sm text-zinc-400">
+                      <span className="text-xs text-zinc-400">
                         {flash.color}
                       </span>
 
                     </div>
 
-                    <h2 className="text-xl font-bold">
+                    <h2 className="text-sm md:text-base font-bold leading-tight">
                       {flash.name}
                     </h2>
 
-                    <p className="mt-4 text-zinc-400 leading-7">
-                      {flash.ability}
-                    </p>
+                    <div className="mt-3 text-xs md:text-sm">
 
-                    <div className="mt-6 space-y-2 text-sm">
+                      <span className="text-zinc-500">
+                        Portador:
+                      </span>
 
-                      <div>
-                        <span className="text-zinc-500">
-                          Era:
-                        </span>{" "}
-                        <span className="text-zinc-300">
-                          {flash.era}
-                        </span>
-                      </div>
-
-                      <div>
-                        <span className="text-zinc-500">
-                          Portador:
-                        </span>{" "}
-                        <span className="text-zinc-300">
-                          {bearer?.name ??
-                            "Desconocido"}
-                        </span>
-                      </div>
+                      <p className="text-zinc-300 mt-1">
+                        {bearer?.name ?? "Desconocido"}
+                      </p>
 
                     </div>
 

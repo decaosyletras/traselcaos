@@ -7,7 +7,7 @@ import { races } from "@/data/races";
 import { planets } from "@/data/planets";
 import { sectors } from "@/data/sectors";
 
-import SearchBar from "@/components/shared/SearchBar";
+import SmartSearch from "@/components/shared/SmartSearch";
 
 export default function CharactersPage() {
   const [search, setSearch] = useState("");
@@ -38,26 +38,34 @@ export default function CharactersPage() {
       const race = racesMap[character.raceId];
 
       const planet = race
-        ? planets.find((p) => p.id === race.homeworldId)
+        ? planets.find(
+            (p) => p.id === race.homeworldId
+          )
         : undefined;
 
       const sector = planet
-        ? sectors.find((s) => s.id === planet.sectorId)
+        ? sectors.find(
+            (s) => s.id === planet.sectorId
+          )
         : undefined;
 
       const matchesSearch =
         !term ||
-        character.name.toLowerCase().includes(term) ||
-        character.description.toLowerCase().includes(term);
+        character.name
+          .toLowerCase()
+          .includes(term);
 
       const matchesRace =
-        !raceFilter || race?.id === raceFilter;
+        !raceFilter ||
+        race?.id === raceFilter;
 
       const matchesPlanet =
-        !planetFilter || planet?.id === planetFilter;
+        !planetFilter ||
+        planet?.id === planetFilter;
 
       const matchesSector =
-        !sectorFilter || sector?.id === sectorFilter;
+        !sectorFilter ||
+        sector?.id === sectorFilter;
 
       return (
         matchesSearch &&
@@ -74,6 +82,15 @@ export default function CharactersPage() {
     racesMap,
   ]);
 
+  const searchItems = useMemo(
+    () =>
+      characters.map((character) => ({
+        id: character.id,
+        title: character.name,
+      })),
+    []
+  );
+
   return (
     <main className="min-h-screen">
       <section className="py-16 md:py-20">
@@ -83,22 +100,30 @@ export default function CharactersPage() {
             Personajes
           </h1>
 
-          <SearchBar
+          <SmartSearch
             value={search}
             onChange={setSearch}
             placeholder="Buscar personaje..."
+            items={searchItems}
           />
-
-          {/* FILTROS */}
 
           <div className="mt-6 grid gap-4 md:grid-cols-3">
 
             <select
               value={raceFilter}
               onChange={(e) =>
-                setRaceFilter(e.target.value)
+                setRaceFilter(
+                  e.target.value
+                )
               }
-              className="rounded-xl bg-zinc-900 border border-zinc-800 px-4 py-3"
+              className="
+                rounded-xl
+                bg-zinc-900
+                border
+                border-zinc-800
+                px-4
+                py-3
+              "
             >
               <option value="">
                 Todas las razas
@@ -117,9 +142,18 @@ export default function CharactersPage() {
             <select
               value={planetFilter}
               onChange={(e) =>
-                setPlanetFilter(e.target.value)
+                setPlanetFilter(
+                  e.target.value
+                )
               }
-              className="rounded-xl bg-zinc-900 border border-zinc-800 px-4 py-3"
+              className="
+                rounded-xl
+                bg-zinc-900
+                border
+                border-zinc-800
+                px-4
+                py-3
+              "
             >
               <option value="">
                 Todos los planetas
@@ -138,9 +172,18 @@ export default function CharactersPage() {
             <select
               value={sectorFilter}
               onChange={(e) =>
-                setSectorFilter(e.target.value)
+                setSectorFilter(
+                  e.target.value
+                )
               }
-              className="rounded-xl bg-zinc-900 border border-zinc-800 px-4 py-3"
+              className="
+                rounded-xl
+                bg-zinc-900
+                border
+                border-zinc-800
+                px-4
+                py-3
+              "
             >
               <option value="">
                 Todos los sectores
@@ -158,41 +201,44 @@ export default function CharactersPage() {
 
           </div>
 
-          {/* LISTADO */}
-
           <div className="mt-8 space-y-4">
 
-            {filteredCharacters.map((character) => {
-              const race =
-                racesMap[character.raceId];
+            {filteredCharacters.map(
+              (character) => {
+                const race =
+                  racesMap[
+                    character.raceId
+                  ];
 
-              const planet = race
-                ? planetsMap[race.homeworldId]
-                : undefined;
+                const planet = race
+                  ? planetsMap[
+                      race.homeworldId
+                    ]
+                  : undefined;
 
-              const sector = planet
-                ? sectorsMap[planet.sectorId]
-                : undefined;
+                const sector = planet
+                  ? sectorsMap[
+                      planet.sectorId
+                    ]
+                  : undefined;
 
-              return (
-                <article
-                  key={character.id}
-                  className="
-                    rounded-xl
-                    border
-                    border-cyan-900/20
-                    bg-zinc-900/50
-                    p-5
-                    md:p-6
-                  "
-                >
-                  <div className="flex flex-col gap-2">
-
+                return (
+                  <article
+                    key={character.id}
+                    className="
+                      rounded-xl
+                      border
+                      border-cyan-900/20
+                      bg-zinc-900/50
+                      p-5
+                      md:p-6
+                    "
+                  >
                     <h2 className="text-xl md:text-2xl font-bold">
                       {character.name}
                     </h2>
 
-                    <div className="flex flex-wrap gap-2 text-sm">
+                    <div className="flex flex-wrap gap-2 text-sm mt-2">
 
                       <span className="text-cyan-400">
                         {race?.name}
@@ -224,14 +270,14 @@ export default function CharactersPage() {
 
                     </div>
 
-                    <p className="text-zinc-400 leading-7 mt-2">
+                    <p className="mt-3 text-zinc-400 leading-7">
                       {character.description}
                     </p>
 
-                  </div>
-                </article>
-              );
-            })}
+                  </article>
+                );
+              }
+            )}
 
           </div>
 
