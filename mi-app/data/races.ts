@@ -6,7 +6,7 @@ export const races: Race[] = [
     slug: "nastajiri",
     name: "Nastajiri",
     summary: "",
-    description: "Especie conocida por ser la primera (de tiempos avanzados) en poseer un Destello entre sus habitantes.",
+    description: "Especie cuya existencia representó un punto de inflexión en la historia universal, al albergar al primer Destello que alcanzó el dominio consciente de sus habilidades.",
     image: "/images/races/nastajiri.jpg",
     homeworldId: "naidul",
     FirstBook: ["book1"],
@@ -14,7 +14,7 @@ export const races: Race[] = [
       {
         bookId: "book1",
         eraId: "era-1",
-        text: "Tras recibir la misteriosa visita de una especie proveniente de otro planeta, los Nastajiri descubren lo que hace falta para ser considerada una especie avanzada.",
+        text: "Tras el inesperado encuentro con una especie procedente de otro planeta, los Nastajiri comprenden la verdadera naturaleza de aquello que define a una civilización avanzada.",
         alignment: "Benévolos",
         faction: "",
         organizations: [""],
@@ -22,7 +22,7 @@ export const races: Race[] = [
       {
         bookId: "book3",
         eraId: "era-3",
-        text: "Ya consolidados dentro de la Asociación Cealtar Universal, los Nastajiri se ven envueltos en un evento que les traerá un reencuentro con la memoria de Arsuen.",
+        text: "Ya consolidados dentro de la Asociación Cealtar Universal, los Nastajiri se ven envueltos en un acontecimiento que los llevará a reencontrarse con el legado de Arsuen.",
         alignment: "Benévolos",
         faction: "",
         organizations: ["Orden Cealtar"],
