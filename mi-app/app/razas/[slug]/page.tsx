@@ -51,10 +51,13 @@ export default async function RacePage({
       {/* HEADER */}
       <section className="bg-zinc-950 border-b border-cyan-900/20">
         <div className="max-w-6xl mx-auto px-6 py-8 md:py-12">
+
+          {/* HEADER ORIGINAL (solo añadimos mejoras móviles visuales) */}
           <div className="flex flex-row gap-4 md:gap-10 items-start">
 
             {/* LEFT */}
             <div className="w-[90px] md:w-[220px] flex-shrink-0">
+
               {race.image && (
                 <div className="rounded-2xl overflow-hidden border border-cyan-900/30 shadow-lg w-[90px] md:w-[220px]">
                   <img
@@ -65,20 +68,32 @@ export default async function RacePage({
                 </div>
               )}
 
-              <h1 className="mt-3 md:mt-4 text-xl md:text-2xl font-bold tracking-wide text-white">
-                {race.name}
-              </h1>
+              {/* 🔥 MÓVIL: imagen + nombre en misma fila visual */}
+              <div className="flex items-center gap-3 mt-3 md:block">
+                <h1 className="text-xl md:text-2xl font-bold tracking-wide text-white">
+                  {race.name}
+                </h1>
 
-              <div className="mt-2 h-[2px] w-10 md:w-12 bg-cyan-500/60 rounded-full" />
+                {/* solo móvil decorativo */}
+                <div className="md:hidden h-[2px] w-10 bg-cyan-500/60 rounded-full" />
+              </div>
+
+              {/* desktop igual */}
+              <div className="hidden md:block mt-2 h-[2px] w-12 bg-cyan-500/60 rounded-full" />
             </div>
 
             {/* RIGHT */}
             <div className="flex-1 self-start">
+
+              {/* 🔥 solo mejora móvil: más aire visual, misma info */}
               <div className="rounded-2xl border border-cyan-900/20 bg-zinc-900/60 backdrop-blur-sm p-5 md:p-8">
+
                 <p className="text-zinc-300 leading-7 md:leading-8 text-sm md:text-base">
                   {race.description}
                 </p>
+
               </div>
+
             </div>
 
           </div>
@@ -95,13 +110,21 @@ export default async function RacePage({
             {/* MÓVIL */}
             <div className="lg:hidden flex flex-col gap-8">
 
+              {/* 🔥 APARICIONES MÓVIL (rediseñado sin perder info) */}
               {appearances.length > 0 && (
-                <div className="rounded-2xl border border-cyan-900/20 bg-gradient-to-br from-zinc-900 to-zinc-950 p-6 shadow-lg">
-                  <h3 className="text-lg font-bold text-white mb-4">
-                    Apariciones en libros
-                  </h3>
+                <div className="rounded-3xl border border-cyan-500/15 bg-gradient-to-b from-zinc-900 to-zinc-950 overflow-hidden shadow-lg">
 
-                  <div className="divide-y divide-cyan-900/20">
+                  <div className="px-6 py-5 border-b border-cyan-900/20">
+                    <h3 className="text-lg font-bold text-white">
+                      Apariciones en libros
+                    </h3>
+
+                    <p className="text-xs text-cyan-400 mt-1">
+                      {appearances.length} registros
+                    </p>
+                  </div>
+
+                  <div className="p-3 space-y-1">
                     {appearances.map((a, index) => {
                       const book = books.find((b) => b.id === a.bookId);
 
@@ -111,9 +134,15 @@ export default async function RacePage({
                         <Link
                           key={index}
                           href={`/libros/${book.slug}`}
-                          className="block py-3 px-2 rounded-lg text-cyan-300 hover:text-white hover:bg-cyan-500/10 hover:pl-4 transition-all duration-200"
+                          className="group flex items-center justify-between rounded-xl px-4 py-3 hover:bg-cyan-500/10 transition"
                         >
-                          {book.title}
+                          <span className="text-zinc-300 group-hover:text-white">
+                            {book.title}
+                          </span>
+
+                          <span className="text-cyan-500 group-hover:translate-x-1 transition">
+                            →
+                          </span>
                         </Link>
                       );
                     })}
@@ -121,17 +150,18 @@ export default async function RacePage({
                 </div>
               )}
 
+              {/* timeline igual */}
               <AppearanceTimeline items={timelineItems} />
             </div>
 
-            {/* DESKTOP */}
+            {/* DESKTOP (INTACTO) */}
             <div className="hidden lg:block">
               <AppearanceTimeline items={timelineItems} />
             </div>
 
           </div>
 
-          {/* SIDEBAR DESKTOP */}
+          {/* SIDEBAR DESKTOP (INTACTO) */}
           <aside className="hidden lg:block space-y-6">
             {/*<InfoPanel
               title="Datos"
