@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-cyan-900/20 mt-20">
-      <div className="max-w-7xl mx-auto px-6 py-10">
+    <footer className="border-t border-cyan-900/20 mt-10">
+      <div className="max-w-7xl mx-auto px-6 py-4">
 
         {/*<div className="flex flex-col md:flex-row justify-between gap-8">
 
@@ -55,7 +55,7 @@ export default function Footer() {
           </div>
         </div>}*/}
 
-        <div className="text-center text-zinc-600">
+        <div className="text-center text-zinc-500">
           © {new Date().getFullYear()} Todos los derechos reservados.
         </div>
       </div>
