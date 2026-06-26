@@ -52,7 +52,6 @@ export default async function RacePage({
       <section className="bg-zinc-950 border-b border-cyan-900/20">
         <div className="max-w-6xl mx-auto px-6 py-8 md:py-12">
 
-          {/* HEADER ORIGINAL (solo añadimos mejoras móviles visuales) */}
           <div className="flex flex-row gap-4 md:gap-10 items-start">
 
             {/* LEFT */}
@@ -68,24 +67,23 @@ export default async function RacePage({
                 </div>
               )}
 
-              {/* 🔥 MÓVIL: imagen + nombre en misma fila visual */}
-              <div className="flex items-center gap-3 mt-3 md:block">
+              {/* 🔥 MÓVIL: nombre al lado de imagen */}
+              <div className="flex items-start gap-3 mt-3 md:block">
                 <h1 className="text-xl md:text-2xl font-bold tracking-wide text-white">
                   {race.name}
                 </h1>
 
-                {/* solo móvil decorativo */}
-                <div className="md:hidden h-[2px] w-10 bg-cyan-500/60 rounded-full" />
+                <div className="md:hidden mt-2 h-[2px] w-10 bg-cyan-500/60 rounded-full" />
               </div>
 
-              {/* desktop igual */}
+              {/* desktop underline */}
               <div className="hidden md:block mt-2 h-[2px] w-12 bg-cyan-500/60 rounded-full" />
             </div>
 
             {/* RIGHT */}
             <div className="flex-1 self-start">
 
-              {/* 🔥 solo mejora móvil: más aire visual, misma info */}
+              {/* 🔥 DESCRIPCIÓN SOLO DEBAJO (como pediste) */}
               <div className="rounded-2xl border border-cyan-900/20 bg-zinc-900/60 backdrop-blur-sm p-5 md:p-8">
 
                 <p className="text-zinc-300 leading-7 md:leading-8 text-sm md:text-base">
