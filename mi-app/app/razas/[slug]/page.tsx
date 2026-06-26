@@ -51,7 +51,7 @@ export default async function RacePage({
       {/* HEADER */}
       <section className="bg-zinc-950 border-b border-cyan-900/20">
         <div className="max-w-6xl mx-auto px-6 py-8 md:py-12">
-          <div className="flex flex-row md:flex-row gap-4 md:gap-10 items-start">
+          <div className="flex flex-row gap-4 md:gap-10 items-start">
 
             {/* LEFT */}
             <div className="w-[90px] md:w-[220px] flex-shrink-0">
@@ -90,31 +90,18 @@ export default async function RacePage({
         <div className="grid lg:grid-cols-3 gap-8">
 
           {/* MAIN */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2">
 
-            {/* MOBILE INFO (solo datos arriba) */}
-            <div className="lg:hidden space-y-6">
-              <InfoPanel
-                title="Datos"
-                items={[
-                  {
-                    label: "Planeta natal",
-                    value: homeworld?.name ?? "Desconocido",
-                  },
-                  {
-                    label: "Sector",
-                    value: sector?.name ?? "Desconocido",
-                  },
-                ]}
-              />
+            {/* MÓVIL */}
+            <div className="lg:hidden flex flex-col gap-8">
 
               {appearances.length > 0 && (
-                <div className="rounded-2xl border border-cyan-900/20 bg-zinc-900 p-6">
-                  <h3 className="text-lg font-bold mb-4">
+                <div className="rounded-2xl border border-cyan-900/20 bg-gradient-to-br from-zinc-900 to-zinc-950 p-6 shadow-lg">
+                  <h3 className="text-lg font-bold text-white mb-4">
                     Apariciones en libros
                   </h3>
 
-                  <div className="space-y-2">
+                  <div className="divide-y divide-cyan-900/20">
                     {appearances.map((a, index) => {
                       const book = books.find((b) => b.id === a.bookId);
 
@@ -124,7 +111,7 @@ export default async function RacePage({
                         <Link
                           key={index}
                           href={`/libros/${book.slug}`}
-                          className="block text-cyan-400 hover:text-cyan-300"
+                          className="block py-3 px-2 rounded-lg text-cyan-300 hover:text-white hover:bg-cyan-500/10 hover:pl-4 transition-all duration-200"
                         >
                           {book.title}
                         </Link>
@@ -133,15 +120,20 @@ export default async function RacePage({
                   </div>
                 </div>
               )}
+
+              <AppearanceTimeline items={timelineItems} />
             </div>
 
-            {/* TIMELINE (UNA SOLA VEZ) */}
-            <AppearanceTimeline items={timelineItems} />
+            {/* DESKTOP */}
+            <div className="hidden lg:block">
+              <AppearanceTimeline items={timelineItems} />
+            </div>
+
           </div>
 
           {/* SIDEBAR DESKTOP */}
           <aside className="hidden lg:block space-y-6">
-            <InfoPanel
+            {/*<InfoPanel
               title="Datos"
               items={[
                 {
@@ -153,15 +145,15 @@ export default async function RacePage({
                   value: sector?.name ?? "Desconocido",
                 },
               ]}
-            />
+            />*/}
 
             {appearances.length > 0 && (
-              <div className="rounded-2xl border border-cyan-900/20 bg-zinc-900 p-6">
-                <h3 className="text-lg font-bold mb-4">
+              <div className="rounded-2xl border border-cyan-900/20 bg-gradient-to-br from-zinc-900 to-zinc-950 p-6 shadow-lg">
+                <h3 className="text-lg font-bold text-white mb-4">
                   Apariciones en libros
                 </h3>
 
-                <div className="space-y-2">
+                <div className="divide-y divide-cyan-900/20">
                   {appearances.map((a, index) => {
                     const book = books.find((b) => b.id === a.bookId);
 
@@ -171,7 +163,7 @@ export default async function RacePage({
                       <Link
                         key={index}
                         href={`/libros/${book.slug}`}
-                        className="block text-cyan-400 hover:text-cyan-300"
+                        className="block py-3 px-2 rounded-lg text-cyan-300 hover:text-white hover:bg-cyan-500/10 hover:pl-4 transition-all duration-200"
                       >
                         {book.title}
                       </Link>

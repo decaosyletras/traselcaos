@@ -2,7 +2,7 @@ import Link from "next/link";
 
 interface EntityCardProps {
   title: string;
-  description: string;
+  description?: string;
   image?: string;
   href: string;
   subtitle?: string;
@@ -59,9 +59,9 @@ export default function EntityCard({
             {title}
           </h2>
 
-          <p className="hidden sm:block mt-2 text-zinc-400 text-xs line-clamp-2">
+          {/*<p className="hidden sm:block mt-2 text-zinc-400 text-xs line-clamp-2">
             {description}
-          </p>
+          </p>*/}
         </div>
       </article>
     </Link>

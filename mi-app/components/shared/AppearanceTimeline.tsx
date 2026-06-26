@@ -20,7 +20,7 @@ export default function AppearanceTimeline({ items }: Props) {
   const [open, setOpen] = useState(false);
 
   return (
-    <section className="mt-16">
+    <section className="mt-8">
 
       {/* TOGGLE HEADER */}
       <button
