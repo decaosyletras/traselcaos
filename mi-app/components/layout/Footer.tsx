@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="border-t border-cyan-900/20 mt-20">
       <div className="max-w-7xl mx-auto px-6 py-10">
 
-        <div className="flex flex-col md:flex-row justify-between gap-8">
+        {/*<div className="flex flex-col md:flex-row justify-between gap-8">
 
           <div>
             <h3 className="font-bold text-cyan-400 text-lg">
@@ -53,9 +53,9 @@ export default function Footer() {
               </ul>
             </div>
           </div>
-        </div>
+        </div>}*/}
 
-        <div className="border-t border-cyan-900/20 mt-10 pt-6 text-center text-zinc-600">
+        <div className="text-center text-zinc-600">
           © {new Date().getFullYear()} Todos los derechos reservados.
         </div>
       </div>
