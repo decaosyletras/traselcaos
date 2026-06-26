@@ -36,7 +36,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="lg:hidden absolute top-16 left-0 right-0 z-50 bg-zinc-950 border-t border-cyan-900/20">
+        <div className="lg:hidden absolute top-16 left-0 right-0 z-50 bg-zinc-750 border-t border-cyan-900/20">
           <div className="flex flex-col gap-4 p-6">
             <Link href="/" onClick={closeMenu}>Inicio</Link>
             <Link href="/conoceme" onClick={closeMenu}>Conóceme</Link>
