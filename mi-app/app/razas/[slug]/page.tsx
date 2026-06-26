@@ -82,7 +82,7 @@ export default async function RacePage({
 
             {/* DESCRIPCIÓN (SIEMPRE ABAJO EN MÓVIL) */}
             <div className="flex-1 w-full">
-              <div className="rounded-2xl border border-cyan-900/20 bg-zinc-900/60 backdrop-blur-sm p-5 md:p-8 mt-4 md:mt-0">
+              <div className="rounded-2xl border border-cyan-900/20 bg-zinc-900/60 backdrop-blur-sm p-3 md:p-6 mt-4 md:mt-0">
 
                 <p className="text-zinc-300 leading-7 md:leading-8 text-sm md:text-base">
                   {race.description}
@@ -108,7 +108,7 @@ export default async function RacePage({
 
               {/* 🔥 APARICIONES MÓVIL (rediseñado sin perder info) */}
               {appearances.length > 0 && (
-                <div className="rounded-3xl border border-cyan-500/15 bg-gradient-to-b from-zinc-900 to-zinc-950 overflow-hidden shadow-lg">
+                <div className="rounded-3xl border border-cyan-500/25 bg-gradient-to-b from-zinc-900 to-zinc-950 overflow-hidden shadow-lg">
 
                   <div className="px-6 py-5 border-b border-cyan-900/20">
                     <h3 className="text-lg font-bold text-white">
