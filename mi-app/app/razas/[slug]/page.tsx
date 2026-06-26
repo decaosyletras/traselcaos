@@ -49,13 +49,15 @@ export default async function RacePage({
   return (
     <main>
       {/* HEADER */}
+      {/* HEADER */}
       <section className="bg-zinc-950 border-b border-cyan-900/20">
         <div className="max-w-6xl mx-auto px-6 py-8 md:py-12">
 
-          <div className="flex flex-row gap-4 md:gap-10 items-start">
+          {/* 🔥 MÓVIL: columna / DESKTOP: fila */}
+          <div className="flex flex-col md:flex-row gap-4 md:gap-10 items-start">
 
-            {/* LEFT */}
-            <div className="w-[90px] md:w-[220px] flex-shrink-0">
+            {/* TOP BLOCK (imagen + título en móvil) */}
+            <div className="flex flex-row md:flex-col gap-4 md:w-[220px] flex-shrink-0">
 
               {race.image && (
                 <div className="rounded-2xl overflow-hidden border border-cyan-900/30 shadow-lg w-[90px] md:w-[220px]">
@@ -67,34 +69,30 @@ export default async function RacePage({
                 </div>
               )}
 
-              {/* 🔥 MÓVIL: nombre al lado de imagen */}
-              <div className="flex items-start gap-3 mt-3 md:block">
+              {/* TÍTULO A LA DERECHA SOLO EN MÓVIL */}
+              <div className="flex flex-col justify-center md:block">
                 <h1 className="text-xl md:text-2xl font-bold tracking-wide text-white">
                   {race.name}
                 </h1>
 
-                <div className="md:hidden mt-2 h-[2px] w-10 bg-cyan-500/60 rounded-full" />
+                <div className="mt-2 h-[2px] w-10 md:w-12 bg-cyan-500/60 rounded-full" />
               </div>
 
-              {/* desktop underline */}
-              <div className="hidden md:block mt-2 h-[2px] w-12 bg-cyan-500/60 rounded-full" />
             </div>
 
-            {/* RIGHT */}
-            <div className="flex-1 self-start">
-
-              {/* 🔥 DESCRIPCIÓN SOLO DEBAJO (como pediste) */}
-              <div className="rounded-2xl border border-cyan-900/20 bg-zinc-900/60 backdrop-blur-sm p-5 md:p-8">
+            {/* DESCRIPCIÓN (SIEMPRE ABAJO EN MÓVIL) */}
+            <div className="flex-1 w-full">
+              <div className="rounded-2xl border border-cyan-900/20 bg-zinc-900/60 backdrop-blur-sm p-5 md:p-8 mt-4 md:mt-0">
 
                 <p className="text-zinc-300 leading-7 md:leading-8 text-sm md:text-base">
                   {race.description}
                 </p>
 
               </div>
-
             </div>
 
           </div>
+
         </div>
       </section>
 
