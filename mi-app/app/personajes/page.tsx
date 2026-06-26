@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 
 import { characters } from "@/data/characters";
 import { races } from "@/data/races";
@@ -126,7 +127,7 @@ export default function CharactersPage() {
               ))}
             </select>
 
-            <select
+            {/*<select
               value={planetFilter}
               onChange={(e) =>
                 setPlanetFilter(e.target.value)
@@ -174,7 +175,7 @@ export default function CharactersPage() {
                   {sector.name}
                 </option>
               ))}
-            </select>
+            </select>*/}
 
           </div>
 
@@ -203,16 +204,26 @@ export default function CharactersPage() {
                     md:p-6
                   "
                 >
-                  <h2 className="text-xl md:text-2xl font-bold">
-                    {character.name}
-                  </h2>
 
-                  <div className="flex flex-wrap gap-2 text-sm mt-2">
-                    <span className="text-cyan-400">
-                      {race?.name}
-                    </span>
+                  <div className="flex flex-wrap items-baseline gap-2 text-sm mt-2">
+                    <h2 className="text-xl md:text-2xl font-bold">
+                      {character.name}
+                    </h2>
 
-                    {planet && (
+                    {race?.name && (
+                      <>
+                        <span className="text-zinc-500">•</span>
+
+                        <Link
+                          href={`/razas/${race.slug}`}
+                          className="text-sm md:text-base text-cyan-400 font-medium hover:text-cyan-300 transition"
+                        >
+                          {race.name}
+                        </Link>
+                      </>
+                    )}
+
+                    {/*{planet && (
                       <>
                         <span className="text-zinc-600">
                           •
@@ -232,7 +243,7 @@ export default function CharactersPage() {
                           {sector.name}
                         </span>
                       </>
-                    )}
+                    )}*/}
                   </div>
 
                   <p className="mt-3 text-zinc-400 leading-7">
