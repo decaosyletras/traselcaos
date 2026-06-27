@@ -179,7 +179,15 @@ export default function CharactersPage() {
 
           </div>
 
-          <div className="mt-8 space-y-4">
+          <div
+            className="
+              mt-8
+              rounded-xl
+              border
+              border-zinc-800
+              overflow-hidden
+            "
+          >
             {filteredCharacters.map((character) => {
               const race =
                 racesMap[character.raceId];
@@ -196,27 +204,33 @@ export default function CharactersPage() {
                 <article
                   key={character.id}
                   className="
-                    rounded-xl
-                    border
-                    border-cyan-900/20
-                    bg-zinc-900/50
-                    p-5
-                    md:p-6
+                    px-5
+                    py-4
+                    border-b
+                    border-zinc-800
+                    last:border-b-0
+                    hover:bg-zinc-900/40
+                    transition-colors
                   "
                 >
+                  <div className="flex flex-wrap items-center gap-2">
 
-                  <div className="flex flex-wrap items-baseline gap-2 text-sm mt-2">
-                    <h2 className="text-xl md:text-2xl font-bold">
+                    <h2 className="text-lg font-semibold">
                       {character.name}
                     </h2>
 
                     {race?.name && (
                       <>
-                        <span className="text-zinc-500">•</span>
+                        <span className="text-zinc-600">•</span>
 
                         <Link
                           href={`/razas/${race.slug}`}
-                          className="text-sm md:text-base text-cyan-400 font-medium hover:text-cyan-300 transition"
+                          className="
+                            text-sm
+                            text-cyan-400
+                            hover:text-cyan-300
+                            transition
+                          "
                         >
                           {race.name}
                         </Link>
@@ -246,7 +260,15 @@ export default function CharactersPage() {
                     )}*/}
                   </div>
 
-                  <p className="mt-3 text-zinc-400 leading-7">
+                  <p
+                    className="
+                      mt-2
+                      text-sm
+                      text-zinc-400
+                      leading-6
+                      line-clamp-2
+                    "
+                  >
                     {character.description}
                   </p>
                 </article>
