@@ -49,7 +49,6 @@ export default async function RacePage({
   return (
     <main>
       {/* HEADER */}
-      {/* HEADER */}
       <section className="bg-zinc-950 border-b border-cyan-900/20">
         <div className="max-w-6xl mx-auto px-6 py-8 md:py-12">
 

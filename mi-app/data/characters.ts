@@ -348,7 +348,7 @@ export const characters: Character[] = [
     name: "Neís",
     description: "La de la vida eterna. La que nunca muere. La posible solución a la enfermedad del envejecimiento.",
     image: "/images/characters/lyra.jpg",
-    raceId: "Raugari",
+    raceId: "raugari",
     relationships: [],
   },
   
@@ -358,7 +358,7 @@ export const characters: Character[] = [
     name: "Legiar",
     description: "Aliados importantes de los Rugari. Los creadores de los clones vigilantes.",
     image: "/images/characters/lyra.jpg",
-    raceId: "Itsher",
+    raceId: "itsher",
     relationships: [],
   },
 
