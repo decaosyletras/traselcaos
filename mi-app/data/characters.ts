@@ -50,8 +50,8 @@ export const characters: Character[] = [
     relationships: [],
   },
   {
-    id: "yumbe-il",
-    slug: "yumbe-il",
+    id: "yumbe",
+    slug: "yumbe",
     name: "Yumbe'il",
     description: "El rey único que sucumbió ante la locura de su puesto.",
     image: "/images/characters/lyra.jpg",
@@ -92,6 +92,16 @@ export const characters: Character[] = [
     description: "La personificación de la justicia vengativa.",
     image: "/images/characters/lyra.jpg",
     raceId: "vel-fatith",
+    relationships: [],
+  },
+  
+  {
+    id: "dinasiel",
+    slug: "dinasiel",
+    name: "Dinasiel",
+    description: "Consejero y protector de los Destellos.",
+    image: "/images/characters/lyra.jpg",
+    raceId: "",
     relationships: [],
   },
 
@@ -402,7 +412,6 @@ export const characters: Character[] = [
     raceId: "ittu",
     relationships: [],
   },
-  
   {
     id: "au-lert",
     slug: "au-lert",
@@ -412,13 +421,20 @@ export const characters: Character[] = [
     raceId: "au-lert",
     relationships: [],
   },
-  
-  
   {
     id: "fos",
     slug: "fos",
     name: "Fos",
     description: "El que brinda consuelo y una salida a los Taílyas.",
+    image: "/images/characters/lyra.jpg",
+    raceId: "astaronte",
+    relationships: [],
+  },
+  {
+    id: "heoriel",
+    slug: "heoriel",
+    name: "Heoriel",
+    description: "El portador de la luz / el que dispone de la consciencia.",
     image: "/images/characters/lyra.jpg",
     raceId: "astaronte",
     relationships: [],
