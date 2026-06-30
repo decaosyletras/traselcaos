@@ -104,14 +104,14 @@ export default function AppearanceTimeline({ items }: Props) {
                 )}
 
                 {/* ALIGNMENT / FACTION */}
-                {item.alignment && (
+                {/*item.alignment && (
                   <p className="mt-2 text-xs md:text-sm text-zinc-400">
                     Alineación:{" "}
                     <span className="text-zinc-200">
                       {item.alignment}
                     </span>
                   </p>
-                )}
+                )*/}
 
                 {item.faction && (
                   <p className="mt-1 text-xs md:text-sm text-zinc-400">
