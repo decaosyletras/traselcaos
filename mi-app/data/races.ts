@@ -13,7 +13,7 @@ export const races: Race[] = [
     appearances: [
       {
         bookId: "book1",
-        eraId: "era-1",
+        eraId: "era-3",
         text: "Las misteriosas naves que surcan sus cielos no solo traen consigo enigmas, sino también revelaciones sobre la verdadera esencia de lo que define a una civilización verdaderamente avanzada. Por mandatos superiores, Arsuen jugará un papel importante para dar inicio a los profundos cambios en su especie.",
         alignment: "Benévolos",
         faction: "",
@@ -21,7 +21,7 @@ export const races: Race[] = [
       },
       {
         bookId: "book3",
-        eraId: "era-3",
+        eraId: "era-4",
         text: "Ya consolidados dentro de la Asociación Cealtar Universal, los Nastajiri se ven envueltos en un acontecimiento que los llevará a reencontrarse con el legado de Arsuen.",
         alignment: "Benévolos",
         faction: "",
@@ -41,7 +41,7 @@ export const races: Race[] = [
     appearances: [
       {
         bookId: "book1",
-        eraId: "era-1",
+        eraId: "era-3",
         text: "La desesperación por preservar su linaje genético, sumada al desconocimiento de sus propios orígenes, ha sembrado un clima de desconfianza y traición constante entre los Fatith. En medio de ese caos, dieron origen sin saberlo a un ser de inmenso poder y traumatizado, cuya única razón de existir es la venganza.",
         alignment: "Hostiles",
         faction: "",
@@ -61,7 +61,7 @@ export const races: Race[] = [
     appearances: [
       {
         bookId: "book1",
-        eraId: "era-1",
+        eraId: "era-3",
         text: "Nafim expone, a través de sus enseñanzas, que la convivencia entre especies requiere tanto de un orden estructurado como de la presencia inevitable del caos.",
         alignment: "Benévolos",
         faction: "",
@@ -69,7 +69,7 @@ export const races: Race[] = [
       },
       {
         bookId: "book3",
-        eraId: "era-3",
+        eraId: "era-4",
         text: "Tras un encuentro inesperado de varias especies, Dehuga reúne a distintas especies de la Asociación Cealtar Universal con el propósito de recordar el pasado y tomar una decisión determinante, mientras guarda un as bajo la manga.",
         alignment: "Benévolos",
         faction: "",
@@ -89,7 +89,7 @@ export const races: Race[] = [
     appearances: [
       {
         bookId: "book1",
-        eraId: "era-1",
+        eraId: "era-3",
         text: "Su función consiste en realizar experimentos con diversas especies, así como mediciones ambientales en distintos planetas, en nombre de los Fatith.",
         alignment: "Hostiles",
         faction: "",
@@ -109,7 +109,7 @@ export const races: Race[] = [
     appearances: [
       {
         bookId: "book2",
-        eraId: "era-1",
+        eraId: "era-3",
         text: "Tras una serie de eventos desastrosos en su planeta, aislado del contacto externo, los Ratti se ven envueltos en una situación que pondrá en riesgo el orden y la paz que han intentado preservar.",
         alignment: "Benévolos",
         faction: "",
@@ -117,7 +117,7 @@ export const races: Race[] = [
       },
       {
         bookId: "book3",
-        eraId: "era-1",
+        eraId: "era-3",
         text: "Su papel no consiste únicamente en servir de vínculo entre varias especies distintas, sino también en influir indirectamente en la voluntad de un individuo hacia fines que le resultarían impensables.",
         alignment: "Benévolos",
         faction: "",
@@ -137,16 +137,16 @@ export const races: Race[] = [
     appearances: [
       {
         bookId: "book2",
-        eraId: "era-1",
-        text: "Tras una serie de eventos desastrosos en su planeta, aislado del contacto externo, los Ratti se ven envueltos en una situación que pondrá en riesgo el orden y la paz que han intentado preservar.",
+        eraId: "era-3",
+        text: "«La Mezcla» constituye una facción parcialmente consciente de la Noc-Auli que ha llegado al planeta de los Ratti en busca de investigación y comprensión de aquello que el resto de su especie no puede alcanzar. Sus breves momentos de conciencia les otorgan emociones que no logran comprender, pero que podrían resultar clave para forjar una alianza duradera.",
         alignment: "Benévolos",
         faction: "",
         organizations: [""],
       },
       {
         bookId: "book3",
-        eraId: "era-1",
-        text: "Su papel no consiste únicamente en servir de vínculo entre varias especies distintas, sino también en influir indirectamente en la voluntad de un individuo hacia fines que le resultarían impensables.",
+        eraId: "era-3",
+        text: "El uso deliberado de individuos de esta especie podría acarrear repercusiones imprevistas para los propios hostiles al mando.",
         alignment: "Benévolos",
         faction: "",
         organizations: [""],
@@ -165,7 +165,7 @@ export const races: Race[] = [
     appearances: [
       {
         bookId: "book2",
-        eraId: "era-1",
+        eraId: "era-4",
         text: "Tras su llegada al planeta Mugta, se adentrarán en los complejos conceptos que rigen la realidad, así como en los conflictos que prevalecen entre las facciones. Encoa deberá tomar una decisión que definirá el lugar de su especie en el universo.",
         alignment: "Benévolos",
         faction: "",
@@ -173,7 +173,7 @@ export const races: Race[] = [
       },
       {
         bookId: "book3",
-        eraId: "era-2",
+        eraId: "era-4",
         text: "A medida que los Taílyas se adentran en el conflicto entre especies, comienzan a preguntarse si realmente están del lado correcto, lo que los impulsa a cuestionar su papel y a buscar su verdadero lugar en todo este conflicto cada vez más preocupante.",
         alignment: "Benévolos",
         faction: "",
@@ -193,7 +193,7 @@ export const races: Race[] = [
     appearances: [
       {
         bookId: "book2",
-        eraId: "era-1",
+        eraId: "era-4",
         text: "Al recibir la visita de los Taílyas, les revelarán los conflictos que se ciernen entre las especies que deberían estar del mismo lado, pero que por razones compljas, se han divivido. Por su parte, Nálika permite a Encoa decidir si desea formar parte de una misión donde pondrán su vida en riesgo.",
         alignment: "Benévolos",
         faction: "",
@@ -201,7 +201,7 @@ export const races: Race[] = [
       },
       {
         bookId: "book3",
-        eraId: "era-2",
+        eraId: "era-4",
         text: "Con el fin de alcanzar su objetivo final, intentan proteger el cuerpo de Nálika mientras adaptan sus defensas a las circunstancias externas que afectan a sus aliados, aunque la situación terminará escapándoseles de las manos.",
         alignment: "Benévolos",
         faction: "",
@@ -221,7 +221,7 @@ export const races: Race[] = [
     appearances: [
       {
         bookId: "book2",
-        eraId: "era-1",
+        eraId: "era-4",
         text: "Se distinguen como una especie guerrera, especialmente valiosa en tiempos de conflicto, durante los cuales su liderazgo suele cambiar de forma temporal para adaptarse a las exigencias de la guerra.",
         alignment: "Benévolos",
         faction: "",
@@ -229,7 +229,7 @@ export const races: Race[] = [
       },
       {
         bookId: "book3",
-        eraId: "era-2",
+        eraId: "era-4",
         text: "Tras la desaparición de Olen y el retroceso de los Nandia, los Gúas asumen el control de la defensa planetaria con el objetivo de salvaguardar la misión de la Orden Cósmica. Sin embargo, sus decisiones orientadas a la guerra desencadenarán una serie de acontecimientos que agravarán aún más la situación a escala global.",
         alignment: "Benévolos",
         faction: "",
@@ -249,7 +249,7 @@ export const races: Race[] = [
     appearances: [
       {
         bookId: "book2",
-        eraId: "era-1",
+        eraId: "era-4",
         text: "Los Assul se presentan como una especie que, pese a ser fundadora de la Orden Cósmica del Espacio junto a los Mugtatarios, mantiene alianzas externas a dicha organización con el fin de adaptarse y sobrevivir en un universo marcado por intereses diversos.",
         alignment: "Benévolos",
         faction: "",
@@ -257,7 +257,7 @@ export const races: Race[] = [
       },
       {
         bookId: "book3",
-        eraId: "era-2",
+        eraId: "era-4",
         text: "Se erigen como los principales castigadores de los Nandia tras su reclusión en su planeta. Los Assul aprovechan esta situación para inclinar sus alianzas externas a su favor y fortalecer su posición.",
         alignment: "Benévolos",
         faction: "",
@@ -277,7 +277,7 @@ export const races: Race[] = [
     appearances: [
       {
         bookId: "book2",
-        eraId: "era-1",
+        eraId: "era-4",
         text: "Se presentan como una especie de naturaleza inocente, aunque profundamente influenciada por las razas hostiles.",
         faction: "",
         organizations: ["Orden Cósmica Protectora del Espacio"],
@@ -296,7 +296,7 @@ export const races: Race[] = [
     appearances: [
       {
         bookId: "book2",
-        eraId: "era-1",
+        eraId: "era-4",
         text: "Se presenta como una raza marcada por intensos conflictos internos en su pasado, cuyo orden actual se sostiene de forma frágil e inestable.",
         alignment: "Benévolos",
         faction: "",
@@ -304,7 +304,7 @@ export const races: Race[] = [
       },
       {
         bookId: "book3",
-        eraId: "era-2",
+        eraId: "era-4",
         text: "Tras la desaparición de su líder, la estrategia defensiva de la Orden Cósmica se ve profundamente afectada debido a la reclusión en su planeta. Esta inestabilidad interna desencadena un cambio radical en su posición dentro del escenario universal.",
         alignment: "Benévolos",
         faction: "",
@@ -324,7 +324,7 @@ export const races: Race[] = [
     appearances: [
       {
         bookId: "book3",
-        eraId: "era-2",
+        eraId: "era-3",
         text: "El castigo impuesto a un individuo rebelde terminará por sacar a la luz una situación que podría fortalecer la posición de su especie ante el círculo de «los Trece». El primero del círculo hace su aparición, demostrando que la crueldad es grande, pero la sabiduría lo es más.",
         alignment: "Hostiles",
         faction: "",
@@ -344,7 +344,7 @@ export const races: Race[] = [
     appearances: [
       {
         bookId: "book3",
-        eraId: "era-1",
+        eraId: "era-3",
         text: "Como custodios de la memoria universal, poseen el conocimiento necesario para revelar la historia del Pacto Ancestral, el acuerdo que en tiempos remotos vinculó a las especies que hoy, separadas por conflictos y diferencias irreconciliables, son conocidas como los «benévolos» y los «hostiles».",
         faction: "",
         organizations: ["Asociación Cealtar Universal"],
@@ -363,7 +363,7 @@ export const races: Race[] = [
     appearances: [
       {
         bookId: "book3",
-        eraId: "era-1",
+        eraId: "era-3",
         text: "Gracias a sus conocimientos ancestrales, son capaces de revelar los secretos que rodean la fundación de «los Trece», uno de los acontecimientos más trascendentales de la historia conocida.",
         faction: "",
         organizations: ["Asociación Cealtar Universal"],
@@ -382,7 +382,7 @@ export const races: Race[] = [
     appearances: [
       {
         bookId: "book3",
-        eraId: "era-1",
+        eraId: "era-3",
         text: "En el pasado, enfrentaron una grave crisis cuando uno de sus habitantes resultó poseer una habilidad que se expuso como una posible cura para una enfermedad mortal que amenazaba el tiempo de vida de las especies en todo el universo.",
         faction: "",
         organizations: ["Asociación Cealtar Universal"],
@@ -401,14 +401,14 @@ export const races: Race[] = [
     appearances: [
       {
         bookId: "book2",
-        eraId: "era-1",
+        eraId: "era-3",
         text: "Siguiendo un plan de los Guardianes, establecen contacto con Encoa por medios poco convencionales, decididos a persuadirlo de que su bando representa el camino correcto.",
         faction: "",
         organizations: [""],
       },
       {
         bookId: "book3",
-        eraId: "era-1",
+        eraId: "era-3",
         text: "Tras la intervensión realizada con Encoa, activan un plan que implica una grave transgresión de las leyes universales que rigen a todas las especies.",
         faction: "",
         organizations: ["Vinculación de Prevención"],
@@ -427,7 +427,7 @@ export const races: Race[] = [
     appearances: [
       {
         bookId: "book3",
-        eraId: "era-1",
+        eraId: "era-4",
         text: "Para apoyar el plan de los Ecdaum, los Ania deciden intervenir en las filas de los hostiles con el objetivo de obtener el resto de los Destellos en su poder.",
         faction: "",
         organizations: ["Vinculación de Prevención"],
@@ -446,7 +446,7 @@ export const races: Race[] = [
     appearances: [
       {
         bookId: "book3",
-        eraId: "era-1",
+        eraId: "era-4",
         text: "Se posicionan como los principales atacantes en el plan de la Vinculación de Prevención, por lo que su intervención marca el inicio de un conflicto sin precedentes.",
         faction: "",
         organizations: ["Vinculación de Prevención"],
@@ -465,7 +465,7 @@ export const races: Race[] = [
     appearances: [
       {
         bookId: "book3",
-        eraId: "era-1",
+        eraId: "era-4",
         text: "Utilizan su poder armamentístico para proteger los planetas Guardianes mientras un plan se ejecuta entre las sombras y en distintos frentes.",
         faction: "",
         organizations: ["Vinculación de Prevención"],
@@ -484,7 +484,7 @@ export const races: Race[] = [
     appearances: [
       {
         bookId: "book3",
-        eraId: "era-1",
+        eraId: "era-4",
         text: "Se erigen como los principales ejecutores de un antiguo plan destinado a instaurar una paz duradera entre las especies, delimitando las experimenteciones hostiles a cambio de una vigilancia constante en pos del progreso.",
         faction: "",
         organizations: [""],
@@ -503,7 +503,7 @@ export const races: Race[] = [
     appearances: [
       {
         bookId: "book3",
-        eraId: "era-1",
+        eraId: "era-4",
         text: "Tras una serie de eventos que desencadenan el desastre, los Itsher buscan ampliar sus filas mientras exhiben su poderío. Su papel será clave en la decisión que los Taílyas deberán tomar para asegurar su lugar entre las especies del universo.",
         faction: "",
         organizations: [""],
