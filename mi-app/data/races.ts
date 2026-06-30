@@ -21,7 +21,7 @@ export const races: Race[] = [
       },
       {
         bookId: "book3",
-        eraId: "era-4",
+        eraId: "era-3",
         text: "Ya consolidados dentro de la Asociación Cealtar Universal, los Nastajiri se ven envueltos en un acontecimiento que los llevará a reencontrarse con el legado de Arsuen.",
         alignment: "Benévolos",
         faction: "",
