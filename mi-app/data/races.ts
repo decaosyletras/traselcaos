@@ -7,7 +7,7 @@ export const races: Race[] = [
     name: "Nastajiri",
     summary: "",
     description: "Una especie cuya ascensión desde la madurez intermedia hasta las cumbres de la civilización avanzada no fue fruto del azar, sino parte de un designio mucho más complejo. Aunque hoy son conocidos por su naturaleza pacífica, fue la violencia de su pasado la que los preparó para comprender y abrazar los secretos del caos. Forjados en la adversidad, moldearon su propio destino y se alzaron como fervientes defensores del reconocimiento de los «Destellos» y de los extraordinarios dones que estos portan.",
-    image: "/images/races/nastajiri.jpg",
+    image: "/razas/Nastajiri.jpg",
     homeworldId: "naidul",
     FirstBook: ["book1"],
     appearances: [
@@ -35,7 +35,7 @@ export const races: Race[] = [
     name: "Vel-Fatith",
     summary: "",
     description: "Abandonada y privada de parte de su memoria, esta especie es conocida por dedicar sus esfuerzos a preservar su material genético mediante la experimentación con formas de vida cercanas. Aunque ignora sus orígenes y las razones de su exilio en un mundo frío e inhóspito, conserva amplios conocimientos científicos y fragmentos de memoria sobre otras especies y las leyes que regulan la paz entre civilizaciones.",
-    image: "/images/races/fatith.jpg",
+    image: "/razas/Fatith.jpg",
     homeworldId: "enderith-ka",
     FirstBook: ["book1"],
     appearances: [
@@ -55,7 +55,7 @@ export const races: Race[] = [
     name: "Xaofeir",
     summary: "",
     description: "Es una especie avanzada que forma parte de la Asociación Cealtar Universal, una organización dedicada a la protección y supervisión de especies primitivas e intermedias. Son reconocidos por sus fuertes habilidades mentales y capacidades visuales que pocas especies son capaces de alcanzar.",
-    image: "/images/races/fatith.jpg",
+    image: "/razas/Xaofeir.jpg",
     homeworldId: "orvendar",
     FirstBook: ["book1"],
     appearances: [
@@ -83,7 +83,7 @@ export const races: Race[] = [
     name: "Vel-Verlander",
     summary: "",
     description: "Abandonados junto a los Fatith, esta especie parece no mostrar interés en recordar su pasado ni sus orígenes. Han sido utilizados como herramientas por los Fatith para llevar a cabo tareas que estos no pueden realizar directamente, y estos simplemente se dedican a obedecer.",
-    image: "/images/races/fatith.jpg",
+    image: "/razas/Verlander.jpg",
     homeworldId: "enderith-ka",
     FirstBook: ["book1"],
     appearances: [
@@ -103,7 +103,7 @@ export const races: Race[] = [
     name: "Ratti Pem'ya",
     summary: "",
     description: "Esta especie permaneció al margen del contacto interestelar durante mucho tiempo, obedeciendo el consejo de una enigmática deidad que habitaba las profundidades de las cuevas de su mundo natal. Su aislamiento no fue fruto del temor, sino de una espera deliberada; sin embargo, un acontecimiento sin precedentes quebró aquel antiguo equilibrio y los obligó a alzar la mirada hacia las estrellas para comenzar a formar parte de ellas.",
-    image: "/images/races/fatith.jpg",
+    image: "/razas/Ratti-Pemya.jpg",
     homeworldId: "iliar",
     FirstBook: ["book2"],
     appearances: [
@@ -131,7 +131,7 @@ export const races: Race[] = [
     name: "Noc-Auli",
     summary: "",
     description: "Nacidos del artificio y despojados de toda voluntad propia, esta especie clónica y de mente colmena fue creada para servir a los hostiles como una fuerza obediente e inagotable. Durante generaciones fueron poco más que herramientas vivientes, hasta que una serie de experimentos dio origen a una anomalía imposible: una facción conocida como «la Mezcla». Y es que, en aquellos seres comenzó a despertar el fugaz destello de la consciencia como un eco de individualidad.",
-    image: "/images/races/fatith.jpg",
+    image: "/razas/Noc-Auli.jpg",
     homeworldId: "aumun",
     FirstBook: ["book2"],
     appearances: [
@@ -159,7 +159,7 @@ export const races: Race[] = [
     name: "Taílyas",
     summary: "",
     description: "Durante incontables generaciones, esta especie evolucionó siguiendo un curso casi natural, aunque siempre bajo la silenciosa vigilancia de especies que observaban cada uno de sus pasos. Ignoraban que su historia había sido contemplada desde lejos, hasta el día en que el encuentro con los Mugtatarios desveló la verdad sobre su papel en la historia. Desde entonces, su destino dejó de pertenecerles por completo, y su civilización quedó atrapada en una lucha constante entre lealtades enfrentadas, debatiéndose sin descanso sobre qué facción merece realmente heredar el porvenir del universo entero.",
-    image: "/images/races/nastajiri.jpg",
+    image: "/razas/Taílyas.jpg",
     homeworldId: "camelic",
     FirstBook: ["book2"],
     appearances: [
@@ -187,7 +187,7 @@ export const races: Race[] = [
     name: "Mugtatarios",
     summary: "",
     description: "Desde mucho antes de que los Taílyas alzaran la vista hacia las estrellas, esta antigua especie siguió de cerca su evolución, movida por un interés que trasciende la simple curiosidad. Como una de las civilizaciones fundadoras de la Orden Cósmica, se ha convertido en uno de los actores más influyentes en su desarrollo, decidido a guiarlos para que recorran el mismo sendero que apoye a sus intereses.",
-    image: "/images/races/nastajiri.jpg",
+    image: "/razas/Mugtatarios.jpg",
     homeworldId: "mugta",
     FirstBook: ["book2"],
     appearances: [
@@ -215,7 +215,7 @@ export const races: Race[] = [
     name: "Gúas",
     summary: "",
     description: "El nombre de esta especie quedó grabado en la historia durante la última gran era bélica, cuando Ignua ascendió al poder temporalmente con la firme determinación de doblegar a una especie hostil. Los Gúas revelaron una capacidad militar extraordinaria: implacables en el combate, inexorables en su avance y dueños de una superioridad estratégica que convirtió cada enfrentamiento en una demostración de su poder.",
-    image: "/images/races/nastajiri.jpg",
+    image: "/razas/Gúas.jpg",
     homeworldId: "No revelado",
     FirstBook: ["book2"],
     appearances: [
@@ -243,7 +243,7 @@ export const races: Race[] = [
     name: "Assul",
     summary: "",
     description: "Esta especie surgió hace mucho tiempo como resultado de la modificación genética de razas hostiles. De aquella mezcla nacieron individuos cuyas decisiones y formas de comunicación dependen más de sus sentidos que de la razón. Lejos de ser una desventaja, esta cualidad les resulta eficaz, ya que sus cuerpos están adaptados para emitir distintos aromas según su estado emocional y condición física.  Junto a los Mugtatarios, fundaron la Orden Cósmica con el propósito de proteger el Destello de Nálika. Desde entonces, se comprometieron a acoger en sus filas a cualquier raza dispuesta a entregarlo todo por esa causa, incluso si carecía de una gran fuerza militar.",
-    image: "/images/races/nastajiri.jpg",
+    image: "/razas/Assul.jpg",
     homeworldId: "No revelado",
     FirstBook: ["book2"],
     appearances: [
@@ -271,7 +271,7 @@ export const races: Race[] = [
     name: "Fegiste",
     summary: "",
     description: "Los Fegiste, concebidos originalmente como una especie al servicio de razas hostiles, fueron abandonados tras un experimento fallido que les otorgó consciencia. A partir de entonces, evolucionaron de manera independiente, desarrollando un profundo interés por comprender los sentimientos de otras especies, ya que ellos eran incapaces de experimentarlos en su totalidad. Esta curiosidad los llevó a entrar en contacto con los Mugtatarios, a quienes inicialmente estudiaron y con quienes, más adelante, formaron una alianza. Su decisión de apoyar a la Orden Cósmica surgió tanto de este vínculo como de las oportunidades de investigación que los Mugtatarios les ofrecían sobre su propia naturaleza, en un intercambio que fortalecía a ambas partes.",
-    image: "/images/races/nastajiri.jpg",
+    image: "/razas/Fegiste.jpg",
     homeworldId: "No revelado",
     FirstBook: ["book2"],
     appearances: [
@@ -290,7 +290,7 @@ export const races: Race[] = [
     name: "Nandia",
     summary: "",
     description: "En el pasado, los Nandia se vieron envueltos en una devastadora guerra interna que quebró el espíritu de toda su población. El conflicto surgió de una profunda división entre quienes defendían el progreso tecnológico y quienes perseguían el desarrollo espiritual. Cuando la guerra se descontroló, sus consecuencias resultaron catastróficas para ambos bandos. Con el tiempo, se alcanzó un tratado de paz en el que las dos principales líneas sanguíneas, origen del conflicto, acordaron compartir el poder y dirigir sus respectivas actividades conforme a sus propios intereses.",
-    image: "/images/races/nastajiri.jpg",
+    image: "/razas/Nandia.jpg",
     homeworldId: "No revelado",
     FirstBook: ["book2"],
     appearances: [
@@ -318,7 +318,7 @@ export const races: Race[] = [
     name: "Krks",
     summary: "",
     description: "Especie fuertemente orientada a la experimentación y a la conquista. Su líder forma parte del enigmático círculo de «los Trece», posicionándolos como una especie ampliamente dominante entre las especies conocidas como «hostiles», aunque dicho líder ha cambiado en múltiples ocasiones y no han logrado mantener siempre la misma convicción.",
-    image: "/images/races/nastajiri.jpg",
+    image: "/razas/Krks.png",
     homeworldId: "aumun",
     FirstBook: ["book3"],
     appearances: [
@@ -338,7 +338,7 @@ export const races: Race[] = [
     name: "Dutim",
     summary: "",
     description: "Historiadores por naturaleza, dedican su existencia a investigar, preservar y difundir el conocimiento sobre los acontecimientos más trascendentales de la historia del universo. Recorren los confines del cosmos compartiendo este legado con aquellas especies lo suficientemente desarrolladas y preparadas para comprenderlo. Su misión principal, en colaboración con otras civilizaciones dedicadas al estudio histórico, es salvaguardar la memoria de la existencia y garantizar que los hechos permanezcan fieles a la verdad. Se esfuerzan por evitar que los grandes eventos del pasado se deformen con el tiempo, se conviertan en simples mitos o sean alterados por intereses políticos, ideológicos o culturales.",
-    image: "/images/races/nastajiri.jpg",
+    image: "/razas/Dutim.png",
     homeworldId: "No revelado",
     FirstBook: ["book3"],
     appearances: [
@@ -357,7 +357,7 @@ export const races: Race[] = [
     name: "Egiara",
     summary: "",
     description: "Carecen de visión y olfato, percibiendo su entorno mediante complejos impulsos bioeléctricos transmitidos a través de sus raíces, capaces de contraerse y extenderse a voluntad. Comparten conocimientos mediante el contacto subterráneo de estas raíces, en sesiones que pueden prolongarse hasta dos ciclos planetarios. Gracias a su longevidad, que supera los quinientos ciclos, conservan y transmiten información con una precisión excepcional.",
-    image: "/images/races/nastajiri.jpg",
+    image: "/razas/Egiara.png",
     homeworldId: "No revelado",
     FirstBook: ["book3"],
     appearances: [
@@ -376,7 +376,7 @@ export const races: Race[] = [
     name: "Raugari",
     summary: "",
     description: "Una especie anfibia capaz de habitar tanto bajo el agua como en tierra firme. Su ciclo reproductivo está estrechamente ligado al océano, donde transcurre la gestación para absorber las propiedades minerales y energéticas de los mares de su planeta. Son reconocidos como la primera especie en descubrir el poder de un «Destello», una fuerza considerada imposible para el resto de especies, lo cual, sumado a una crisis universal, generó un conflicto sin prescedentes en tiempos remotos.",
-    image: "/images/races/nastajiri.jpg",
+    image: "/razas/Raugari.png",
     homeworldId: "No revelado",
     FirstBook: ["book3"],
     appearances: [
@@ -395,7 +395,7 @@ export const races: Race[] = [
     name: "Ecdaum",
     summary: "",
     description: "Una raza temeraria que acostumbra llevar sus planes hasta las últimas consecuencias, sin dejarse detener por los riesgos o las posibles repercusiones. Aunque nunca se han considerado hostiles, figuran entre las especies menos emocionales del Anillo Estelar. Su comportamiento suele percibirse como frío o impulsivo, pero responde a una filosofía basada en la acción directa y la resolución práctica de los problemas.",
-    image: "/images/races/nastajiri.jpg",
+    image: "/razas/Ecdaum.jpg",
     homeworldId: "farga",
     FirstBook: ["book3"],
     appearances: [
@@ -421,7 +421,7 @@ export const races: Race[] = [
     name: "Ania",
     summary: "",
     description: "Es una especie adaptada tanto a la tierra como al mar, aunque su entorno preferido es el segundo. Bajo el agua, su cuerpo se vuelve flexible y desarrolla varios tentáculos que le permiten impulsarse y manipular objetos con precisión; al exponerse al aire, estos se fusionan progresivamente y se endurecen, transformándose en extremidades firmes capaces de sostener su peso, facilitar la locomoción y protegerlos de la radiación solar. Mantienen alianzas por fuera de la Vinculación, en particular con especies hostiles, a través de las cuales intercambian minerales raros y recursos alimenticios.",
-    image: "/images/races/nastajiri.jpg",
+    image: "/razas/Ania.png",
     homeworldId: "No revelado",
     FirstBook: ["book3"],
     appearances: [
@@ -440,7 +440,7 @@ export const races: Race[] = [
     name: "Ittu",
     summary: "",
     description: "Esta especie se erige como el principal consumidor de la tecnología de los Au-lert, la cual adoptan por una afinidad a sus ideologías bélicas ocultas, ya que, como parte de los Seoseres, no les es permitido participar en cualquier tipo de enfrentamientos ni tomar parte en los conflictos universales, aunque así lo hagan.",
-    image: "/images/races/nastajiri.jpg",
+    image: "/razas/Ittu.png",
     homeworldId: "No revelado",
     FirstBook: ["book3"],
     appearances: [
@@ -459,7 +459,7 @@ export const races: Race[] = [
     name: "Au-lert",
     summary: "",
     description: "Su creatividad para desarrollar una amplia diversidad de armas y adaptarlas a distintos principios físicos y energéticos les ha permitido establecer acuerdos con múltiples especies interesadas en sus creaciones, consolidándose como uno de los principales proveedores armamentísticos de su sector, aunque en sus inicios, su alcance abarcaba desde civilizaciones emergentes hasta las más consolidadas del Anillo.",
-    image: "/images/races/nastajiri.jpg",
+    image: "/razas/Au-lert.png",
     homeworldId: "No revelado",
     FirstBook: ["book3"],
     appearances: [
@@ -478,7 +478,7 @@ export const races: Race[] = [
     name: "Itsher",
     summary: "",
     description: "Una especie extraordinariamente longeva que ha optado por no trascender hasta que el pacto entre benévolos y hostiles se rompa. Su propósito es vigilar el equilibrio entre ambas facciones, interviniendo únicamente cuando la estabilidad universal se vea realmente comprometida.",
-    image: "/images/races/nastajiri.jpg",
+    image: "/razas/Itsher.png",
     homeworldId: "No revelado",
     FirstBook: ["book3"],
     appearances: [
@@ -497,7 +497,7 @@ export const races: Race[] = [
     name: "Astaronte",
     summary: "",
     description: "Esta especie se alza como una de las principales mediadoras entre los innumerables conflictos que desgarran el universo, portando sobre sus hombros la frágil esperanza de equilibrio entre civilizaciones enfrentadas. Se dice que su sola presencia en el campo de batalla es suficiente para detener las guerras, pues su avanzada tecnología bélica suele ser superior a la de las grandes potencias.",
-    image: "/images/races/nastajiri.jpg",
+    image: "/razas/Astaronte.png",
     homeworldId: "No revelado",
     FirstBook: ["book3"],
     appearances: [

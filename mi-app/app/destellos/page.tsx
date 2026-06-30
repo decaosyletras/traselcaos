@@ -140,9 +140,7 @@ export default function FlashesPage() {
                 >
 
                   {/* Imagen */}
-
                   <div className="relative aspect-square overflow-hidden">
-
                     <img
                       src={flash.image}
                       alt={flash.name}
@@ -150,14 +148,12 @@ export default function FlashesPage() {
                         w-full
                         h-full
                         object-cover
-
+                        object-[28%_center]
                         transition-transform
                         duration-700
-
                         group-hover:scale-110
                       "
                     />
-
 
                     <div
                       className="
@@ -171,7 +167,6 @@ export default function FlashesPage() {
                         to-transparent
                       "
                     />
-
                   </div>
 
 

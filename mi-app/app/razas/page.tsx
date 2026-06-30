@@ -36,8 +36,7 @@ export default function RacesPage() {
         id: race.id,
         title: race.name,
         description:
-          planets.find((p) => p.id === race.homeworldId)
-            ?.name ?? "",
+          planets.find((p) => p.id === race.homeworldId)?.name ?? "",
       })),
     []
   );
@@ -55,64 +54,64 @@ export default function RacesPage() {
 
   return (
     <main>
-      <section className="py-2 md:py-2">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-4 md:py-6">
+        <div className="mx-auto max-w-[1500px] px-5 xl:px-8">
+          <SectionTitle title="Especies" />
 
-          <SectionTitle
-            title="Especies"
-          />
+          <div className="mt-8">
+            <SmartSearch
+              value={search}
+              onChange={setSearch}
+              placeholder="Buscar especie o planeta..."
+              items={searchItems}
+            />
+          </div>
 
-          {/* SEARCH PRO */}
-          <SmartSearch
-            value={search}
-            onChange={setSearch}
-            placeholder="Buscar especie o planeta..."
-            items={searchItems}
-          />
+          <div className="mt-12">
+            {racesByBook.map(({ book, races }) => {
+              if (!races.length) return null;
 
-          {racesByBook.map(({ book, races }) => {
-            if (races.length === 0) return null;
+              return (
+                <section
+                  key={book.id}
+                  className="mt-16 first:mt-0"
+                >
+                  <h2 className="mb-8 border-b border-zinc-800 pb-3 text-2xl font-semibold tracking-tight text-cyan-300">
+                    {book.title}
+                  </h2>
 
-            return (
-              <div key={book.id} className="mt-14">
+                  <EntityGrid>
+                    {races.map((race) => {
+                      const planet = planets.find(
+                        (p) => p.id === race.homeworldId
+                      );
 
-                <h2 className="mb-6 text-2xl md:text-3xl font-bold text-cyan-400">
-                  {book.title}
-                </h2>
+                      return (
+                        <EntityCard
+                          key={race.id}
+                          title={race.name}
+                          description={
+                            planet
+                              ? `Planeta: ${planet.name}`
+                              : race.description
+                          }
+                          image={race.image}
+                          href={`/razas/${race.slug}`}
+                          imageRatio="square"
+                        />
+                      );
+                    })}
+                  </EntityGrid>
+                </section>
+              );
+            })}
 
-                <EntityGrid>
-                  {races.map((race) => {
-                    const planet = planets.find(
-                      (p) => p.id === race.homeworldId
-                    );
-
-                    return (
-                      <EntityCard
-                        key={race.id}
-                        title={race.name}
-                        description={
-                          planet
-                            ? `Planeta: ${planet.name}`
-                            : race.description
-                        }
-                        image={race.image}
-                        href={`/razas/${race.slug}`}
-                        imageRatio="square"
-                      />
-                    );
-                  })}
-                </EntityGrid>
-
-              </div>
-            );
-          })}
-
-          {!hasResults && (
-            <p className="mt-12 text-center text-zinc-500">
-              No se encontraron especies.
-            </p>
-          )}
-
+            {!hasResults && (
+              <p className="mt-20 text-center text-zinc-500">
+                No se encontraron especies.
+              </p>
+            )}
+          </div>
         </div>
       </section>
     </main>
