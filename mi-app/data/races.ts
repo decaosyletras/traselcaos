@@ -7,7 +7,7 @@ export const races: Race[] = [
     name: "Nastajiri",
     summary: "",
     description: "Una especie cuya ascensión desde la madurez intermedia hasta las cumbres de la civilización avanzada no fue fruto del azar, sino parte de un designio mucho más complejo. Aunque hoy son conocidos por su naturaleza pacífica, fue la violencia de su pasado la que los preparó para comprender y abrazar los secretos del caos. Forjados en la adversidad, moldearon su propio destino y se alzaron como fervientes defensores del reconocimiento de los «Destellos» y de los extraordinarios dones que estos portan.",
-    image: "/razas/Nastajiri.jpg",
+    image: "/razas/Fegiste.jpg",
     homeworldId: "naidul",
     FirstBook: ["book1"],
     appearances: [
