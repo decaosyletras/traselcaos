@@ -46,12 +46,12 @@ export default function Hero() {
         </p>
 
         <h1 className="mt-3 sm:mt-6 text-3xl sm:text-5xl md:text-7xl xl:text-8xl font-black leading-[1.05]">
-          NOMBRE DE TU SAGA
+          Tras el Caos de la Existencia
         </h1>
 
         <p className="mt-5 sm:mt-8 text-sm sm:text-lg md:text-xl text-zinc-400 max-w-2xl md:max-w-3xl mx-auto leading-relaxed">
           Una historia de civilizaciones, guerras interestelares,
-          misterios ancestrales y personajes que cambiarán el destino de la galaxia.
+          misterios ancestrales y personajes que cambiarán el destino del universo.
         </p>
 
         <div className="mt-7 sm:mt-10 flex flex-wrap justify-center gap-3">

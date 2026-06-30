@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -15,10 +16,16 @@ export default function Navbar() {
 
         <Link
           href="/"
-          className="text-xl font-bold tracking-wider"
+          className="flex items-center"
           onClick={closeMenu}
         >
-          TU SAGA
+          <Image
+            src="/otros/logo.png"
+            alt="Logo"
+            width={50}
+            height={50}
+            priority
+          />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
