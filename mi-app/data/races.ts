@@ -7,7 +7,7 @@ export const races: Race[] = [
     name: "Nastajiri",
     summary: "",
     description: "Una especie cuya ascensión desde la madurez intermedia hasta las cumbres de la civilización avanzada no fue fruto del azar, sino parte de un designio mucho más complejo. Aunque hoy son conocidos por su naturaleza pacífica, fue la violencia de su pasado la que los preparó para comprender y abrazar los secretos del caos. Forjados en la adversidad, moldearon su propio destino y se alzaron como fervientes defensores del reconocimiento de los «Destellos» y de los extraordinarios dones que estos portan.",
-    image: "/razas/Fegiste.jpg",
+    image: "/razas/Nastajiri.png",
     homeworldId: "naidul",
     FirstBook: ["book1"],
     appearances: [
@@ -35,7 +35,7 @@ export const races: Race[] = [
     name: "Vel-Fatith",
     summary: "",
     description: "Abandonada y privada de parte de su memoria, esta especie es conocida por dedicar sus esfuerzos a preservar su material genético mediante la experimentación con formas de vida cercanas. Aunque ignora sus orígenes y las razones de su exilio en un mundo frío e inhóspito, conserva amplios conocimientos científicos y fragmentos de memoria sobre otras especies y las leyes que regulan la paz entre civilizaciones.",
-    image: "/razas/Fatith.jpg",
+    image: "/razas/Fatith.png",
     homeworldId: "enderith-ka",
     FirstBook: ["book1"],
     appearances: [
@@ -55,7 +55,7 @@ export const races: Race[] = [
     name: "Xaofeir",
     summary: "",
     description: "Es una especie avanzada que forma parte de la Asociación Cealtar Universal, una organización dedicada a la protección y supervisión de especies primitivas e intermedias. Son reconocidos por sus fuertes habilidades mentales y capacidades visuales que pocas especies son capaces de alcanzar.",
-    image: "/razas/Xaofeir.jpg",
+    image: "/razas/Xaofeir.png",
     homeworldId: "orvendar",
     FirstBook: ["book1"],
     appearances: [
@@ -83,7 +83,7 @@ export const races: Race[] = [
     name: "Vel-Verlander",
     summary: "",
     description: "Abandonados junto a los Fatith, esta especie parece no mostrar interés en recordar su pasado ni sus orígenes. Han sido utilizados como herramientas por los Fatith para llevar a cabo tareas que estos no pueden realizar directamente, y estos simplemente se dedican a obedecer.",
-    image: "/razas/Verlander.jpg",
+    image: "/razas/Verlander.png",
     homeworldId: "enderith-ka",
     FirstBook: ["book1"],
     appearances: [
