@@ -66,6 +66,7 @@ export default function FeaturedBooks() {
                     w-full
                     aspect-[2/3]
                     object-cover
+                    object-[44%_center]
 
                     transition-transform
                     duration-500
@@ -78,7 +79,7 @@ export default function FeaturedBooks() {
               {/* INFO */}
                 <div className="p-4 md:p-5">
                   <p className="text-cyan-400 text-xs md:text-sm uppercase tracking-widest">
-                    {book.publishYear}
+                    {book.publishYear === 1111 ? "????" : book.publishYear}
                   </p>
 
                   <h3 className="mt-2 text-base md:text-xl font-bold group-hover:text-cyan-300 transition-colors">

@@ -75,7 +75,7 @@ export default async function BookPage({
                 <img
                   src={book.cover}
                   alt={book.title}
-                  className="w-full aspect-[2/3] object-cover"
+                  className="w-full aspect-[2/3] object-cover object-[45%_center]"
                 />
               </div>
             </div>
