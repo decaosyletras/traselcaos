@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { books } from "@/data/books";
 import BookNavigation from "@/components/BookNavigation";
+import AmazonButton from "@/components/AmazonButton"
 
 interface Props {
   params: Promise<{
@@ -106,7 +107,7 @@ export default async function BookPage({
                   text-sm text-zinc-300
                 "
               >
-                Publicado en {book.publishYear}
+                Publicado en {book.publishYear === 1111 ? "????" : book.publishYear}
               </div>
 
               <p className="mt-8 text-zinc-400 leading-relaxed max-w-3xl">
@@ -116,7 +117,14 @@ export default async function BookPage({
               {/* BOTONES */}
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
 
-                <a
+                {book.LinkAmazon !== "" && (
+                  <AmazonButton
+                    amazon={book.amazon}
+                    amazonLink={book.LinkAmazon}
+                  />
+                )}
+
+                {/*<a
                   href={book.LinkAmazon}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -136,9 +144,9 @@ export default async function BookPage({
                   "
                 >
                   Comprar en Amazon
-                </a>
+                </a>*/}
 
-                <Link
+                {/*<Link
                   href="/libros"
                   className="
                     inline-flex
@@ -156,7 +164,7 @@ export default async function BookPage({
                   "
                 >
                   Ver todos los libros
-                </Link>
+                </Link>*/}
 
               </div>
 
@@ -184,7 +192,7 @@ export default async function BookPage({
             Sinopsis
           </h2>
 
-          <p className="mt-6 text-zinc-300 leading-relaxed text-base md:text-lg">
+          <p className="mt-6 text-zinc-300 leading-relaxed text-base md:text-lg whitespace-pre-line">
             {book.synopsis}
           </p>
         </div>

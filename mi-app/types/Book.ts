@@ -4,6 +4,11 @@ export interface Book {
   title: string;
   cover: string;
   publishYear: number;
+  amazon: {
+    es: string,
+    mx: string,
+    us: string,
+  },
   LinkAmazon: string;
   timelineYear: number;
   synopsis: string;
