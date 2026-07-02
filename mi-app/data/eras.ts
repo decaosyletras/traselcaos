@@ -2,8 +2,8 @@ export const eras = [
   {
     id: "era-3",
     name: "Ciclo 3 / Era de la Expansión",
-    startTemi: "E6E990EC",
-    endTemi: "E6EA1FFF",
+    startTemi: "E6E9A4FF",
+    endTemi: "E6EA17FF",
 
     benevolentEvents: [
       { id: 1, temi: "E6E9A7ED", title: "Pacto Nak'an" },
@@ -20,8 +20,8 @@ export const eras = [
   {
     id: "era-4",
     name: "Ciclo 4 / Era del Conflicto",
-    startTemi: "3DB75C49",
-    endTemi:   "3DB95C49",
+    startTemi: "3DB7EFFF",
+    endTemi: "3DB95FFF",
 
     benevolentEvents: [
       { id: 1, temi: "3DB82C49", title: "La conjunción del espacio-tiempo" },
